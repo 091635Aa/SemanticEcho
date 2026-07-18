@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Tokenizers
+*.tokenizer.json
+
+# 模型文件（太大，不推送）
+本地模型/
+original/
+
+# IDE
+.trae/
+.idea/
+.vscode/
+
+# 临时文件
+*.tmp
+*.log
