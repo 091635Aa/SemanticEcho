@@ -17,6 +17,14 @@ original/
 .idea/
 .vscode/
 
-# 临时文件
+# Temp / Build
 *.tmp
 *.log
+dist/
+build/
+*.egg-info/
+
+# 发布包（只放在 GitHub Release，不提交到仓库）
+*.zip
+*.whl
+*.tar.gz
