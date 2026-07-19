@@ -25,8 +25,8 @@ if str(项目根目录) not in sys.path:
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.回响池 import 语义回响池
-from src.采样处理器 import 回响注入器
+from semantic_echo.回响池 import 语义回响池
+from semantic_echo.采样处理器 import 回响注入器
 
 # ── 测试提示词集 ──
 测试提示词 = {

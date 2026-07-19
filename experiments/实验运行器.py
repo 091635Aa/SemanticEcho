@@ -21,8 +21,8 @@ import torch.nn.functional as F
 from transformers import PreTrainedModel, AutoModelForCausalLM, AutoTokenizer
 from tqdm import tqdm
 
-from src.回响池 import 语义回响池
-from src.采样处理器 import 回响注入器
+from semantic_echo.回响池 import 语义回响池
+from semantic_echo.采样处理器 import 回响注入器
 
 
 # ══════════════════════════════════════════════════

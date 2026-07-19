@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semantic-echo"
+version = "1.0.0"
+description = "语义回响：通过回收被丢弃Token嵌入增强语言模型表达能力"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "保留所有权利 — 任何人可基于学术目的自由复现"}
+authors = [
+    {name = "邓斯键", email = "DYPUBG2025@QQ.COM"},
+]
+
+keywords = ["llm", "semantic", "echo", "emotion", "nlp", "推理增强", "情感表达"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: Chinese (Simplified)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.35.0",
+    "cnsenti>=0.0.9",
+    "tqdm>=4.60.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/091635Aa/SemanticEcho"
+Repository = "https://github.com/091635Aa/SemanticEcho"
+"Bug Reports" = "https://github.com/091635Aa/SemanticEcho/issues"
+
+[project.scripts]
+semantic-echo = "semantic_echo.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["semantic_echo", "semantic_echo.*"]
+
+[tool.setuptools.package-data]
+semantic_echo = ["**/*.py"]

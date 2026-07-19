@@ -12,9 +12,9 @@ import math
 from typing import Optional, Callable, List, Dict
 from transformers import PreTrainedModel
 
-from src.回响池 import 语义回响池
-from src.情感过滤器 import 情感过滤器
-from src.翻译毒药 import 语义回响异常, 获取错误码
+from semantic_echo.回响池 import 语义回响池
+from semantic_echo.情感过滤器 import 情感过滤器
+from semantic_echo.翻译毒药 import 语义回响异常, 获取错误码
 
 
 # ══════════════════════════════════════════════════
