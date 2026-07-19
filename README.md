@@ -55,26 +55,34 @@
 
 ## 快速开始
 
-1. 安装依赖：
-   ```bash
-   pip install -r 需求.txt
-   pip install cnsenti
-   ```
+### 方式一：下载 zip 包（推荐）
 
-2. 下载模型：
-   ```bash
-   python scripts/下载模型.py
-   ```
+从 [GitHub Releases](https://github.com/091635Aa/SemanticEcho/releases) 下载最新版 zip 包，解压后：
 
-3. 运行实验：
-   ```bash
-   python experiments/运行全量实验.py
-   ```
+```bash
+# 1. 安装依赖
+pip install -r requirements.txt
 
-4. 运行测试：
-   ```bash
-   python tests/全面测试.py
-   ```
+# 2. 启动 Web 演示平台
+python run_demo.py
+
+# 或检查模型兼容性
+python run_demo.py check Qwen/Qwen2.5-0.5B-Instruct
+```
+
+### 方式二：从源码运行
+
+```bash
+git clone https://github.com/091635Aa/SemanticEcho.git
+cd SemanticEcho
+pip install -r requirements.txt
+
+# 运行实验
+python experiments/运行全量实验.py
+
+# 启动 Web 演示
+python -m semantic_echo.demo_app
+```
 
 ## V2 交互式演示平台
 
