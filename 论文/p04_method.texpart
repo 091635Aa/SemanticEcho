@@ -1,0 +1,64 @@
+﻿\section{方法}
+
+\subsection{总体框架}
+
+语义回响的核心思想是在LLM自回归解码过程中，回收每一步被丢弃Token的隐藏状态，经投影和衰减后注入当前Token的表示。
+图~\ref{fig:matrix} 展示了完整实验矩阵。
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.95\linewidth]{完整实验矩阵.png}
+  \caption{语义回响完整实验矩阵：$\lambda$与语义熵的非单调关系。}
+  \label{fig:matrix}
+\end{figure}
+
+\begin{algorithm}[ht]
+  \caption{语义回响整体流程}
+  \label{alg:overall}\small
+  \begin{algorithmic}
+    \STATE {\bf 输入：}LLM $\mathcal{M}$，提示词$x_1^{:m}$，$\lambda$，$\gamma$，$\tau$，$T$
+    \STATE {\bf 输出：}生成序列$x_{m+1}^{:T}$
+    \STATE 初始化回响池$\mathcal{P}$，过滤器$\mathcal{F}$，控制器$\mathcal{S}$
+    \FOR{$t=m+1$ {\bf to} $T$}
+      \STATE 前向传播，获取$\{\bm{h}_t^{(i)}\}$及$P(\cdot|x_{<t})$
+      \STATE 采样得$x_t^*$，定义$\mathcal{D}_t=\{\bm{h}_t^{(i)}\mid i\neq i_t^*\}$
+      \STATE {\bf (可选)}情感筛选：$\mathcal{D}_t^{(\text{sent})}=\mathcal{F}(\mathcal{D}_t,\tau)$
+      \STATE 计算质心$\bm{c}_t=\text{centroid}(\mathcal{D}_t^{(\text{sent})})$
+      \STATE 投影：$\bm{p}_t=\bm{W}_{\text{rsp}}\,\bm{c}_t$
+      \STATE 检测阶段$s(t)$，计算$\lambda(t)$
+      \STATE 注入：$\bm{h}_t^{\text{(echo)}}=\bm{h}_t^*+\lambda(t)\cdot\bm{p}_t$
+    \ENDFOR
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection{语义回响池}
+
+丢弃集：$\mathcal{D}_t=\{\bm{h}_t^{(i)}\mid i\in\mathcal{V}\setminus\{i_t^*\}\}$
+质心：$\bm{c}_t=\frac{1}{|\mathcal{D}_t|}\sum_{\bm{h}\in\mathcal{D}_t}\bm{h}$
+衰减：$\bm{p}_{t+\Delta t}^{(\text{eff})}=\gamma^{\Delta t}\cdot\bm{p}_t,\;\gamma=0.9$
+
+\subsection{情感词库筛选}
+
+情感相关性权重：$\alpha_i=\max_{k\in\mathcal{K}}\text{sentiment}_k(i)$
+过滤：$\mathcal{D}_t^{(\text{sent})}=\{\bm{h}_t^{(i)}\mid\alpha_i>\tau\},\;\tau=0.1$
+加权质心：$\bm{c}_t^{(\text{sent})}=(\sum\alpha_i\cdot\bm{h}_t^{(i)})/(\sum\alpha_i)$
+
+\subsection{思考阶段分离注入}
+
+$s(t)=\begin{cases}\text{thinking},&t\le T_{\text{think}}\lor H_{\text{local}}(t)>\theta_H\\\text{expression},&\text{otherwise}\end{cases}$
+$\lambda(t)=\begin{cases}\lambda,&s(t)=\text{thinking}\\0.5\lambda,&s(t)=\text{expression}\end{cases}$
+
+\subsection{随机静态投影与注入}
+
+RSP：$\bm{p}_t=\bm{W}_{\text{rsp}}\bm{c}_t$，$\bm{W}_{\text{rsp}}$为正交矩阵。
+注入：$\bm{h}_t^{\text{(echo)}}=\bm{h}_t^*+\lambda(t)\cdot\bm{p}_t$
+
+\subsection{三种保留策略}
+
+\textbf{衰减（A）：}指数衰减自动遗忘。\textbf{滑动窗口（B）：}仅保留最近$K=3$轮向量。
+\textbf{全局保留（C）：}永不淘汰。预期：衰减$>$滑动窗口$>$全局保留。
+
+\subsection{四个理论升华}
+
+\textbf{理论一：}情感是最佳试点场景。\textbf{理论二：}代码场景不适用。
+\textbf{理论三：}通用语义键架构。\textbf{理论四：}场景-成本-收益匹配。

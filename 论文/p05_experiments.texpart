@@ -1,0 +1,139 @@
+﻿\section{实验}
+
+\subsection{实验设置}
+
+\textbf{模型：}Qwen2.5-0.5B-Instruct（$d_{\text{model}}=896$，$|\mathcal{V}|=151{,}936$）。
+解码：top-$p=0.9$，温度$T=0.7$，最大长度200Token。
+\textbf{硬件：}单张NVIDIA A100 80G PCIe GPU。
+\textbf{参数：}$\lambda\in\{0,0.5,1.0,2.0\}$，$\gamma=0.9$，$\tau=0.1$，$T_{\text{think}}=0.15T$。
+\textbf{评估：}15条情感提示词，3次重复取均值。
+
+语义熵：$H_{\text{sem}}=-\frac{1}{N}\sum_{n=1}^{N}\sum_{k=1}^{K}P(w_{n,k}|w_{<n})\log P(w_{n,k}|w_{<n})$
+SIR：$\text{SIR}=(H_{\text{sem}}^{(E_i)}-H_{\text{sem}}^{(E1)})/H_{\text{sem}}^{(E1)}\times100\%$
+
+\subsection{实验矩阵}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{完整实验矩阵}}\label{tab:experiment_matrix}\small
+  \begin{tabular}{ccllcc}\toprule
+    轮 & ID & 描述 & $\lambda$ & 筛选 & 分离\\\midrule
+    \multirow{4}{*}{一} & E1 & Baseline & 0 & --- & ---\\
+    & E3 & Echo弱 & 0.5 & --- & ---\\
+    & E4 & Echo中 & 1.0 & --- & ---\\
+    & E5 & Echo强 & 2.0 & --- & ---\\\midrule
+    \multirow{4}{*}{二} & E7 & 筛选+衰减 & 0.5 & \checkmark & ---\\
+    & E8 & 筛选+衰减 & 1.0 & \checkmark & ---\\
+    & E9 & 筛选+分离 & 0.5 & \checkmark & \checkmark\\
+    & E10 & 筛选+分离 & 1.0 & \checkmark & \checkmark\\\midrule
+    \multirow{3}{*}{三} & E11 & 筛选+滑动窗口 & 0.5 & \checkmark & ---\\
+    & E12 & 筛选+滑动窗口 & 1.0 & \checkmark & ---\\
+    & E13 & 筛选+全局保留 & 0.5 & \checkmark & ---\\\bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{第一轮结果}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{第一轮结果}}\label{tab:round1}\small
+  \begin{tabular}{clccc}\toprule
+    ID & $\lambda$ & 平均语义熵 & SIR\\\midrule
+    E1 & 0（基线） & 1.8011 & ---\\
+    E3 & 0.5 & 2.1240 & +17.9\%\\
+    E4 & 1.0 & 0.7199 & $-60.0\%$\\
+    E5 & 2.0 & 0.1914 & $-89.4\%$\\\bottomrule
+  \end{tabular}
+\end{table}
+
+$\lambda$的\textbf{U型效应}：$\lambda=0.5$达峰值（+17.9\%），随后骤降。
+
+\begin{figure}[ht]
+  \centering\includegraphics[width=0.95\linewidth]{λ效应图.png}
+  \caption{$\lambda$对语义熵的影响。}\label{fig:lambda_effect}
+\end{figure}
+
+\subsection{第二轮结果}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{第二轮结果}}\label{tab:round2}\small
+  \begin{tabular}{clcccc}\toprule
+    ID & $\lambda$ & 筛选 & 分离 & 熵 & SIR\\\midrule
+    E1 & 0 & --- & --- & 1.8011 & ---\\
+    E7 & 0.5 & \checkmark & --- & 2.1352 & +18.5\%\\
+    E8 & 1.0 & \checkmark & --- & 0.9022 & $-49.9\%$\\
+    E9 & 0.5 & \checkmark & \checkmark & 2.0668 & +14.7\%\\
+    E10 & 1.0 & \checkmark & \checkmark & 0.8982 & $-50.1\%$\\\bottomrule
+  \end{tabular}
+\end{table}
+
+E8 vs E4改善+25.33\%，验证情感筛选有效性。
+
+\begin{figure}[ht]
+  \centering\includegraphics[width=0.9\linewidth]{两轮熵对比.png}
+  \caption{两轮实验语义熵对比。}\label{fig:bar_comparison}
+\end{figure}
+
+\subsection{第三轮结果}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{三种保留策略对比}}\label{tab:round3}\small
+  \begin{tabular}{cllc}\toprule
+    ID & $\lambda$ & 策略 & 熵 vs E7\\\midrule
+    E7 & 0.5 & 衰减 & 2.1352 ---\\
+    E11 & 0.5 & 滑动窗口 & 2.0832 $-2.44\%$\\
+    E13 & 0.5 & 全局保留 & 1.9372 $-9.27\%$\\\midrule
+    E8 & 1.0 & 衰减 & 0.9022 ---\\
+    E12 & 1.0 & 滑动窗口 & 0.7311 $-18.97\%$\\\bottomrule
+  \end{tabular}
+\end{table}
+
+验证：衰减$>$滑动窗口$>$全局保留。
+
+\subsection{逐维度分析}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{逐情感维度语义熵}}\label{tab:per_dimension}\small
+  \begin{tabular}{lcccc}\toprule
+    实验 & 快乐 & 悲伤 & 愤怒\\\midrule
+    E1 & 2.03 & 2.19 & 2.21\\
+    E3 & 2.36 & 1.98 & 1.79\\
+    E4 & 0.67 & 0.57 & 0.37\\
+    E5 & 0.16 & 0.12 & 0.20\\
+    E7 & 2.41 & 2.36 & 1.76\\
+    E8 & 0.62 & 1.31 & 1.01\\
+    E9 & 2.14 & 2.38 & 2.04\\
+    E10 & 0.76 & 0.99 & 0.67\\\bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{案例研究}
+
+E4输出：\texttt{"请选择请选择..."}（坍缩模式）。
+E10输出：正常连贯文本。
+
+\subsection{消融研究}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{消融研究（$\lambda=1.0$）}}\label{tab:ablation}\small
+  \begin{tabular}{lccc}\toprule
+    配置 & 实验 & 熵 & vs E4\\\midrule
+    原始 & E4 & 0.7199 & ---\\
+    +情感筛选 & E8 & 0.9022 & +25.33\%\\
+    +筛选+分离 & E10 & 0.8982 & +24.77\%\\
+    +筛选+窗口 & E12 & 0.7311 & +1.56\%\\\bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{可视化}
+
+\begin{figure}[ht]
+  \centering\includegraphics[width=0.9\linewidth]{细腻度提升率.png}\caption{SIR对比。}\label{fig:improvement_rate}
+\end{figure}
+\begin{figure}[ht]
+  \centering\includegraphics[width=0.9\linewidth]{热力图.png}\caption{语义熵热力图。}\label{fig:heatmap}
+\end{figure}
+\begin{figure}[ht]
+  \centering\includegraphics[width=0.9\linewidth]{雷达图.png}\caption{雷达图对比。}\label{fig:radar}
+\end{figure}
+\begin{figure}[ht]
+  \centering\includegraphics[width=0.9\linewidth]{语义熵箱线图.png}\caption{箱线图。}\label{fig:boxplot}
+\end{figure}

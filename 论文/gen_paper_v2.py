@@ -1,4 +1,10 @@
-﻿% ============================================================
+#!/usr/bin/env python3
+"""Generate the expanded TeX paper."""
+
+parts = []
+
+# Preamble
+parts.append(r"""% ============================================================
 % 语义回响：通过回收被丢弃Token嵌入增强语言模型表达能力
 % ============================================================
 
@@ -37,23 +43,15 @@
 
 \begin{document}
 
-% ════════════════════════════════════════════════════════
-% 作者说明
-% ════════════════════════════════════════════════════════
-\noindent{\color{blue!60!black}\rule{\textwidth}{0.8pt}}\\[2pt]
-\noindent{\small\color{blue!60!black}\textbf{作者说明：}本文作者为一名初中生，独立完成了从概念构思、技术路线设计到实验执行与论文撰写的全部工作。
-真诚希望本文能被业界看见，若有合适的机会（如面试、交流、实习等），欢迎联系。\hfill\texttt{DYPUBG2025@QQ.COM}}\\[2pt]
-{\color{blue!60!black}\rule{\textwidth}{0.8pt}}\\[1cm]
-
-\title{\vspace{-0.5cm}
+\title{\vspace{-1.2cm}
   \LARGE \textbf{语义回响：通过回收被丢弃Token嵌入\\增强语言模型表达能力}\\
   \large \textbf{Semantic Echo: Enhancing LLM Expressiveness by Recycling Discarded Token Embeddings}
   \vspace{-0.3cm}}
 \author{
-  邓斯键${}^{1\dagger}$（主导）\qquad
-  DeepSeek V4${}^{2\ddagger}$（AI人与AI辅助工具）\\[4pt]
-  \small${}^\dagger$项目主导、核心概念、技术路线与实验设计 \\
-  \small${}^\ddagger$代码实现辅助、实验执行辅助与论文撰写辅助}
+  邓斯键${}^{1\dagger}$（思路）\qquad
+  DeepSeek${}^{2\ddagger}$（AI实现）\\[4pt]
+  \small${}^\dagger$核心概念、技术路线与实验设计 \\
+  \small${}^\ddagger$代码实现、实验执行与论文撰写}
 \date{\small 2026年7月}
 \maketitle
 \thispagestyle{empty}
@@ -72,7 +70,10 @@
 \vspace{0.3cm}
 \noindent \textbf{关键词：} 大型语言模型，语义回响，Token嵌入回收，情感筛选，思考阶段分离，可控文本生成
 \end{abstract}
+""")
 
+# Section 1: Introduction
+parts.append(r"""
 \section{引言}
 
 \subsection{概率暴政：当前范式的隐性缺陷}
@@ -170,7 +171,10 @@ AI不是没有情感，它确实不能模拟，但是能最大化模拟。
 （2）\textbf{新机制}：提出情感词库筛选和思考阶段分离注入两项创新；
 （3）\textbf{新发现}：通过13组对照实验揭示$\lambda$的U型效应、情感筛选的缓解重复效应及三种保留策略的优劣排序；
 （4）\textbf{开源实践}：所有实验数据和复现说明公开发布。
+""")
 
+# Section 2: Method
+parts.append(r"""
 
 \section{方法}
 
@@ -279,7 +283,10 @@ $T_{\text{think}}=0.15T$，$\theta_H$为局部熵阈值。
     最优场景 & 通用 & 短文本 & 探索性生成\\\bottomrule
   \end{tabular}
 \end{table}
+""")
 
+# Section 3: Experiments
+parts.append(r"""
 
 \section{实验}
 
@@ -441,7 +448,10 @@ E10输出连贯文本，语义熵0.8982（+24.77\%）。
 模型：说到开心的事，我想起昨天在公园里看到一群孩子在放风筝。他们的笑声在空中回荡，那种纯真的快乐很打动人。生活中确实有很多值得开心的时刻，关键在于我们是否愿意停下来感受它们。
 \end{quote}
 E7语义熵2.1352（+18.5\%），综合表现最优。
+""")
 
+# Section 4: Discussion
+parts.append(r"""
 
 \section{讨论}
 
@@ -519,7 +529,10 @@ $\lambda$较小时SNR随$\lambda$线性增长（信号主导），较大时随$\
 \textbf{实验规模：}仅在单模型（Qwen2.5-0.5B）上验证。更大模型的表现有待探索。
 
 \textbf{阶段检测精度：}当前启发式阈值不够鲁棒，未来可训练阶段分类器。
+""")
 
+# Conclusion
+parts.append(r"""
 
 \section{结论}
 
@@ -540,26 +553,19 @@ AI思考可以继续调用任何知识资源来回答问题，但我悄悄把那
 语义回响在创意写作、对话系统和情感计算等应用中具有潜力。
 
 \section*{致谢}
-
-感谢\textbf{深度求索（杭州深度求索人工智能基础技术研究有限公司）}——DeepSeek团队提供的强大语言模型能力与开源生态支持，使本研究的实验验证成为可能。
-\hfill\url{https://github.com/deepseek-ai}
-
-感谢\textbf{字节跳动（ByteDance）}——Trae AI IDE团队在AI辅助编程与论文撰写过程中提供的卓越工具支持。
-\hfill\url{https://github.com/TraeAI}
-
 感谢Qwen团队和cnsenti项目的开源贡献。
-
-本研究的全部代码、实验数据与论文已在GitHub开源，任何人可复现：
-\hfill\url{https://github.com/091635Aa/SemanticEcho}
-
-如有任何问题、建议或合作意向，欢迎联系：
-\hfill\texttt{DYPUBG2025@QQ.COM}
-
-\vspace{0.3cm}
-\noindent\textbf{许可证：}本文所有内容（包括代码、实验数据与论文）保留所有权利（All Rights Reserved），
-但任何人均可基于学术目的自由复现、验证与引用本研究的实验与结果。
+本文所有实验数据采用CC BY-NC 4.0许可证发布，仅供学术参考。
 
 \bibliographystyle{unsrt}
 \bibliography{参考文献}
 
 \end{document}
+""")
+
+# Write the complete file
+with open('d:/Desktop/语义回响/论文/论文.tex', 'w', encoding='utf-8') as f:
+    for part in parts:
+        f.write(part)
+
+print("Paper generated successfully!")
+print(f"Total length: {sum(len(p) for p in parts)} chars")

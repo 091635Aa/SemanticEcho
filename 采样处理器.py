@@ -13,6 +13,8 @@ from typing import Optional, Callable, List, Dict
 from transformers import PreTrainedModel
 
 from 回响池 import 语义回响池
+from 情感过滤器 import 情感过滤器
+from 翻译毒药 import 语义回响异常, 获取错误码
 
 
 # ══════════════════════════════════════════════════
@@ -73,6 +75,10 @@ class 回响注入器:
         uncertainty_threshold: float = 0.01,
         projection_seed: int = 42,
         last_n_layers: int = 4,
+        情感过滤器实例: Optional[情感过滤器] = None,
+        思考标记对: tuple[str, str] = ("", ""),
+        思考阶段λ: Optional[float] = None,
+        正文阶段λ: float = 0.0,
     ) -> None:
         """
         Parameters
@@ -89,6 +95,14 @@ class 回响注入器:
             随机投影矩阵的固定种子
         last_n_layers : int
             取最后 N 层的 hidden_state 平均作为"语义场"向量
+        情感过滤器实例 : Optional[情感过滤器]
+            情感筛选器实例，为 None 时跳过情感筛选（兼容旧行为）
+        思考标记对 : tuple[str, str]
+            思考阶段边界标记，如 ("<think>", "</think>")；为空时行为与升级前一致
+        思考阶段λ : Optional[float]
+            思考阶段的注入强度，为 None 时与 lambda_strength 相同
+        正文阶段λ : float
+            正文阶段的注入强度，为 0.0 时正文阶段不注入
         """
         self.model = model
         self.pool = echo_pool
@@ -96,12 +110,22 @@ class 回响注入器:
         self.uncertainty_threshold = uncertainty_threshold
         self.last_n_layers = last_n_layers
 
+        # 阶段相关参数
+        self.思考标记对 = 思考标记对
+        self.思考阶段λ = 思考阶段λ
+        self.正文阶段λ = 正文阶段λ
+
         self.hidden_dim = model.config.hidden_size
         self.vocab_size = model.config.vocab_size
         self.device = model.device
 
         # 当前步捕获的 hidden_state（多层平均），在 forward hook 中更新
         self.当前hidden_state: Optional[torch.Tensor] = None
+
+        # 阶段状态跟踪
+        self.当前阶段: str = "思考"
+        self.已解码文本: str = ""
+        self.情感过滤器引用: Optional[情感过滤器] = 情感过滤器实例
 
         # 随机静态投影矩阵
         self._初始化投影(projection_seed)
@@ -146,25 +170,33 @@ class 回响注入器:
         则对最后 last_n_layers 层各注册一个钩子，取输出平均。
 
         否则退化为只捕获最后一层的输出。
-        """
-        # 支持多层平均的标准架构
-        if (
-            hasattr(self.model, 'model')
-            and hasattr(self.model.model, 'layers')
-        ):
-            所有层 = self.model.model.layers
-            目标层数 = min(self.last_n_layers, len(所有层))
-            起始索引 = len(所有层) - 目标层数
-            self.目标层索引 = list(range(起始索引, len(所有层)))
 
-            for idx in self.目标层索引:
-                handle = 所有层[idx].register_forward_hook(self._创建多层钩子(idx))
+        Raises
+        ------
+        语义回响异常
+            当钩子注册失败时抛出
+        """
+        try:
+            # 支持多层平均的标准架构
+            if (
+                hasattr(self.model, 'model')
+                and hasattr(self.model.model, 'layers')
+            ):
+                所有层 = self.model.model.layers
+                目标层数 = min(self.last_n_layers, len(所有层))
+                起始索引 = len(所有层) - 目标层数
+                self.目标层索引 = list(range(起始索引, len(所有层)))
+
+                for idx in self.目标层索引:
+                    handle = 所有层[idx].register_forward_hook(self._创建多层钩子(idx))
+                    self._钩子列表.append(handle)
+            else:
+                # 退化为单层模式
+                最后一层 = _定位最后一层(self.model)
+                handle = 最后一层.register_forward_hook(self._单层钩子)
                 self._钩子列表.append(handle)
-        else:
-            # 退化为单层模式
-            最后一层 = _定位最后一层(self.model)
-            handle = 最后一层.register_forward_hook(self._单层钩子)
-            self._钩子列表.append(handle)
+        except Exception as e:
+            raise 语义回响异常("钩子注册失败", str(e))
 
     def _单层钩子(
         self,
@@ -217,6 +249,45 @@ class 回响注入器:
         self._钩子列表.clear()
 
     # ──────────────────────────────────────────────
+    # 阶段切换检测
+    # ──────────────────────────────────────────────
+
+    def _检测阶段切换(self, 新token_id: int, tokenizer) -> bool:
+        """
+        检测是否进入了新阶段（思考→正文）。
+
+        通过检测已生成文本中是否出现了思考结束标记来判断。
+
+        Parameters
+        ----------
+        新token_id : int
+            当前步采样得到的新 token ID
+        tokenizer : AutoTokenizer
+            HuggingFace tokenizer，用于将 token_id 解码为文本
+
+        Returns
+        -------
+        bool
+            是否发生了阶段切换（思考→正文）
+        """
+        # 1. 将 token_id 解码后追加到已解码文本
+        新文本 = tokenizer.decode([新token_id]) if tokenizer else ""
+        self.已解码文本 += 新文本
+
+        # 2. 判断阶段切换：思考阶段且标记对不为空且已遇到结束标记
+        if (
+            self.思考标记对
+            and self.思考标记对 != ("", "")
+            and self.当前阶段 == "思考"
+            and self.思考标记对[1] in self.已解码文本
+        ):
+            self.当前阶段 = "正文"
+            return True
+
+        # 3. 正文阶段保持不变
+        return False
+
+    # ──────────────────────────────────────────────
     # 核心操作：注入 + 捕获
     # ──────────────────────────────────────────────
 
@@ -224,6 +295,10 @@ class 回响注入器:
     def 注入偏置(self, logits: torch.Tensor) -> torch.Tensor:
         """
         将回响池质心通过随机投影映射到 logits 空间，作为偏置注入。
+
+        根据当前阶段选择不同的 λ 强度系数：
+        - 思考阶段：使用 思考阶段λ（若不为 None）或 lambda_strength
+        - 正文阶段：使用 正文阶段λ（为 0 时不注入）
 
         Parameters
         ----------
@@ -235,29 +310,42 @@ class 回响注入器:
         torch.Tensor
             注入偏置后的 logits，shape 不变
         """
+        # 正文阶段且正文阶段λ=0时，不注入
+        if self.当前阶段 == "正文" and self.正文阶段λ == 0.0:
+            return logits
+
         if self.pool.是否为空:
             return logits
 
         质心 = self.pool.计算质心().to(self.device)
 
+        # 根据阶段选择不同的 λ
+        if self.当前阶段 == "思考" and self.思考阶段λ is not None:
+            有效λ = self.思考阶段λ
+        elif self.当前阶段 == "正文":
+            有效λ = self.正文阶段λ
+        else:
+            有效λ = self.lambda_strength
+
         # 质心 @ 投影矩阵 → shape=(vocab_size,)
         偏置 = 质心 @ self.投影矩阵.to(self.device)
-        偏置 = 偏置 * self.lambda_strength
+        偏置 = 偏置 * 有效λ
 
         return logits + 偏置.unsqueeze(0)
 
     @torch.no_grad()
-    def 捕获回响(self, logits: torch.Tensor) -> None:
+    def 捕获回响(self, logits: torch.Tensor, tokenizer=None) -> None:
         """
-        从注入后的 logits 计算不确定性，将当前步的 hidden_state 存入回响池。
+        将当前 hidden_state 存入回响池（带情感筛选）。
 
-        不确定性权重 = 1 - max(softmax(logits))
-        权重越高（不确定性越大），该 hidden_state 对后续的影响越大。
+        如果配置了情感过滤器，只存储命中情感词库的 token。
 
         Parameters
         ----------
         logits : torch.Tensor
             shape=(1, vocab_size)，注入偏置后的 logits
+        tokenizer : AutoTokenizer, optional
+            HuggingFace tokenizer，用于将 token_id 解码为文本进行情感筛选
         """
         if self.当前hidden_state is None:
             return
@@ -266,9 +354,28 @@ class 回响注入器:
         max_prob = probs.max().item()
         不确定性 = 1.0 - max_prob
 
-        # 不确定性高于阈值时才存池，避免纯噪声
-        if 不确定性 > self.uncertainty_threshold:
-            self.pool.添加(self.当前hidden_state, 不确定性)
+        # 不确定性阈值筛选
+        if 不确定性 <= self.uncertainty_threshold:
+            return
+
+        # 情感相关性筛选
+        情感权重 = None
+        if self.情感过滤器引用 is not None and tokenizer is not None:
+            # 获取 top-1 token
+            top_token_id = logits.argmax(dim=-1).item()
+            top_token_text = tokenizer.decode([top_token_id])
+
+            # 筛选
+            命中 = self.情感过滤器引用.筛选([top_token_text], tokenizer)
+            if not 命中:
+                # 未命中情感词，不入池
+                self.pool.自增检查()
+                return
+
+            情感权重 = 命中[0][1]  # 使用情感强度
+
+        # 入池（带情感权重）
+        self.pool.添加(self.当前hidden_state, 不确定性, 情感相关性=情感权重)
 
     # ──────────────────────────────────────────────
     # 自定义生成循环
@@ -285,6 +392,8 @@ class 回响注入器:
         repetition_penalty: float = 1.0,
         eos_token_id: Optional[int] = None,
         logits_callback: Optional[Callable[[int, torch.Tensor], None]] = None,
+        tokenizer=None,  # 新增：用于情感筛选和阶段检测
+        轮次回调: Optional[Callable[[int, object], None]] = None,
     ) -> torch.Tensor:
         """
         带语义回响的自回归生成循环。
@@ -311,6 +420,11 @@ class 回响注入器:
         logits_callback : Optional[Callable[[int, torch.Tensor], None]]
             可选回调函数，每步生成后调用，传入 (步数, logits)，
             用于外部记录每一步的 logits（如实验记录）
+        tokenizer : AutoTokenizer, optional
+            HuggingFace tokenizer，用于情感筛选和思考阶段边界检测
+        轮次回调 : Optional[Callable[[int, object], None]]
+            可选回调函数，每步推进后调用，传入 (当前步数, self.pool)，
+            用于外部控制轮次切换（如滑动窗口策略）
 
         Returns
         -------
@@ -350,7 +464,7 @@ class 回响注入器:
                 logits_callback(步, logits)
 
             # ── (2) 捕获：将当前 hidden_state 存入回响池 ──
-            self.捕获回响(logits)
+            self.捕获回响(logits, tokenizer=tokenizer)
 
             # ── 温度缩放 ──
             logits = logits / temperature
@@ -380,11 +494,18 @@ class 回响注入器:
             probs = F.softmax(logits, dim=-1)
             下一个token = torch.multinomial(probs, num_samples=1)
 
+            # ── (3) 检测阶段切换（思考→正文） ──
+            self._检测阶段切换(下一个token.item(), tokenizer)
+
             已生成 = torch.cat([已生成, 下一个token], dim=-1)
             已生成token集合.add(下一个token.item())
 
-            # ── (3) 推进回响池步数 ──
+            # ── (4) 推进回响池步数 ──
             self.pool.推进()
+
+            # ── (5) 外部轮次回调（用于滑动窗口策略） ──
+            if 轮次回调 is not None:
+                轮次回调(self.pool.当前步数, self.pool)
 
             if 下一个token.item() == eos_token_id:
                 break

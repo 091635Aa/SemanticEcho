@@ -1,0 +1,66 @@
+﻿% ============================================================
+% 语义回响：通过回收被丢弃Token嵌入增强语言模型表达能力
+% ============================================================
+
+\documentclass[a4paper, 11pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.8cm, right=2.8cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[sort&compress, numbers]{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue,linkcolor=black,urlcolor=blue}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{algorithm2e}
+\usepackage{xcolor}
+\RestyleAlgo{plain}\SetAlgoCaptionSeparator{~}\SetAlgoVlined
+\graphicspath{{图片/}}
+\newcommand{\methodname}{Semantic Echo}
+\newcommand{\lambdasym}{\lambda}
+\newcommand{\gammasym}{\gamma}
+\newtheorem{definition}{定义}
+\newtheorem{theorem}{定理}
+\renewcommand{\baselinestretch}{1.15}
+
+\begin{document}
+
+\title{\vspace{-1.2cm}
+  \LARGE \textbf{语义回响：通过回收被丢弃Token嵌入\\增强语言模型表达能力}\\
+  \large \textbf{Semantic Echo: Enhancing LLM Expressiveness by Recycling Discarded Token Embeddings}
+  \vspace{-0.3cm}}
+\author{
+  邓斯键${}^{1\dagger}$（思路）\qquad
+  DeepSeek${}^{2\ddagger}$（AI实现）\\[4pt]
+  \small${}^\dagger$核心概念、技术路线与实验设计 \\
+  \small${}^\ddagger$代码实现、实验执行与论文撰写}
+\date{\small 2026年7月}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent 自回归语言模型在每一步解码中仅选取单个Token，其余候选Token的隐藏状态被完全丢弃本文称此为\textbf{概率暴政}（Probabilistic Tyranny）。
+受人类交流中"潜台词"与"回响"现象的启发，本文提出\textbf{语义回响}（Semantic Echo）范式：
+回收被丢弃Token的隐藏状态，经随机静态投影后重新注入当前表示空间，使模型感知更丰富的语义上下文。
+我们进一步提出了\textbf{情感词库筛选}与\textbf{思考阶段分离注入}两项创新机制。
+在Qwen2.5-0.5B-Instruct上的三轮共13组对照实验表明：
+（1）$\lambda=0.5$弱回响条件下，原始方案可使语义熵提升+17.9\%；
+（2）情感筛选机制可有效缓解$\lambda\geq1.0$时的重复生成问题（E8 vs E4: +25.33\%）；
+（3）三种保留策略对比表明，衰减策略最优，滑动窗口其次，全局保留最弱；
+（4）语义回响不修改模型权重、不重新训练，仅通过采样层扩展实现。
+
+\vspace{0.3cm}
+\noindent \textbf{关键词：} 大型语言模型，语义回响，Token嵌入回收，情感筛选，思考阶段分离，可控文本生成
+\end{abstract}

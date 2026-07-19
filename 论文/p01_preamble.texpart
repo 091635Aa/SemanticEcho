@@ -1,0 +1,45 @@
+﻿% ============================================================
+% 语义回响：通过回收被丢弃Token嵌入增强语言模型表达能力
+% ============================================================
+
+\documentclass[twocolumn, a4paper, 10pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.0cm, right=2.0cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[sort&compress, numbers]{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue,linkcolor=black,urlcolor=blue}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{diagbox}
+\usepackage{enumitem}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{pifont}
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{basicstyle=\ttfamily\small,numbers=left,numberstyle=\tiny,frame=single,backgroundcolor=\color{gray!10},language=Python,showstringspaces=false,breaklines=true,tabsize=4,keywordstyle=\color{blue},commentstyle=\color{green!60!black},stringstyle=\color{purple}}
+\RestyleAlgo{boxed}\LinesNumbered\SetAlgoCaptionSeparator{~}\SetAlgoVlined
+\graphicspath{{图片/}}
+\newcommand{\methodname}{Semantic Echo}
+\newcommand{\lambdasym}{\lambda}
+\newcommand{\gammasym}{\gamma}
+\newcommand{\alphai}{\alpha_i}
+\newtheorem{definition}{定义}
+\newtheorem{theorem}{定理}
+\newtheorem{hypothesis}{假设}
+
+\begin{document}
