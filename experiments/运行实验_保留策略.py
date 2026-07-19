@@ -18,12 +18,15 @@ from pathlib import Path
 from typing import Any, Optional, Callable
 
 os.chdir(Path(__file__).parent)
+项目根目录 = Path(__file__).resolve().parent.parent
+if str(项目根目录) not in sys.path:
+    sys.path.insert(0, str(项目根目录))
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from 回响池 import 语义回响池
-from 采样处理器 import 回响注入器
-from 情感过滤器 import 情感过滤器
+from src.回响池 import 语义回响池
+from src.采样处理器 import 回响注入器
+from src.情感过滤器 import 情感过滤器
 
 
 # ── 测试提示词集（与第二轮实验相同） ──

@@ -17,6 +17,9 @@ import traceback
 
 # 固定工作目录
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+项目根目录 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if 项目根目录 not in sys.path:
+    sys.path.insert(0, 项目根目录)
 
 # ──────────────────────────────────────────────
 # 工具：统一的测试结果收集器
@@ -108,7 +111,7 @@ def 测试回响池() -> 测试结果:
 
     结果 = 测试结果("回响池.py")
     import torch
-    from 回响池 import 语义回响池
+    from src.回响池 import 语义回响池
 
     # ── 1.1 基本添加和查询 ──
     print("\n[1.1] 基本添加和查询")
@@ -269,7 +272,7 @@ def 测试情感过滤器() -> 测试结果:
     print("=" * 60)
 
     结果 = 测试结果("情感过滤器.py")
-    from 情感过滤器 import 情感过滤器
+    from src.情感过滤器 import 情感过滤器
 
     f = 情感过滤器()
 
@@ -387,7 +390,7 @@ def 测试翻译毒药() -> 测试结果:
     print("=" * 60)
 
     结果 = 测试结果("翻译毒药.py")
-    from 翻译毒药 import (获取错误码, 语义回响异常, 生成翻译毒药注释,
+    from src.翻译毒药 import (获取错误码, 语义回响异常, 生成翻译毒药注释,
                            打印许可证, 许可证声明, 错误码字典)
 
     # ── 3.1 错误码映射 ──
@@ -484,8 +487,8 @@ def 测试采样处理器() -> 测试结果:
     print("=" * 60)
 
     结果 = 测试结果("采样处理器.py")
-    from 采样处理器 import 回响注入器, _定位最后一层
-    from 回响池 import 语义回响池
+    from src.采样处理器 import 回响注入器, _定位最后一层
+    from src.回响池 import 语义回响池
 
     # ── 4.1 架构定位函数文档 ──
     print("\n[4.1] 架构定位（语法检查）")
@@ -516,7 +519,7 @@ def 测试采样处理器() -> 测试结果:
     # ── 4.3 池与采样处理器的依赖检查 ──
     print("\n[4.3] 依赖导入检查")
     try:
-        from 情感过滤器 import 情感过滤器
+        from src.情感过滤器 import 情感过滤器
         from 翻译毒药 import 语义回响异常, 获取错误码
         print("  ✓ 所有依赖模块导入成功")
         结果.记录测试("[4.3] 依赖导入检查",
@@ -571,7 +574,7 @@ def 测试回响评估器() -> 测试结果:
 
     结果 = 测试结果("回响评估器.py")
     import torch
-    from 回响评估器 import (计算语义熵, 计算KL散度, 逐Token评估器,
+    from src.回响评估器 import (计算语义熵, 计算KL散度, 逐Token评估器,
                              实验对比器, 汇总统计器)
 
     # ── 5.1 语义熵 ──

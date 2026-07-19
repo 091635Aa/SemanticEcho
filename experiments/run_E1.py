@@ -12,10 +12,13 @@ from datetime import datetime
 
 # 切换到项目目录
 os.chdir(Path(__file__).parent)
+项目根目录 = Path(__file__).resolve().parent.parent
+if str(项目根目录) not in sys.path:
+    sys.path.insert(0, str(项目根目录))
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from 实验运行器 import (
+from experiments.实验运行器 import (
     实验配置,
     实验运行器,
     # 汇总统计器,   # 本脚本暂不使用

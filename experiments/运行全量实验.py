@@ -19,11 +19,14 @@ import math
 from pathlib import Path
 
 os.chdir(Path(__file__).parent)
+项目根目录 = Path(__file__).resolve().parent.parent
+if str(项目根目录) not in sys.path:
+    sys.path.insert(0, str(项目根目录))
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from 回响池 import 语义回响池
-from 采样处理器 import 回响注入器
+from src.回响池 import 语义回响池
+from src.采样处理器 import 回响注入器
 
 # ── 测试提示词集 ──
 测试提示词 = {
