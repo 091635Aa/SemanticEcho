@@ -4,6 +4,7 @@
 安装后可用:
     semantic-echo check <model_name>  检查模型兼容性
     semantic-echo demo <model_name>   快速演示回响效果
+    semantic-echo demo-ui             启动 Web 交互式演示平台
     semantic-echo info                显示包信息
     semantic-echo list                列出已知兼容模型
 
@@ -157,6 +158,12 @@ def 命令_列表() -> None:
     print()
 
 
+def 命令_UI() -> None:
+    """启动 Gradio Web 交互式演示平台。"""
+    from semantic_echo.demo_app import main as ui_main
+    ui_main()
+
+
 def main() -> None:
     """CLI 主入口。"""
     parser = argparse.ArgumentParser(
@@ -182,12 +189,17 @@ def main() -> None:
     # list
     subparsers.add_parser("list", help="列出已知兼容模型")
 
+    # demo-ui
+    subparsers.add_parser("demo-ui", help="启动 Web 交互式演示平台 (需 gradio)")
+
     args = parser.parse_args()
 
     if args.command == "check":
         命令_检查(args.model_name)
     elif args.command == "demo":
         命令_演示(args.model_name)
+    elif args.command == "demo-ui":
+        命令_UI()
     elif args.command == "info":
         命令_信息()
     elif args.command == "list":

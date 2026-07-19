@@ -76,6 +76,29 @@
    python tests/全面测试.py
    ```
 
+## V2 交互式演示平台
+
+启动 Web UI，可视化对比基线与语义回响的生成效果：
+
+```bash
+# 安装额外依赖
+pip install gradio
+
+# 启动演示平台
+semantic-echo demo-ui
+
+# 或
+python -m semantic_echo.demo_app
+```
+
+打开 http://localhost:7860 后：
+
+1. **选择模型** — 下拉选已测试兼容模型，或输入自定义 HuggingFace 模型名
+2. **加载模型** — 自动检测兼容性并加载
+3. **调整参数** — λ强度、情感筛选、最大 Token 数
+4. **运行对比** — 基线 vs 回响同时生成，实时展示语义熵、池大小等指标
+5. **支持 API 模式** — 也可通过 OpenAI 兼容 API 调用（如 DeepSeek、HuggingFace）
+
 ## 作者
 
 - 邓斯键†（项目主导）

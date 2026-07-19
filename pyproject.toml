@@ -31,6 +31,10 @@ dependencies = [
     "tqdm>=4.60.0",
 ]
 
+[project.optional-dependencies]
+web = ["gradio>=4.0.0"]
+dev = ["build", "twine"]
+
 [project.urls]
 Homepage = "https://github.com/091635Aa/SemanticEcho"
 Repository = "https://github.com/091635Aa/SemanticEcho"
