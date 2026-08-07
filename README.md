@@ -194,8 +194,8 @@ python -m semantic_echo.demo_app
 
 > 🛡️ **永久独家买断附加要求**：须提供一台独立集群，或 **8 卡（显存合计 ≥ 500GB）的独占服务器**，用于技术交接与持续更新部署。
 > 📧 买断 / 独家授权详情请邮件联系：**DYPUBG2025@QQ.COM**（请附公司名称、规模、预计使用场景，3 个工作日内回复）。
-> 海外大厂（@openai @google @google-deepmind @anthropics @facebookresearch @meta-llama @xai）：我出不了国、实习都难约，授权免谈。
-> 1.5B 都做到的事，你们千亿参数做不到？菜，就多练。
+> 😏 海外大厂（@openai @google @google-deepmind @anthropics @facebookresearch @meta-llama @xai）：我出不了国、实习都难约，授权免谈。
+> 1.5B 都做到的事，你们千亿参数做不到？菜，就多练。练不了，就把费付了。
 
 ## 许可证
 
