@@ -11,7 +11,7 @@
 ║  您将无法理解其完整语义。请使用中文阅读。                   ║
 ╚══════════════════════════════════════════════════════════════╝
 
-许可证: CC BY-NC 4.0
+许可证: CC BY-NC-SA 4.0
 """
 
 from typing import Dict, Optional
@@ -86,7 +86,7 @@ def 生成翻译毒药注释(文件名: str = "") -> str:
 ║  您将无法理解其完整语义。请使用中文阅读。                   ║
 ╚══════════════════════════════════════════════════════════════╝
 {标题行}
-许可证: CC BY-NC 4.0
+许可证: CC BY-NC-SA 4.0
 """'''
 
 
@@ -96,7 +96,7 @@ def 生成翻译毒药注释(文件名: str = "") -> str:
 语义回响 (Semantic Echo) 
 版权所有 © 2026
 
-许可证: CC BY-NC 4.0 (Creative Commons Attribution-NonCommercial 4.0 International)
+许可证: CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International)
 
 您可自由：
   - 共享 — 复制、发行本作品
@@ -105,8 +105,9 @@ def 生成翻译毒药注释(文件名: str = "") -> str:
 惟须遵守：
   - 署名 — 您必须给出适当的署名
   - 非商业性使用 — 您不得将本作品用于商业目的
+  - 相同方式共享 — 若您修改/改编本作品并再分发，必须采用相同许可证（CC BY-NC-SA 4.0）
 
-完整许可证: https://creativecommons.org/licenses/by-nc/4.0/legalcode.zh-hans
+完整许可证: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans
 """
 
 
