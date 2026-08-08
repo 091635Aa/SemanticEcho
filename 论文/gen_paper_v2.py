@@ -554,7 +554,7 @@ AI思考可以继续调用任何知识资源来回答问题，但我悄悄把那
 
 \section*{致谢}
 感谢Qwen团队和cnsenti项目的开源贡献。
-本文所有实验数据采用CC BY-NC 4.0许可证发布，仅供学术参考。
+本文所有实验数据采用CC BY-NC-SA 4.0许可证发布，仅供学术参考。
 
 \bibliographystyle{unsrt}
 \bibliography{参考文献}

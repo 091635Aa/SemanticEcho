@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1250px; height: 860px; overflow: hidden; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "SimHei", sans-serif;
+    background: linear-gradient(180deg, #0d1a33 0%, #16264a 55%, #1d2f57 100%);
+    color: #fff; padding: 34px 46px 28px 46px;
+    display: flex; flex-direction: column;
+  }
+  /* ── 顶部标题区 ── */
+  .title-zh { font-size: 42px; font-weight: 900; text-align: center; letter-spacing: 12px; }
+  .title-sub { text-align: center; color: #ffd98a; font-size: 21px; margin-top: 9px;
+               letter-spacing: 3px; font-weight: 600; }
+  .title-en { text-align: center; color: #8fb4e8; font-size: 14px; margin-top: 7px;
+              letter-spacing: 8px; }
+  .badges { display: flex; justify-content: center; gap: 46px; margin-top: 18px; }
+  .badge { padding: 7px 26px; border-radius: 9px; font-size: 17px; font-weight: 700;
+           letter-spacing: 4px; text-align: center; }
+  .b-decision { background: #e0567d; }
+  .b-persona  { background: #2f9fd6; }
+  .b-emotion  { background: #7d5bd6; }
+  /* ── 主体：左（五层）+ 右（说明） ── */
+  .main { flex: 1; display: flex; gap: 34px; margin-top: 20px; min-height: 0; }
+  .layers { flex: 0 0 720px; display: flex; flex-direction: column; justify-content: space-between; }
+  .layer { position: relative; display: flex; align-items: center; border-radius: 12px;
+           height: 96px; padding: 0 20px 0 78px; border: 3px solid; }
+  .layer .tag { position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+                width: 50px; height: 50px; border-radius: 9px; display: flex;
+                align-items: center; justify-content: center; font-size: 21px;
+                font-weight: 900; color: #08131f; }
+  .layer .zh { font-size: 20px; font-weight: 700; }
+  .layer .sub { font-size: 13px; color: #a9c4e8; margin-top: 5px; }
+  .layer-core { box-shadow: 0 0 22px rgba(255,255,255,0.10); }
+  .l0 { border-color: #ff7a59; background: rgba(255,122,89,0.16); }
+  .l0 .tag { background: #ff7a59; }
+  .l1 { border-color: #4fd1ff; background: rgba(79,209,255,0.15); }
+  .l1 .tag { background: #4fd1ff; }
+  .l2 { border-color: #e8b04b; background: rgba(232,176,75,0.13); }
+  .l2 .tag { background: #e8b04b; }
+  .l3 { border-color: #4fb7a3; background: rgba(79,183,163,0.13); }
+  .l3 .tag { background: #4fb7a3; }
+  .l4 { border-color: #5a8fc9; background: rgba(90,143,201,0.13); }
+  .l4 .tag { background: #5a8fc9; }
+  .arrow { text-align: center; color: #5a7aa8; font-size: 17px; line-height: 1; }
+  .side { flex: 1; display: flex; flex-direction: column; justify-content: space-around; }
+  .side h3 { color: #ffd98a; font-size: 17px; margin-bottom: 7px; }
+  .side p { color: #cfe0f5; font-size: 13.5px; line-height: 1.7; }
+  .side .warn { color: #ffb3a0; font-size: 13.5px; line-height: 1.7; }
+  .mem-box { border-left: 3px solid #4fd1ff; padding: 4px 0 4px 14px; }
+  .prompt-box { border-left: 3px solid #ff7a59; padding: 4px 0 4px 14px; }
+  /* ── 底部标语 ── */
+  .foot { text-align: center; margin-top: 16px; }
+  .foot-1 { color: #ffd98a; font-size: 19px; font-weight: 800; letter-spacing: 2px; }
+  .foot-2 { color: #8fb4e8; font-size: 13.5px; margin-top: 5px; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+  <div class="title-zh">底层记忆化 AI 扮演架构</div>
+  <div class="title-sub">让大模型更有决策 · 更会扮演 · 更有情感</div>
+  <div class="title-en">决 策 · 扮 演 · 情 感</div>
+
+  <div class="badges">
+    <div class="badge b-decision">决&nbsp;策&nbsp;性</div>
+    <div class="badge b-persona">扮&nbsp;演&nbsp;一&nbsp;致</div>
+    <div class="badge b-emotion">情&nbsp;感&nbsp;表&nbsp;达</div>
+  </div>
+
+  <div class="main">
+    <div class="layers">
+      <div class="layer l4">
+        <div class="tag">L4</div>
+        <div><div class="zh">外挂记忆 · 对话历史</div>
+             <div class="sub">长期累积 · 1M 上下文不够聊</div></div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="layer l3">
+        <div class="tag">L3</div>
+        <div><div class="zh">RAG · 知识检索</div>
+             <div class="sub">向量检索 · 事实知识注入</div></div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="layer l2">
+        <div class="tag">L2</div>
+        <div><div class="zh">LoRA · 风格外挂</div>
+             <div class="sub">可热插拔 · 语态切换</div></div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="layer l1 layer-core">
+        <div class="tag">L1</div>
+        <div><div class="zh">语义回响 · 思考链中断注入</div>
+             <div class="sub">情感先在脑中想好，再表达</div></div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="layer l0 layer-core">
+        <div class="tag">L0</div>
+        <div><div class="zh">模型底层 · 遗忘与身世内化</div>
+             <div class="sub">灾难性遗忘 → 主动工程手段</div></div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="mem-box">
+        <h3>两级记忆体系</h3>
+        <p>① 外挂记忆 —— 对话历史（L4）<br>持续累积 · 上下文放不下</p>
+        <p style="margin-top:10px">② 模型自身记忆 —— 身世 / 世界观（L0）<br>一生固定 · 直接长在权重里</p>
+      </div>
+      <div class="prompt-box">
+        <h3 style="color:#ffb3a0">提示词层大砍</h3>
+        <p class="warn">保留：固定短锚点「你是 XX，你在一个真实世界」<br>移除：长角色提示词（已由 L0 内化）</p>
+      </div>
+      <div class="mem-box" style="border-color:#ff7a59">
+        <h3 style="color:#ffd98a">核心创新</h3>
+        <p>灾难性遗忘从「训练事故」变为「主动工程手段」<br>扮演从「符号层」下沉到「模型底层」</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="foot-1">情感是剂量效应，不是开关</div>
+    <div class="foot-2">语义回响 · 五层底层记忆化扮演架构 · 2026</div>
+  </div>
+</body>
+</html>

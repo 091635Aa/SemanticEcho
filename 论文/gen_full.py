@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Generate complete paper.tex - expanded 13-15 page version."""
 import os
 OUT = r"d:\Desktop\语义回响\论文\论文.tex"
@@ -171,7 +171,7 @@ INTRO = r"""
 （1）\textbf{新范式}：首个系统性地回收被丢弃Token隐藏状态的研究，形式化定义了回响池、随机静态投影、衰减注入等核心组件；
 （2）\textbf{新机制}：提出情感词库筛选和思考阶段分离注入两项创新，实验证明二者具有协同效应；
 （3）\textbf{新发现}：在Qwen2.5-0.5B-Instruct上通过三轮共13组对照实验，发现了$\lambda$的U型效应、情感筛选的缓解重复效应、三种保留策略的优劣排序；
-（4）\textbf{开源实践}：所有代码和实验数据采用CC BY-NC 4.0许可证发布。
+（4）\textbf{开源实践}：所有代码和实验数据采用CC BY-NC-SA 4.0许可证发布。
 """
 
 METHOD = r"""
@@ -422,7 +422,7 @@ CONCLUSION = r"""
 语义回响在创意写作、对话系统和情感计算等应用中具有潜力。
 
 \section*{致谢}
-感谢Qwen团队和cnsenti项目的开源贡献。CC BY-NC 4.0许可证。
+感谢Qwen团队和cnsenti项目的开源贡献。CC BY-NC-SA 4.0许可证。
 
 \bibliographystyle{unsrt}
 \bibliography{参考文献}

@@ -28,3 +28,13 @@ build/
 *.zip
 *.whl
 *.tar.gz
+
+# 含 GitHub Token 的推送脚本（secret scanning 会拒绝推送，本地使用）
+scripts/推送到1.5B仓库.py
+scripts/推送1.5B仓库_修正README与部署页.py
+scripts/更新仓库信息.py
+scripts/更新GitHub仓库信息.py
+scripts/_创建数据仓库.py
+scripts/_推送数据仓库.py
+scripts/_更新数据仓库信息.py
+scripts/_检查仓库流量.py

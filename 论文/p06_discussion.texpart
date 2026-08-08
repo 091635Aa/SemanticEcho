@@ -1,4 +1,4 @@
-﻿\section{讨论}
+\section{讨论}
 
 \subsection{$\lambda$-熵非单调关系}
 
@@ -31,7 +31,7 @@ $\lambda=0.5$时回响贡献有益扰动；$\lambda=1.0$开始压制有效信号
 （3）保留策略：衰减$>$滑动窗口$>$全局保留；（4）完整方案在$\lambda=1.0$时+24.77\%改善。
 
 \section*{致谢}
-感谢Qwen团队和cnsenti项目的开源贡献。本研究遵循CC BY-NC 4.0许可证。
+感谢Qwen团队和cnsenti项目的开源贡献。本研究遵循CC BY-NC-SA 4.0许可证。
 
 \bibliographystyle{unsrt}
 \bibliography{参考文献}
