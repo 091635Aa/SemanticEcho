@@ -256,3 +256,11 @@ python -m semantic_echo.demo_app
 
 详见 [LICENSE](./LICENSE) 文件。
 如需商业授权，请联系作者。
+
+---
+
+## 💰 商业授权
+
+> 语义回响 / 情感潮汐解码 ETD 全套技术资产商业授权 · **超级价目表**（分级定价 · 双组合 · 垄断 · 永久锁定 · 完全体打包 8 亿）：
+> [SemanticEcho-Hub · 商业授权价目表](https://github.com/091635Aa/SemanticEcho-Hub/blob/main/%E5%95%86%E4%B8%9A%E6%8E%88%E6%9D%83%E4%BB%B7%E7%9B%AE%E8%A1%A8.md)
+> 洽谈：**DYPUBG2025@QQ.COM**
