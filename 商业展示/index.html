@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语义回响 × 情感潮汐解码 ETD · 商业授权与战略合作</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --bg:#0a0e1a; --bg2:#111627; --card:rgba(255,255,255,.045);
+    --line:rgba(255,255,255,.09); --txt:#eef2ff; --sub:#9aa3c0;
+    --acc:#e94560; --acc2:#f39c12; --acc3:#2ecc71;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(233,69,96,.14), transparent 60%),
+      radial-gradient(1000px 500px at -10% 20%, rgba(79,107,254,.14), transparent 60%),
+      var(--bg);
+    color:var(--txt); line-height:1.65; overflow-x:hidden;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+  /* ── Hero ── */
+  .hero{text-align:center;padding:72px 20px 44px;position:relative;}
+  .hero .kicker{
+    display:inline-block;padding:7px 18px;border:1px solid rgba(233,69,96,.5);
+    background:rgba(233,69,96,.12);color:#ff9aa8;border-radius:30px;
+    font-size:.85rem;letter-spacing:2px;margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem,5vw,3.4rem);font-weight:800;line-height:1.2;
+    background:linear-gradient(90deg,#e94560,#f39c12,#2ecc71,#4d6bfe);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    padding-bottom:6px;
+  }
+  .hero .sub{color:var(--sub);font-size:clamp(1rem,2vw,1.2rem);margin-top:14px;max-width:820px;margin-inline:auto;}
+  .hero .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;}
+  .hero .badge{
+    padding:6px 14px;border:1px solid var(--line);border-radius:20px;
+    background:var(--card);font-size:.8rem;color:#c6cdea;
+  }
+  /* ── Stats 数据墙 ── */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:34px 0;}
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 16px;text-align:center;transition:.3s;
+  }
+  .stat:hover{transform:translateY(-4px);border-color:rgba(233,69,96,.5);}
+  .stat b{font-size:1.7rem;background:linear-gradient(90deg,#e94560,#f39c12);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block;}
+  .stat span{color:var(--sub);font-size:.8rem;}
+  /* ── Sections ── */
+  section{margin:54px 0;}
+  h2{
+    font-size:1.5rem;font-weight:700;margin-bottom:8px;
+    display:flex;align-items:center;gap:12px;
+  }
+  h2::before{content:"";width:5px;height:22px;border-radius:3px;
+    background:linear-gradient(180deg,var(--acc),var(--acc2));}
+  .secsub{color:var(--sub);font-size:.95rem;margin-bottom:22px;}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px;transition:.3s;
+  }
+  .card:hover{border-color:rgba(243,156,18,.45);transform:translateY(-3px);}
+  .card h3{font-size:1.05rem;margin-bottom:8px;}
+  .card p{color:var(--sub);font-size:.9rem;}
+  .card .tag{
+    display:inline-block;font-size:.72rem;padding:3px 10px;border-radius:12px;
+    background:rgba(46,204,113,.15);color:#5fe89a;border:1px solid rgba(46,204,113,.4);margin-bottom:10px;
+  }
+  /* ── 窗口期 banner ── */
+  .banner{
+    background:linear-gradient(120deg,rgba(233,69,96,.16),rgba(243,156,18,.14));
+    border:1px solid rgba(233,69,96,.4);border-radius:18px;padding:26px 28px;
+    margin:40px 0;
+  }
+  .banner h3{font-size:1.15rem;color:#ffb3bd;margin-bottom:8px;}
+  .banner p{color:#e8e3e0;font-size:.95rem;}
+  .banner b{color:#ffd27f;}
+  /* ── 商业授权表 ── */
+  .price-table{width:100%;border-collapse:collapse;background:var(--card);
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .price-table th,.price-table td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.92rem;}
+  .price-table th{background:rgba(255,255,255,.05);color:#c6cdea;font-weight:600;}
+  .price-table tr:last-child td{border-bottom:none;}
+  .price-table .price{color:#ff9d6b;font-weight:700;white-space:nowrap;}
+  .price-table .off{color:#5fe89a;font-size:.8rem;}
+  .note{color:var(--sub);font-size:.82rem;margin-top:12px;}
+  /* ── 厂商 tabs ── */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 18px;}
+  .tab{
+    padding:9px 20px;border-radius:24px;cursor:pointer;border:1px solid var(--line);
+    background:var(--card);color:#b9c1de;font-size:.9rem;transition:.25s;
+  }
+  .tab:hover{background:rgba(255,255,255,.09);}
+  .tab.active{color:#fff;border-color:transparent;}
+  .tab[data-v="阿里云"]{--vc:#ff6a00}.tab[data-v="腾讯云"]{--vc:#00c9ff}
+  .tab[data-v="华为云"]{--vc:#e52e2e}.tab[data-v="小米"]{--vc:#ff6700}
+  .tab[data-v="米哈游"]{--vc:#00d8ff}.tab[data-v="DeepSeek"]{--vc:#4d6bfe}
+  .tab.active{background:linear-gradient(90deg,var(--vc),#ffffff22);box-shadow:0 0 18px color-mix(in srgb,var(--vc) 45%,transparent);}
+  .panel{display:none;animation:fade .4s;}
+  .panel.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .vhero{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;
+    position:relative;overflow:hidden;
+  }
+  .vhero::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;
+    background:linear-gradient(180deg,var(--vc,#e94560),transparent);}
+  .vhero h3{font-size:1.4rem;margin-bottom:6px;color:var(--vc,#e94560);}
+  .vhero .fit{color:#e6eaf8;font-size:.95rem;margin:12px 0;}
+  .vhero .chip{
+    display:inline-block;padding:5px 12px;border-radius:14px;font-size:.75rem;font-weight:700;
+    background:rgba(95,232,154,.12);color:#5fe89a;border:1px solid rgba(95,232,154,.4);margin-bottom:14px;
+  }
+  .vhero ul{margin:0 0 0 2px;padding-left:20px;}
+  .vhero li{color:#c9d1ee;font-size:.9rem;margin:8px 0;}
+  .vhero li b{color:#ffd27f;}
+  /* ── CTA ── */
+  .cta{
+    text-align:center;padding:56px 20px;margin:50px 0 30px;
+    background:var(--card);border:1px solid var(--line);border-radius:24px;
+  }
+  .cta h2{justify-content:center;}
+  .cta p{color:var(--sub);margin:12px 0 22px;}
+  .btn{
+    display:inline-block;padding:14px 38px;border-radius:40px;text-decoration:none;font-weight:700;
+    background:linear-gradient(90deg,#e94560,#f39c12);color:#fff;font-size:1.05rem;
+    box-shadow:0 8px 30px rgba(233,69,96,.35);transition:.3s;
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(233,69,96,.5);}
+  .mail{color:#ff9d6b;font-weight:700;}
+  footer{text-align:center;color:#5b6482;font-size:.78rem;padding:26px 0 40px;}
+</style>
+</head>
+<body>
+
+<!-- ══ Hero ══ -->
+<div class="hero">
+  <span class="kicker">商业授权 · 战略合作 · 技术买断</span>
+  <h1>语义回响 × 情感潮汐解码 ETD</h1>
+  <div class="sub">让 1.5B 小模型在「AI vs 真人」盲评中反超大模型 —— 推理期情感增强引擎。
+  不改权重 · 不重训练 · 即插即用 · 显存增量≈0 · 与全球开源第一生态（Qwen / DeepSeek）同源兼容</div>
+  <div class="badges">
+    <span class="badge">🛰 三套正交架构</span>
+    <span class="badge">🎭 概率空间情感引导</span>
+    <span class="badge">🛡 一致性 / OOC 可控</span>
+    <span class="badge">🧪 五项图灵测试公开复现</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ══ 数据墙 ══ -->
+  <div class="stats">
+    <div class="stat"><b>+180%</b><span>LLM-Judge 盲评胜率（0.18 → 0.52）</span></div>
+    <div class="stat"><b>4/5</b><span>五项图灵测试反超裸模型</span></div>
+    <div class="stat"><b>1.5B</b><span>反超 3B、与 Qwen3-1.7B 统计持平</span></div>
+    <div class="stat"><b>≈0</b><span>显存增量 · 推理边际成本≈0</span></div>
+    <div class="stat"><b>100%</b><span>优化步骤正向增益、同种子可复现</span></div>
+  </div>
+
+  <!-- ══ 情感市场宏大 ══ -->
+  <section>
+    <h2>情感市场 · 比想象中宏大得多</h2>
+    <p class="secsub">给厂商的底气：这不是小众需求，是政策首次背书、千亿级、双位数增速的独立品类。</p>
+    <div class="stats">
+      <div class="stat"><b>11.25亿</b><span>中国网民（CNNIC）· AI 用户 6.02 亿</span></div>
+      <div class="stat"><b>2.72万亿</b><span>情绪经济规模 → 2029E 4.5 万亿（艾媒）</span></div>
+      <div class="stat"><b>2.4亿+</b><span>单身人口 · 独居 1.8 亿 · 空巢老人 1.3 亿</span></div>
+      <div class="stat"><b>3179亿$</b><span>全球 AI 陪伴市场 2033E（CAGR 31%）</span></div>
+      <div class="stat"><b>543.5亿</b><span>中国 AI 陪伴软件（+20%）· 付费率 18.7%</span></div>
+      <div class="stat"><b>37.6%</b><span>用户愿为 AI 陪伴按月付费（+11.2pp）</span></div>
+    </div>
+  </section>
+
+  <!-- ══ 窗口期 ══ -->
+  <div class="banner">
+    <h3>🚨 2026 行业「暂停键」= 反超窗口（错过不再有）</h3>
+    <p>全球首部拟人化互动法规 2026-07-15 施行 —— <b>豆包下线 800 万智能体 / 2600 万 MAU，千问、元宝同步离场</b>。
+    巨头集体缺席，赛道洗牌。新规要求的「极端情绪识别 · 安抚引导 · 防沉迷」底层全是情感计算 ——
+    <b>谁先拿出「合规且像真人、一致性稳定、OOC 可控」的引擎，谁就定义下一个赛道。</b></p>
+  </div>
+
+  <!-- ══ 三套架构 ══ -->
+  <section>
+    <h2>三套正交架构 · 全栈可控</h2>
+    <p class="secsub">覆盖「表示空间 · 配置空间 · 概率空间」三大技术路线，可叠加、可拆解、可私有化。</p>
+    <div class="grid2">
+      <div class="card"><span class="tag">第 0 层 + 第 1 层</span><h3>五层架构 · 语义回响</h3>
+        <p>训练期底层改造（让模型「忘记自己是 AI」）+ 思考链中断注入 hidden_state 情感底色 —— 模型从底层就是角色。</p></div>
+      <div class="card"><span class="tag">配置空间</span><h3>通用兼容层 V2</h3>
+        <p>因子表 + 归一化公式跨模型自动调参（Qwen2.5/Qwen3/Gemma/Phi/SmolLM × fp16/4bit），25 配置全可控。</p></div>
+      <div class="card"><span class="tag">概率空间</span><h3>情感潮汐解码 ETD</h3>
+        <p>采样分布乘性重加权 p' = p^(1-α)·q_emo^α，数学上有界不可能坍缩；极性定向 + 在线兜底，闭源 API 也能用。</p></div>
+      <div class="card"><span class="tag">混合方案</span><h3>回响 × 潮汐</h3>
+        <p>回响给情感底色（熵 +40~45%），潮汐给方向密度控制（像真人↑）—— 正交叠加，1.5B 盲评胜率 +180% 的来源。</p></div>
+    </div>
+  </section>
+
+  <!-- ══ 商业授权 ══ -->
+  <section>
+    <h2>商业授权方案</h2>
+    <p class="secsub">以下均为参考底价，最终以合同为准。学术 / 学习使用免费。</p>
+    <table class="price-table">
+      <tr><th>授权等级</th><th>参考价格</th><th>优惠</th><th>说明</th></tr>
+      <tr><td>大厂年费（普通授权）</td><td class="price">500 万+ / 年</td><td class="off">米哈游 -20 万 · 其他 -10 万</td><td>全技术资产 · 按年续约</td></tr>
+      <tr><td>中厂年费</td><td class="price">200–500 万 / 年</td><td class="off">-10 万 / -20 万</td><td>按企业规模定级</td></tr>
+      <tr><td>小厂年费</td><td class="price">10–50 万 / 年</td><td class="off">-10 万</td><td>中小企业 / 独立团队</td></tr>
+      <tr><td>永久非独占授权</td><td class="price">1,500 万起</td><td class="off">-10 万 / -20 万</td><td>一次性 · 保留对其他家授权</td></tr>
+      <tr><td>独家授权（年）</td><td class="price">1,000 万 / 年</td><td class="off">-10 万 / -20 万</td><td>授权期全国 / 行业独家</td></tr>
+      <tr><td>长期独家（8年 / 10年）</td><td class="price">5,000 万 / 8年 · 8,000 万 / 10年</td><td class="off">-10 万 / -20 万</td><td>推荐长期锁定 · 对手不可碰</td></tr>
+      <tr><td>永久独家买断</td><td class="price">1 亿 ~ 10 亿</td><td class="off">详谈</td><td>买断全部技术资产与源码</td></tr>
+    </table>
+    <p class="note">💎 附加诚意条款：作者可不要工资、或按最低工资 + 最低社保加入贵司（纯热爱）—— 以实习生 / 顾问身份全程技术陪跑；
+    可接受「独占服务器 / 满配工作站」等实物部分置换；授权后作者在校内外展示中优先采用贵司技术背书。</p>
+  </section>
+
+  <!-- ══ 厂商定制 ══ -->
+  <section>
+    <h2>厂商定制方案</h2>
+    <p class="secsub">为每家厂商定制了契合点、核心说服理由与专属优惠 —— 点击页签查看。</p>
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-v="阿里云">阿里云</div>
+      <div class="tab" data-v="腾讯云">腾讯云</div>
+      <div class="tab" data-v="华为云">华为云</div>
+      <div class="tab" data-v="小米">小米</div>
+      <div class="tab" data-v="米哈游">米哈游</div>
+      <div class="tab" data-v="DeepSeek">DeepSeek</div>
+    </div>
+
+    <!-- 阿里云 -->
+    <div class="panel active" data-p="阿里云" style="--vc:#ff6a00">
+      <div class="vhero">
+        <h3>阿里云 · 定制方案</h3>
+        <span class="chip">年费 500 万+/年 → 优惠 490 万+ · 永久 1490 万起</span>
+        <p class="fit"><b>契合点</b>：阿里 AI 收入占比首破 30%、正冲刺 50%；ATH（Token Hub）事业群成立 —— 千问在「像真人」的情感表达层是明确缺口，引擎直接补上，且原生跑在千问基座上。</p>
+        <ul>
+          <li><b>对营收负责</b>：用不到千分之三的年度 AI 收入，买到「图灵级」情感表达能力；</li>
+          <li><b>接口售卖</b>：引擎封装为百炼 MaaS「情感增强接口」，按 Token 计费随 100 万企业客户分发；</li>
+          <li><b>独家窗口</b>：豆包 / 元宝智能体下线正是空窗，早签 = 窗口期独占权。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 腾讯云 -->
+    <div class="panel" data-p="腾讯云" style="--vc:#00c9ff">
+      <div class="vhero">
+        <h3>腾讯云 · 定制方案</h3>
+        <span class="chip">年费 500 万+/年 → 优惠 490 万+</span>
+        <p class="fit"><b>契合点</b>：腾讯 MaaS 调用份额未进前三 —— 最大短板是体验差异化；游戏 AI 队友（和平精英 1.1 亿用户、「小田」情感养成）与微信 AI 内测正是情感陪伴窗口。</p>
+        <ul>
+          <li><b>补 MaaS 短板</b>：情感增强 = 价格战之外的体验壁垒，MaaS 份额翻身的正解；</li>
+          <li><b>三端复用</b>：游戏 AI 队友 / 微信陪伴 / 云 MaaS 一套引擎三处落地；</li>
+          <li><b>锁死代差</b>：8-10 年长期独家，混元 / 元宝陪伴体验持续领先。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 华为云 -->
+    <div class="panel" data-p="华为云" style="--vc:#e52e2e">
+      <div class="vhero">
+        <h3>华为云 · 定制方案</h3>
+        <span class="chip">年费 500 万+/年 → 优惠 490 万+</span>
+        <p class="fit"><b>契合点</b>：小艺「11 种情绪感知」只到感知层、缺共情推理；鸿蒙座舱「情感化陪伴 / 角色扮演」是官方方向 —— 引擎作为昇腾原生适配的情感增强层直接补位，信创私有化无阻力。</p>
+        <ul>
+          <li><b>补小艺短板</b>：从「感知」到「共情」一站到位，情感化陪伴从宣传词变实测；</li>
+          <li><b>昇腾生态差异</b>：MaaS 上架 160+ 模型全是别人的 —— 情感增强是华为自有差异化能力；</li>
+          <li><b>后训练胜负手</b>：华为云 CEO 称「后训练是模型竞争胜负手」，引擎正是后训练 / 推理增强的关键能力。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 小米 -->
+    <div class="panel" data-p="小米" style="--vc:#ff6700">
+      <div class="vhero">
+        <h3>小米 · 定制方案</h3>
+        <span class="chip">年费 500 万+/年 → 优惠 490 万+</span>
+        <p class="fit"><b>契合点</b>：小爱 MAU 1.69 亿 + 车机「小爱陪伴」官方定位「懂情绪更懂需求」 + 端侧 4B 模型 + 具身机器人 —— 一套情感引擎端侧 / 车机 / IoT / 机器人四处复用。</p>
+        <ul>
+          <li><b>一处部署多端复用</b>：手机 / 眼镜 / 车机 / 机器人共享情感内核，边际成本≈0；</li>
+          <li><b>契合端侧路线</b>：引擎 1.5B 即可达高自然度，正是小米低功耗端侧 AI 的理想组件；</li>
+          <li><b>AI 会员付费点</b>：澎湃 OS 3 高级功能已收费，「更会聊的小爱」是天然升级卖点。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 米哈游 -->
+    <div class="panel" data-p="米哈游" style="--vc:#00d8ff">
+      <div class="vhero">
+        <h3>米哈游 · 定制方案</h3>
+        <span class="chip">专属优惠：年费 500 万+/年 → 480 万+（-20 万）</span>
+        <p class="fit"><b>契合点</b>：帕姆帮帮已跑通「情绪互动 / 闲聊陪伴」（千万级并发）—— 引擎让角色「更像角色、更像人」，角色一致性 / OOC 正是陪伴赛道头号痛点，IP 情感资产直接升值。</p>
+        <ul>
+          <li><b>游戏内情感直接变现</b>：角色会共情 → 沉浸 → 付费（米哈游 ARPU 行业第一）；</li>
+          <li><b>千万级并发的成本解</b>：1.5B 基座 + 显存增量≈0，帕姆帮帮场景依然便宜；</li>
+          <li><b>多产品摊薄</b>：原神 / 星铁 / 绝区零 / 新作多端复用，IP 级长期资产。</li>
+        </ul>
+        <p class="note" style="margin-top:12px">🎁 专属优惠说明：作者对米哈游产品有真实热爱与深度理解，愿以最大诚意换取合作。</p>
+      </div>
+    </div>
+
+    <!-- DeepSeek -->
+    <div class="panel" data-p="DeepSeek" style="--vc:#4d6bfe">
+      <div class="vhero">
+        <h3>DeepSeek · 定制方案</h3>
+        <span class="chip">年费 500 万+/年 → 优惠 490 万+</span>
+        <p class="fit"><b>契合点</b>：ChatAnime 评测 V3 情感支持角色扮演 9 项指标 8 项第一 —— DeepSeek 情感底子极强，但官方不做陪伴应用；引擎作为开放情感层，赋能 210 万开发者生态，双方互补不竞争。</p>
+        <ul>
+          <li><b>补全行业弱项</b>：CompanionBench 证实全行业弱项 = 情绪调节与实质关系支持，引擎正是这一层；</li>
+          <li><b>挽回「变冷淡」口碑</b>：兑现官方「温暖模式」承诺，C 端体验直接受益；</li>
+          <li><b>成本匹配</b>：显存增量≈0，与 DeepSeek 极致性价比路线完全同频。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <div class="cta">
+    <h2>洽谈商业授权 · 战略合作 · 技术买断</h2>
+    <p>欢迎 阿里云 / 腾讯云 / 华为云 / 小米 / 米哈游 / DeepSeek 及各界伙伴垂询。<br>
+    可先 PoC（同种子可复现、评测数据公开在 GitHub）再付款 —— 零风险决策。</p>
+    <a class="btn" href="mailto:DYPUBG2025@QQ.COM">联系作者 · DYPUBG2025@QQ.COM</a>
+  </div>
+
+  <footer>
+    语义回响 × 情感潮汐解码（Emotion Tidal Decoding, ETD）· 三套正交架构 · 推理期情感增强引擎<br>
+    免费学术研究不受限 · 商业使用须获授权 · 本页展示数据均公开可复现（GitHub：091635Aa）
+  </footer>
+</div>
+
+<script>
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){t.classList.remove('active');});
+      panels.forEach(function(p){p.classList.remove('active');});
+      tab.classList.add('active');
+      var v = tab.getAttribute('data-v');
+      panels.forEach(function(p){
+        if(p.getAttribute('data-p') === v){ p.classList.add('active'); }
+      });
+    });
+  });
+</script>
+</body>
+</html>
