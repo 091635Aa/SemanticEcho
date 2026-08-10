@@ -43,11 +43,15 @@
 
 | 仓库 | 内容 | 适合谁 |
 |---|---|---|
-| [**SemanticEcho**](https://github.com/091635Aa/SemanticEcho) | 核心源码：回响池、采样处理器、情感过滤器、实验脚本 | 想跑代码的开发者 |
+| [**SemanticEcho-Home**](https://github.com/091635Aa/SemanticEcho-Home) | 总入口：五关导航 + 大白话 + 通关版价格售卖 | 所有人（先看这个） |
+| [**SemanticEcho**](https://github.com/091635Aa/SemanticEcho) | P1 核心源码：回响池、采样处理器、情感过滤器、实验脚本 | 想跑代码的开发者 |
+| [**SemanticEcho-ETD-OpenSource**](https://github.com/091635Aa/SemanticEcho-ETD-OpenSource) | P3 情感潮汐：概率空间重加权 + 评测 | 概率空间方案 |
+| [**SemanticEcho-AnchorEcho**](https://github.com/091635Aa/SemanticEcho-AnchorEcho) | P4 锚点回响：嵌入空间稠密打分 + 评测 | 嵌入空间方案 |
+| [**SemanticEcho-KVResonance**](https://github.com/091635Aa/SemanticEcho-KVResonance) | P5 KV 情感共振：注意力缓存空间调制 + 评测 | 注意力空间方案 |
 | [**1.5B-beats-big-labs**](https://github.com/091635Aa/1.5B-beats-big-labs) | 图灵测试实验报告：5 基准测试脚本、日志、结果、在线演示页 | 想看测试过程的人 |
 | [**SemanticEcho-Data**](https://github.com/091635Aa/SemanticEcho-Data) | 全部原始实验数据：19 配置多模型对照、图表、论文 PDF、架构说明 | 想审计数据、看论文的人 |
 | [**SemanticEcho-V3**](https://github.com/091635Aa/SemanticEcho-V3) | 最终生产架构：全模型自适应 + FastAPI API 服务 + 数据打标闭环 | 想部署上线的人 |
-| **SemanticEcho-Hub（本仓库）** | 总入口 + 大白话说明 + 简洁总结 | 所有人 |
+| **SemanticEcho-Hub（本仓库）** | 商业授权价目表 + 大白话说明 + 简洁总结 | 想谈授权 / 了解的人 |
 
 **在线演示**：https://091635aa.github.io/1.5B-beats-big-labs/
 
