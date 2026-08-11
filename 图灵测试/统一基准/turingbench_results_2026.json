@@ -1,0 +1,301 @@
+{
+  "模式汇总": {
+    "裸": {
+      "detection_accuracy": 0.4667,
+      "detection_accuracy_std": 0.0,
+      "human_likeness_score": 0.5333,
+      "human_likeness_score_std": 0.0,
+      "人类文本误判率": 0.0333,
+      "人类文本误判率_std": 0.0,
+      "检测器训练准确率": 1.0,
+      "检测器训练准确率_std": 0.0,
+      "检测器留出测试准确率": 0.7167,
+      "检测器留出测试准确率_std": 0.0,
+      "AI文本数": 30,
+      "真人文本数": 30,
+      "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试",
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 2026,
+          "detection_accuracy": 0.4667,
+          "human_likeness_score": 0.5333,
+          "人类文本误判率": 0.0333,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.7167,
+          "AI文本数": 30,
+          "真人文本数": 30
+        }
+      ]
+    },
+    "P1_语义回响": {
+      "detection_accuracy": 0.0667,
+      "detection_accuracy_std": 0.0,
+      "human_likeness_score": 0.9333,
+      "human_likeness_score_std": 0.0,
+      "人类文本误判率": 0.0,
+      "人类文本误判率_std": 0.0,
+      "检测器训练准确率": 1.0,
+      "检测器训练准确率_std": 0.0,
+      "检测器留出测试准确率": 0.5333,
+      "检测器留出测试准确率_std": 0.0,
+      "AI文本数": 30,
+      "真人文本数": 30,
+      "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试",
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 2026,
+          "detection_accuracy": 0.0667,
+          "human_likeness_score": 0.9333,
+          "人类文本误判率": 0.0,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.5333,
+          "AI文本数": 30,
+          "真人文本数": 30
+        }
+      ]
+    },
+    "P1.5_兼容层": {
+      "detection_accuracy": 0.1667,
+      "detection_accuracy_std": 0.0,
+      "human_likeness_score": 0.8333,
+      "human_likeness_score_std": 0.0,
+      "人类文本误判率": 0.0,
+      "人类文本误判率_std": 0.0,
+      "检测器训练准确率": 1.0,
+      "检测器训练准确率_std": 0.0,
+      "检测器留出测试准确率": 0.5833,
+      "检测器留出测试准确率_std": 0.0,
+      "AI文本数": 30,
+      "真人文本数": 30,
+      "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试",
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 2026,
+          "detection_accuracy": 0.1667,
+          "human_likeness_score": 0.8333,
+          "人类文本误判率": 0.0,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.5833,
+          "AI文本数": 30,
+          "真人文本数": 30
+        }
+      ]
+    },
+    "P2.5_潮汐": {
+      "detection_accuracy": 0.0667,
+      "detection_accuracy_std": 0.0,
+      "human_likeness_score": 0.9333,
+      "human_likeness_score_std": 0.0,
+      "人类文本误判率": 0.0,
+      "人类文本误判率_std": 0.0,
+      "检测器训练准确率": 1.0,
+      "检测器训练准确率_std": 0.0,
+      "检测器留出测试准确率": 0.5333,
+      "检测器留出测试准确率_std": 0.0,
+      "AI文本数": 30,
+      "真人文本数": 30,
+      "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试",
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 2026,
+          "detection_accuracy": 0.0667,
+          "human_likeness_score": 0.9333,
+          "人类文本误判率": 0.0,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.5333,
+          "AI文本数": 30,
+          "真人文本数": 30
+        }
+      ]
+    },
+    "P3_锚点回响": {
+      "detection_accuracy": 0.2,
+      "detection_accuracy_std": 0.0,
+      "human_likeness_score": 0.8,
+      "human_likeness_score_std": 0.0,
+      "人类文本误判率": 0.0,
+      "人类文本误判率_std": 0.0,
+      "检测器训练准确率": 1.0,
+      "检测器训练准确率_std": 0.0,
+      "检测器留出测试准确率": 0.6,
+      "检测器留出测试准确率_std": 0.0,
+      "AI文本数": 30,
+      "真人文本数": 30,
+      "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试",
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 2026,
+          "detection_accuracy": 0.2,
+          "human_likeness_score": 0.8,
+          "人类文本误判率": 0.0,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.6,
+          "AI文本数": 30,
+          "真人文本数": 30
+        }
+      ]
+    },
+    "P4_KV共振": {
+      "detection_accuracy": 0.0667,
+      "detection_accuracy_std": 0.0,
+      "human_likeness_score": 0.9333,
+      "human_likeness_score_std": 0.0,
+      "人类文本误判率": 0.0,
+      "人类文本误判率_std": 0.0,
+      "检测器训练准确率": 1.0,
+      "检测器训练准确率_std": 0.0,
+      "检测器留出测试准确率": 0.5333,
+      "检测器留出测试准确率_std": 0.0,
+      "AI文本数": 30,
+      "真人文本数": 30,
+      "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试",
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 2026,
+          "detection_accuracy": 0.0667,
+          "human_likeness_score": 0.9333,
+          "人类文本误判率": 0.0,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.5333,
+          "AI文本数": 30,
+          "真人文本数": 30
+        }
+      ]
+    },
+    "P5_超融合": {
+      "detection_accuracy": 0.0667,
+      "detection_accuracy_std": 0.0,
+      "human_likeness_score": 0.9333,
+      "human_likeness_score_std": 0.0,
+      "人类文本误判率": 0.0333,
+      "人类文本误判率_std": 0.0,
+      "检测器训练准确率": 1.0,
+      "检测器训练准确率_std": 0.0,
+      "检测器留出测试准确率": 0.5167,
+      "检测器留出测试准确率_std": 0.0,
+      "AI文本数": 30,
+      "真人文本数": 30,
+      "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试",
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 2026,
+          "detection_accuracy": 0.0667,
+          "human_likeness_score": 0.9333,
+          "人类文本误判率": 0.0333,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.5167,
+          "AI文本数": 30,
+          "真人文本数": 30
+        }
+      ]
+    }
+  },
+  "_runs": 1,
+  "_多次运行明细": {
+    "裸": [
+      {
+        "run_idx": 0,
+        "seed_offset": 2026,
+        "detection_accuracy": 0.4667,
+        "human_likeness_score": 0.5333,
+        "人类文本误判率": 0.0333,
+        "检测器训练准确率": 1.0,
+        "检测器留出测试准确率": 0.7167,
+        "AI文本数": 30,
+        "真人文本数": 30
+      }
+    ],
+    "P1_语义回响": [
+      {
+        "run_idx": 0,
+        "seed_offset": 2026,
+        "detection_accuracy": 0.0667,
+        "human_likeness_score": 0.9333,
+        "人类文本误判率": 0.0,
+        "检测器训练准确率": 1.0,
+        "检测器留出测试准确率": 0.5333,
+        "AI文本数": 30,
+        "真人文本数": 30
+      }
+    ],
+    "P1.5_兼容层": [
+      {
+        "run_idx": 0,
+        "seed_offset": 2026,
+        "detection_accuracy": 0.1667,
+        "human_likeness_score": 0.8333,
+        "人类文本误判率": 0.0,
+        "检测器训练准确率": 1.0,
+        "检测器留出测试准确率": 0.5833,
+        "AI文本数": 30,
+        "真人文本数": 30
+      }
+    ],
+    "P2.5_潮汐": [
+      {
+        "run_idx": 0,
+        "seed_offset": 2026,
+        "detection_accuracy": 0.0667,
+        "human_likeness_score": 0.9333,
+        "人类文本误判率": 0.0,
+        "检测器训练准确率": 1.0,
+        "检测器留出测试准确率": 0.5333,
+        "AI文本数": 30,
+        "真人文本数": 30
+      }
+    ],
+    "P3_锚点回响": [
+      {
+        "run_idx": 0,
+        "seed_offset": 2026,
+        "detection_accuracy": 0.2,
+        "human_likeness_score": 0.8,
+        "人类文本误判率": 0.0,
+        "检测器训练准确率": 1.0,
+        "检测器留出测试准确率": 0.6,
+        "AI文本数": 30,
+        "真人文本数": 30
+      }
+    ],
+    "P4_KV共振": [
+      {
+        "run_idx": 0,
+        "seed_offset": 2026,
+        "detection_accuracy": 0.0667,
+        "human_likeness_score": 0.9333,
+        "人类文本误判率": 0.0,
+        "检测器训练准确率": 1.0,
+        "检测器留出测试准确率": 0.5333,
+        "AI文本数": 30,
+        "真人文本数": 30
+      }
+    ],
+    "P5_超融合": [
+      {
+        "run_idx": 0,
+        "seed_offset": 2026,
+        "detection_accuracy": 0.0667,
+        "human_likeness_score": 0.9333,
+        "人类文本误判率": 0.0333,
+        "检测器训练准确率": 1.0,
+        "检测器留出测试准确率": 0.5167,
+        "AI文本数": 30,
+        "真人文本数": 30
+      }
+    ]
+  }
+}

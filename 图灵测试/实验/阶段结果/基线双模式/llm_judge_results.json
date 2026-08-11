@@ -1,0 +1,18 @@
+{
+  "模式汇总": {
+    "裸": {
+      "win_rate_against_human": 0.4333,
+      "average_rating": 0.7467,
+      "average_rating_raw": 3.73,
+      "human_average_rating_raw": 3.8,
+      "样本数": 30
+    },
+    "四层": {
+      "win_rate_against_human": 0.3333,
+      "average_rating": 0.7067,
+      "average_rating_raw": 3.53,
+      "human_average_rating_raw": 3.8,
+      "样本数": 30
+    }
+  }
+}

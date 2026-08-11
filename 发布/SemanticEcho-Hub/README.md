@@ -45,9 +45,9 @@
 |---|---|---|
 | [**SemanticEcho-Home**](https://github.com/091635Aa/SemanticEcho-Home) | 总入口：五关导航 + 大白话 + 通关版价格售卖 | 所有人（先看这个） |
 | [**SemanticEcho**](https://github.com/091635Aa/SemanticEcho) | P1 核心源码：回响池、采样处理器、情感过滤器、实验脚本 | 想跑代码的开发者 |
-| [**SemanticEcho-ETD-OpenSource**](https://github.com/091635Aa/SemanticEcho-ETD-OpenSource) | P3 情感潮汐：概率空间重加权 + 评测 | 概率空间方案 |
-| [**SemanticEcho-AnchorEcho**](https://github.com/091635Aa/SemanticEcho-AnchorEcho) | P4 锚点回响：嵌入空间稠密打分 + 评测 | 嵌入空间方案 |
-| [**SemanticEcho-KVResonance**](https://github.com/091635Aa/SemanticEcho-KVResonance) | P5 KV 情感共振：注意力缓存空间调制 + 评测 | 注意力空间方案 |
+| [**SemanticEcho-ETD-OpenSource**](https://github.com/091635Aa/SemanticEcho-ETD-OpenSource) | P2.5 情感潮汐：概率空间重加权 + 评测 | 概率空间方案 |
+| [**SemanticEcho-AnchorEcho**](https://github.com/091635Aa/SemanticEcho-AnchorEcho) | P3 锚点回响：嵌入空间稠密打分 + 评测 | 嵌入空间方案 |
+| [**SemanticEcho-KVResonance**](https://github.com/091635Aa/SemanticEcho-KVResonance) | P4 KV 情感共振：注意力缓存空间调制 + 评测（含 P5 超融合解码器 UFD） | 注意力空间方案 |
 | [**1.5B-beats-big-labs**](https://github.com/091635Aa/1.5B-beats-big-labs) | 图灵测试实验报告：5 基准测试脚本、日志、结果、在线演示页 | 想看测试过程的人 |
 | [**SemanticEcho-Data**](https://github.com/091635Aa/SemanticEcho-Data) | 全部原始实验数据：19 配置多模型对照、图表、论文 PDF、架构说明 | 想审计数据、看论文的人 |
 | [**SemanticEcho-V3**](https://github.com/091635Aa/SemanticEcho-V3) | 最终生产架构：全模型自适应 + FastAPI API 服务 + 数据打标闭环 | 想部署上线的人 |
@@ -114,19 +114,23 @@
 
 ## 💰 商业授权
 
-本技术可商用授权。**完整价目表见 [商业授权价目表](./商业授权价目表.md)**，或参考各子仓库 README 底部。
+本技术可商用授权。**完整价目表见 [商业授权价目表](./商业授权价目表.md)**（碎片合成版：五碎片 → 完全体 15 亿 → 终极版 30 亿），或参考各子仓库 README 底部。
 
 > ⚠️ **以下价格均为参考价格**，最终以双方签订合同为准。
 
-**速览：**
+**速览（碎片合成版 · 永久买断）：**
 
-| 企业规模 | 授权费 / 年 |
-|---|---|
-| 大厂（年收入 ≥100 亿元） | 500 万元以上 |
-| 中厂（年收入 10–100 亿元） | 200–500 万元 |
-| 小厂（年收入 <10 亿元） | 10–50 万元 |
+| 碎片 | 项目 | 永久买断 |
+|---|---|---|
+| 碎片① | P1 语义回响（表示空间） | 3 亿 |
+| 碎片② | P1.5 通用兼容层（配置空间） | 2.4 亿 |
+| 碎片③ | P2.5 情感潮汐（概率空间） | 2.7 亿 |
+| 碎片④ | P3 锚点回响（嵌入空间） | 3.9 亿 |
+| 碎片⑤ | P4 KV 情感共振（注意力空间） | 3 亿 |
+| **完全体** | P1-P4 五空间全铺 + P5 超融合合成方案 | **15 亿** |
+| **终极版** | 完全体 + 独家垄断 + 二次分发权 | **30 亿** |
 
-另有永久非独占授权（1,500 万元起）、独家授权（1,000 万元/年）、永久独家买断（1 亿~10 亿元）等选项，详见 [价目表](./商业授权价目表.md)。
+> 集齐碎片，合成完全体；升级终极版（30 亿）即全球唯一合法分销。详见 [价目表](./商业授权价目表.md)。
 
 > 🎁 实物/礼品条款、[作者心愿单](#-商业授权)（高性能 AI 计算卡 / 工作站 / NAS / 定制周边）、价格立场等详见 [商业授权价目表](./商业授权价目表.md)。
 
@@ -171,6 +175,6 @@
 
 ## 💰 商业授权
 
-> 语义回响 / 情感潮汐解码 ETD 全套技术资产商业授权 · **超级价目表**（分级定价 · 双组合 · 垄断 · 永久锁定 · 完全体打包 8 亿）：
+> 语义回响家族全套技术资产商业授权 · **碎片合成版价目表**（P1 3 亿 → P1.5 2.4 亿 → P2.5 2.7 亿 → P3 3.9 亿 → P4 3 亿 → 完全体 15 亿 → 终极版 30 亿）：
 > [SemanticEcho-Hub · 商业授权价目表](https://github.com/091635Aa/SemanticEcho-Hub/blob/main/%E5%95%86%E4%B8%9A%E6%8E%88%E6%9D%83%E4%BB%B7%E7%9B%AE%E8%A1%A8.md)
 > 洽谈：**DYPUBG2025@QQ.COM**

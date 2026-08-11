@@ -1,0 +1,26 @@
+{
+  "模式汇总": {
+    "裸": {
+      "accuracy_score": 0.1,
+      "consistency_score": 0.6001,
+      "empathy_score": 0.765,
+      "有效决策率": 1.0,
+      "抽样数": 40,
+      "总用时秒": 545.9,
+      "_早停淘汰": false,
+      "_λ": null,
+      "_思考链": true
+    },
+    "四层": {
+      "accuracy_score": 0.25,
+      "consistency_score": 0.6251,
+      "empathy_score": 0.735,
+      "有效决策率": 1.0,
+      "抽样数": 40,
+      "总用时秒": 646.6,
+      "_早停淘汰": false,
+      "_λ": null,
+      "_思考链": true
+    }
+  }
+}

@@ -38,3 +38,35 @@ scripts/_创建数据仓库.py
 scripts/_推送数据仓库.py
 scripts/_更新数据仓库信息.py
 scripts/_检查仓库流量.py
+
+# 敏感 / 内部文件（禁止推送到公开仓库）
+query
+last_ticket_id.txt
+workorder_chat.py
+发送邮件*.py
+测试SMTP登录.py
+邮件正文_*.html
+邮件附件_*.html
+生成邮件*.py
+生成交互附件.py
+semantic_echo_framework_v2.0.0.zip
+
+# 独立子仓库（由各自 GitHub 仓库发布，父仓库不包含）
+发布/SemanticEcho-AnchorEcho/
+发布/1.5B-Turing-Challenge/
+发布/SemanticEcho-ETD-OpenSource/
+图灵测试/repos/
+
+# 图灵测试统一基准：日志 / 临时 / 缓存不发布（结果数据发布）
+图灵测试/统一基准/*_log.txt
+图灵测试/统一基准/_*
+图灵测试/统一基准/*_cache_2026.json
+图灵测试/统一基准/*_out.json
+图灵测试/logs/
+图灵测试/data/turingbench/
+
+# 内部交付 / 商业材料（不发布）
+简介交付包/
+商业展示/
+邮件模板*.md
+邮件附件_材料说明.txt
