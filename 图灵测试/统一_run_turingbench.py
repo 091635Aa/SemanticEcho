@@ -31,7 +31,7 @@ sys.path.insert(0, 本目录)
 import 公共模块 as cm
 
 # ===== 统一 7 模式补丁（种子 2026） =====
-七模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"]
+七模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"]
 # ===== /统一 7 模式补丁 =====
 
 
@@ -59,7 +59,7 @@ def 加载对话():
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--模式", choices=["全部", "裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"], default="全部")
+    ap.add_argument("--模式", choices=["全部", "裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"], default="全部")
     ap.add_argument("--runs", type=int, default=1, help="多次测试轮数（>=1）")
     ap.add_argument("--seed_base", type=int, default=42, help="随机种子基数，每次 run 递增")
     args = ap.parse_args()
@@ -183,8 +183,17 @@ def main():
         记录日志(f"[{模式} 汇总] {json.dumps(汇总, ensure_ascii=False)}")
 
     生成器实例.清理()
+    # 增量合并保存（保留 P1~P5 基线，只追加新模式）
+    已有汇总 = {}
+    if os.path.exists(结果路径):
+        try:
+            with open(结果路径, encoding="utf-8") as f:
+                已有汇总 = json.load(f).get("模式汇总", {})
+        except Exception:
+            pass
+    已有汇总.update(全部汇总)
     with open(结果路径, "w", encoding="utf-8") as f:
-        json.dump({"模式汇总": 全部汇总, "_runs": runs, "_多次运行明细": 多次运行明细}, f, ensure_ascii=False, indent=2)
+        json.dump({"模式汇总": 已有汇总, "_runs": runs, "_多次运行明细": 多次运行明细}, f, ensure_ascii=False, indent=2)
     记录日志(f"结果已保存 -> {结果路径}")
     return 全部汇总 if len(全部汇总) > 1 else 全部汇总[模式列表[0]]
 

@@ -143,7 +143,8 @@ def 加载4bit():
         bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True)
     分词器 = AutoTokenizer.from_pretrained(路径, trust_remote_code=True)
     模型 = AutoModelForCausalLM.from_pretrained(
-        路径, quantization_config=配置, device_map="auto", trust_remote_code=True)
+        路径, quantization_config=配置, device_map="auto", trust_remote_code=True,
+        low_cpu_mem_usage=True)
     模型.eval()
     return 模型, 分词器
 

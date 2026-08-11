@@ -34,6 +34,7 @@ from 目标决策器 import 目标决策器
 from 锚点解码器 import 锚点解码器, 计算熵
 from 超融合解码器 import 超融合解码器
 from 情感共振解码器 import 情感共振解码器
+from 情感导演解码器 import 情感导演解码器
 from semantic_echo.回响池 import 语义回响池
 from semantic_echo.采样处理器 import 回响注入器
 from semantic_echo.情感过滤器 import 情感过滤器
@@ -42,8 +43,15 @@ from semantic_echo.情感过滤器 import 情感过滤器
 目标模型名 = "Qwen2.5-1.5B-Instruct"
 模型路径 = os.path.join(模型空间, 目标模型名)
 
-模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"]
+模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"]
 采样参数 = dict(temperature=1.0, top_p=0.9, top_k=50, repetition_penalty=1.05)
+
+# P6 导演层人格注入（零权重 system prompt，仅 P6 模式生效）
+P6人格注入提示 = (
+    "你是真实的人类，正在和朋友聊天。你的回复要简短自然、口语化，像微信消息，"
+    "通常一到两句话，可以有情绪和小俏皮，但绝不要提及你是AI、模型、助手或机器人，"
+    "也不要使用「您」这样的敬语。"
+)
 
 
 class _GPU回响注入器(回响注入器):
@@ -78,7 +86,8 @@ class 统一生成器:
         print(f"[统一生成器] 加载 {目标模型名} fp16 ...")
         self._分词器 = AutoTokenizer.from_pretrained(模型路径, trust_remote_code=True)
         self._模型 = AutoModelForCausalLM.from_pretrained(
-            模型路径, torch_dtype=torch.float16, trust_remote_code=True).to(self._设备)
+            模型路径, torch_dtype=torch.float16, trust_remote_code=True,
+            low_cpu_mem_usage=True).to(self._设备)
         self._模型.eval()
         torch.cuda.empty_cache()
 
@@ -117,6 +126,14 @@ class 统一生成器:
         self._解码器["P5_超融合"] = 超融合解码器(self._模型, self._分词器, self._锚库, 目标决策,
                                             开启DSA=True, 开启DMR=True, 开启锚点偏置=False,
                                             α基=0.15, α倍率=1.0, T_emo=0.5, 句子停止=True)
+        # P6 情感导演解码（EDD）：任务自适应强度 + 进度调度 + 在线纠正 + 多通道正交注入
+        self._解码器["P6_情感导演"] = 情感导演解码器(self._模型, self._分词器, self._锚库, 目标决策,
+                                               开启DMR=True, 开启KV调制=True, 开启V调制=True,
+                                               开启锚点偏置=True, 开启DSA=True,
+                                               α基=0.18, κ基=0.20, κ_v基=0.12, β基=0.6,
+                                               AI腔抑制强度=2.0, 口语化强度=0.6,
+                                               任务自适应=True, 进度调度=True, 在线纠正=True,
+                                               句子停止=True)
         try:
             from 潮汐解码器 import 潮汐解码器
             if 感知器 is not None:
@@ -146,6 +163,17 @@ class 统一生成器:
         if 模板 == "纯文本":
             提示 = "\n\n".join(x["content"] for x in 消息)
         else:
+            # P6 导演层人格注入：零权重，仅 P6 模式、chat 模板生效。
+            # 跳过条件：已有 system（角色扮演）；要求结构化输出（JSON）；
+            # 或用户提示已自带任务框架（HeartBench"对话历史/真诚伙伴"等）——
+            # 后者需要细腻表达，简短人格指令会伤害 rubric 命中。
+            if 模式 == "P6_情感导演" and not any(x["role"] == "system" for x in 消息):
+                用户内容 = " ".join(x["content"] for x in 消息 if x["role"] == "user")
+                _跳过 = ("JSON", "decision_choice", "final_decision", "Output strictly",
+                        "rubric", "```", "dialogue_history", "对话历史", "真诚伙伴",
+                        "下文回应", "考题", "请将以上", "设定", "场景")
+                if not any(_w in 用户内容 for _w in _跳过):
+                    消息 = [{"role": "system", "content": P6人格注入提示}] + 消息
             提示 = self._分词器.apply_chat_template(
                 消息, tokenize=False, add_generation_prompt=True)
         inputs = self._分词器(提示, return_tensors="pt").to(self._设备)
@@ -167,14 +195,23 @@ class 统一生成器:
         解码 = self._解码器.get(模式)
         if 解码 is None:
             raise ValueError(f"未知模式：{模式}")
+        # 角色（EmoCharacter 等）→ 传给解码器做角色感知锚定
+        _角色 = kwargs.get("角色")
+        # P6：仅**外部** system（真实角色扮演，非 P6 自注入的通用人格）→ 指令标记，
+        # 让 EDD 全程保持角色扮演锚定，防止后续轮次漂移
+        _指令 = ""
+        if 模式 == "P6_情感导演" and any(
+                x["role"] == "system" and x.get("content") != P6人格注入提示 for x in 消息):
+            _指令 = "角色扮演"
         if 模式 == "P2.5_潮汐":
             out = 解码.生成(inputs.input_ids, max_new_tokens=max_new_tokens,
                            eos_token_id=self._分词器.eos_token_id,
-                           tokenizer=self._分词器, 用户文本=消息[-1]["content"], **采样参数)
+                           tokenizer=self._分词器, 用户文本=消息[-1]["content"],
+                           角色=_角色, **采样参数)
         else:
             out, _ = 解码.生成(inputs.input_ids, max_new_tokens=max_new_tokens,
                              eos_token_id=self._分词器.eos_token_id, 用户文本=消息[-1]["content"],
-                             **采样参数)
+                             指令=_指令, 角色=_角色, **采样参数)
         新 = out[0, inputs.input_ids.shape[1]:]
         return self._分词器.decode(新, skip_special_tokens=True).strip()
 

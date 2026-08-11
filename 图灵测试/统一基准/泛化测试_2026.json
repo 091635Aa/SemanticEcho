@@ -1,0 +1,30 @@
+{
+  "模式汇总": {
+    "Qwen2.5-3B-Instruct": {
+      "裸": {
+        "win_rate_against_human": 0.4167,
+        "average_rating": 0.8,
+        "average_rating_raw": 4.0
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7667,
+        "average_rating_raw": 3.83
+      }
+    },
+    "Qwen3-1.7B-Instruct": {
+      "裸": {
+        "win_rate_against_human": 0.5,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.8333,
+        "average_rating": 0.7833,
+        "average_rating_raw": 3.92
+      }
+    }
+  },
+  "样本数": 12,
+  "说明": "各模型上 裸 vs P6_情感导演 的 LLM-Judge（win_rate 与 rating）"
+}

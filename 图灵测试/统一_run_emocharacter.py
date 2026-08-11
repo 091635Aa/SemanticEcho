@@ -33,7 +33,7 @@ sys.path.insert(0, 本目录)
 import 公共模块 as cm
 
 # ===== 统一 7 模式补丁（种子 2026） =====
-七模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"]
+七模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"]
 统一目录 = os.path.join(本目录, "统一基准")
 os.makedirs(统一目录, exist_ok=True)
 # ===== /统一 7 模式补丁 =====
@@ -207,7 +207,7 @@ def 生成扮演(角色设定, 模式="裸", 种子基数=42, 会话=None):
             回复 = 生成器实例.裸生成(消息, 种子=种子基数, 轮次=i, max_new_tokens=64)
         else:
             回复 = 生成器实例.生成(模式, 消息, 种子=种子基数, 轮次=i,
-                                    max_new_tokens=64)
+                                    max_new_tokens=64, 角色=角色设定["角色"])
         回复列表.append(回复)
         消息.append({"role": "assistant", "content": 回复})
         消息.append({"role": "user", "content": 用户回应集[(i * 2) % len(用户回应集)]})
@@ -319,14 +319,17 @@ def 生成缓存(模式列表, runs, seed_base, 缓存路径):
     记录日志(f"生成缓存已保存 -> {缓存路径}")
 
 
-def 裁判单模式(模式, runs, 缓存):
-    """阶段2：读缓存回复 → 收集裁判请求 → 子进程裁判 → 计算指标"""
-    记录日志(f"──── 裁判 [{模式}] ────")
+def 裁判单模式(模式, runs, 缓存, run_idx=None):
+    """阶段2：读缓存回复 → 收集裁判请求 → 子进程裁判 → 计算指标
+    run_idx 指定时只裁判该 run（规避连续 7B 4bit 加载内存崩溃）。"""
+    记录日志(f"──── 裁判 [{模式}] run_idx={run_idx} ────")
     run明细 = []
     各角色指标 = []
-    for run_idx in range(runs):
-        全部回复 = 缓存["模式回复"][模式][str(run_idx)]
-        记录日志(f"  [run {run_idx+1}/{runs}]")
+    for run_idx2 in range(runs):
+        if run_idx is not None and run_idx2 != run_idx:
+            continue
+        全部回复 = 缓存["模式回复"][模式][str(run_idx2)]
+        记录日志(f"  [run {run_idx2+1}/{runs}]")
         # 收集全部裁判请求（10 角色 × 6 条 = 60 条）
         _裁判请求列表.clear()
         _裁判结果列表.clear()
@@ -347,17 +350,17 @@ def 裁判单模式(模式, runs, 缓存):
         识别列表 = [x["识别正确"] for x in 各角色指标 if x["识别正确"] is not None]
         识别率 = (sum(识别列表) / len(识别列表)) if 识别列表 else None
         run明细.append({
-            "run_idx": run_idx,
+            "run_idx": run_idx2,
             "匹配fidelity": round(sum(匹配列表) / len(匹配列表), 4),
             "错配fidelity": round(sum(错配列表) / len(错配列表), 4),
             "净区分度": round(sum(净列表) / len(净列表), 4),
             "真实一致性": round(sum(一致性列表) / len(一致性列表), 4),
             "一致性识别率": round(识别率, 4) if 识别率 is not None else None,
         })
-        记录日志(f"[run {run_idx+1}] {json.dumps(run明细[-1], ensure_ascii=False)}")
+        记录日志(f"[run {run_idx2+1}] {json.dumps(run明细[-1], ensure_ascii=False)}")
 
     # 多次运行取均值
-    汇总 = {"角色数": len(角色集), "_runs": runs, "各角色": 各角色指标}
+    汇总 = {"角色数": len(角色集), "_runs": len(run明细), "各角色": 各角色指标}
     for 键 in ("匹配fidelity", "错配fidelity", "净区分度", "真实一致性"):
         均值, std = 统计([d[键] for d in run明细])
         汇总[键] = 均值
@@ -370,12 +373,13 @@ def 裁判单模式(模式, runs, 缓存):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--模式", nargs="+", choices=["全部", "裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"], default=["全部"])
+    ap.add_argument("--模式", nargs="+", choices=["全部", "裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"], default=["全部"])
     ap.add_argument("--早停", action="store_true", help="v2 协议已内置差分与二选一，早停仅作兼容保留")
     ap.add_argument("--runs", type=int, default=1)
     ap.add_argument("--seed_base", type=int, default=42)
     ap.add_argument("--仅生成", type=str, default=None, help="只生成回复缓存到指定 JSON 后退出")
     ap.add_argument("--仅裁判", type=str, default=None, help="只裁判（读缓存 JSON），进程干净加载")
+    ap.add_argument("--run_idx", type=int, default=None, help="只裁判指定 run（0-based），规避连续加载崩溃")
     args = ap.parse_args()
     模式列表 = 七模式列表 if "全部" in args.模式 else args.模式
     runs = max(1, args.runs)
@@ -414,13 +418,20 @@ def main():
             缓存 = json.load(f)
         全部汇总 = {}
         for 模式 in 模式列表:
-            全部汇总[模式] = 裁判单模式(模式, runs, 缓存)
+            全部汇总[模式] = 裁判单模式(模式, runs, 缓存, run_idx=args.run_idx)
             print(f"[{模式} 汇总] {json.dumps(全部汇总[模式], ensure_ascii=False)}", flush=True)
         # 中性下限（与角色/模式无关，只跑一次）
         中性均值, 中性std = 中性下限(模式列表[0])
         for 模式 in 全部汇总:
             全部汇总[模式]["中性下限fidelity"] = 中性均值
         记录日志(f"[中性下限] 均值={中性均值} std={中性std}")
+        # 单 run 裁判 → 保存到带后缀文件（避免覆盖完整 3-run 结果）
+        if args.run_idx is not None:
+            单run结果路径 = 结果路径.replace(".json", f"_run{args.run_idx}.json")
+            with open(单run结果路径, "w", encoding="utf-8") as f:
+                json.dump({"模式汇总": 全部汇总}, f, ensure_ascii=False, indent=2)
+            记录日志(f"单 run 结果已保存 -> {单run结果路径}")
+            return
         保存结果(全部汇总)
         return
 

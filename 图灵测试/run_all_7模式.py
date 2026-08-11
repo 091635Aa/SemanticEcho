@@ -17,7 +17,7 @@ from datetime import datetime
 输出目录 = os.path.join(本目录, "results")
 os.makedirs(输出目录, exist_ok=True)
 
-七模式 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"]
+七模式 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"]
 
 性能路径 = r"c:\Users\Administrator\Documents\KV 情感共振解码\评测结果\P1_5统一_性能_2026.json"
 情感理解路径 = r"c:\Users\Administrator\Documents\KV 情感共振解码\评测结果\P1_5统一_情感理解_2026.json"

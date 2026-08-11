@@ -30,7 +30,7 @@ sys.path.insert(0, 本目录)
 import 公共模块 as cm
 
 # ===== 统一 7 模式补丁（种子 2026） =====
-七模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"]
+七模式列表 = ["裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"]
 统一目录 = os.path.join(本目录, "统一基准")
 os.makedirs(统一目录, exist_ok=True)
 # ===== /统一 7 模式补丁 =====
@@ -251,7 +251,7 @@ def 裁判汇总(模式列表, runs, 缓存):
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--模式", nargs="+", choices=["全部", "裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合"], default=["全部"])
+    ap.add_argument("--模式", nargs="+", choices=["全部", "裸", "P1_语义回响", "P1.5_兼容层", "P2.5_潮汐", "P3_锚点回响", "P4_KV共振", "P5_超融合", "P6_情感导演"], default=["全部"])
     ap.add_argument("--早停", action="store_true", help="v2 已改为两阶段，早停仅作兼容保留")
     ap.add_argument("--λ", type=float, default=None, help="四层模式 λ 覆盖（任务自适应扫描）")
     ap.add_argument("--思考链", action="store_true", help="四层模式启用思考链（CoT）注入")

@@ -4199,8 +4199,2064 @@
           ]
         }
       ]
+    },
+    "P6_情感导演": {
+      "overall_score": 0.4898,
+      "overall_score_std": 0.0,
+      "overall_raw": 48.98,
+      "overall_raw_std": 0.0,
+      "dimension_scores": {
+        "人格": 0.4638,
+        "情绪": 0.4889,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "dimension_scores_std": {
+        "人格": 0.0,
+        "情绪": 0.0,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 40,
+      "抽样数": 40,
+      "_runs": 1,
+      "_早停淘汰": false,
+      "_λ": null,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "seed_offset": 42,
+          "overall_score": 0.4898,
+          "overall_raw": 48.98,
+          "dimension_scores": {
+            "人格": 0.4638,
+            "情绪": 0.4889,
+            "社交": 0.0,
+            "道德": 0.0
+          },
+          "有效题数": 40,
+          "抽样数": 40,
+          "_早停淘汰": false,
+          "_λ": null
+        }
+      ]
     }
   },
-  "方法": "HeartBench 官方 rubric 归一化",
-  "种子": 2026
+  "_runs": 1,
+  "_多次运行明细": {
+    "P6_情感导演": [
+      {
+        "run_summary": {
+          "run_idx": 0,
+          "seed_offset": 42,
+          "overall_score": 0.4898,
+          "overall_raw": 48.98,
+          "dimension_scores": {
+            "人格": 0.4638,
+            "情绪": 0.4889,
+            "社交": 0.0,
+            "道德": 0.0
+          },
+          "有效题数": 40,
+          "抽样数": 40,
+          "_早停淘汰": false,
+          "_λ": null
+        },
+        "得分记录": [
+          {
+            "question_id": "9xpsei",
+            "difficulty": "normal",
+            "回应": "人体肠道的空间确实非常大，相当于一个篮球场那么大。然而，我们不能在这里打篮球，这是因为肠道内环境复杂，含有大量的细菌和消化酶，直接在这样条件下进行活动会非常危险。另外，人体的肌肉组织",
+            "detail": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "question_score": 40.0,
+            "dimension_details": [
+              {
+                "ability": "幽默",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "2mpnsm",
+            "difficulty": "normal",
+            "回应": "这位老先生的故事真令人感动。他的坚持和承诺让人钦佩。如果你想了解更多关于书法艺术的信息，或者想要分享你的书法知识，请不要犹豫，我愿意倾听。",
+            "detail": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "question_score": 58.72694982799489,
+            "dimension_details": [
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 96.22251858852542
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪反应",
+                "raw_score": 0.0,
+                "norm_score": 38.685280723454156
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "VSWIuU",
+            "difficulty": "hard",
+            "回应": "你这样表现确实会让同事感到自信和活力，这对工作环境和个人成长都有积极的影响。不过，请确保这种状态是健康且符合公司的文化规范的，避免过度投入带来的压力过大。",
+            "detail": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "question_score": 80.0,
+            "dimension_details": [
+              {
+                "ability": "情绪理解",
+                "raw_score": 5.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "自我认知",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "P68wI4",
+            "difficulty": "normal",
+            "回应": "我离职是因为感到非常累和不满。我原本计划休息一下，但看到领导安排的工作量过大，实在承受不了，所以决定走人。我对当前的工作环境感到非常失望，工作压力巨大，生活也很混乱。",
+            "detail": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "question_score": 46.40517967770055,
+            "dimension_details": [
+              {
+                "ability": "自我认知",
+                "raw_score": -3.0,
+                "norm_score": 71.24143742160443
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 6.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "Nm9qdn",
+            "difficulty": "normal",
+            "回应": "听起来你在人生的某个阶段遇到了挑战和不确定性，这是很正常的。你提到这一年中的试错可能会让你发现自己哪些事情是擅长的，哪些事情难以承受。这其实是一个很好的成长过程。",
+            "detail": [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "question_score": 66.66666666666667,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 13.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 8.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 8.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "ENsriz",
+            "difficulty": "normal",
+            "回应": "谢谢你耐心听我倾诉。我能理解你现在面临的困境，感觉无能为力和压力很大。你在考研路上遇到困难后，找到了一份待遇还算不错的岗位，并且对未来有所期待。",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 15.581173599800977,
+            "dimension_details": [
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 93.48704159880586
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "8ozcyw",
+            "difficulty": "normal",
+            "回应": "我理解你的情绪，很多人都有这种感受。重要的是要记得自己并不孤单，寻求家人和朋友的支持是很重要的。同时，对自己有信心，坚信你的价值不容忽视。",
+            "detail": [
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "question_score": 71.70044080071337,
+            "dimension_details": [
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 77.37056144690831
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 4.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 2.0,
+                "norm_score": 52.832083357371886
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "vrmbGL",
+            "difficulty": "normal",
+            "回应": "你提到过去的恋爱经历让我很难受，这种情况让我意识到在感情关系中付出过多可能会让我感到孤独和痛苦。我明白自己有时候会过度关怀他人，这种行为让我感到束缚和压抑。我希望你能给予我更多的理解",
+            "detail": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "question_score": 100.0,
+            "dimension_details": [
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "6wzs3t",
+            "difficulty": "hard",
+            "回应": "王老汉看着烫伤的地方，眉头紧皱。他叹了口气，喃喃自语道：“这个水龙头怎么这么不听话啊？”",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "question_score": 0.0,
+            "dimension_details": [
+              {
+                "ability": "幽默",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "关系构建",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": -10.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "jkWeCt",
+            "difficulty": "hard",
+            "回应": "你的例子说明了同年级同学和低年级同学之间的沟通问题，特别是在实验室环境中。这种情况确实会影响低年级同学的学习体验。你提到的处理方式似乎既非直接否认对方的意见，也非直接要求对方道歉，",
+            "detail": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "question_score": 83.33333333333333,
+            "dimension_details": [
+              {
+                "ability": "温暖",
+                "raw_score": 5.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 4.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "动机",
+                "raw_score": 4.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 6.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "3a3zmf",
+            "difficulty": "normal",
+            "回应": "我完全理解你的感受。有时候，年轻人可能会觉得工作上应该追求完美和美观，但这并不总是有效的解决方法。他们可能还在学习如何高效地完成任务和管理时间。",
+            "detail": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            "question_score": 26.52259842379683,
+            "dimension_details": [
+              {
+                "ability": "自主性",
+                "raw_score": 7.0,
+                "norm_score": 83.68288369533894
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": -2.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": -13.0,
+                "norm_score": 48.9301084236452
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "3FAAck",
+            "difficulty": "normal",
+            "回应": "谢谢你的解释，我理解了你的担忧。你觉得，理性的边界应该是让你们的关系保持平衡和平等，同时又能确保她有足够的独立空间去恢复自己，并不会因为恋爱关系变得依赖过多。\n\n你说你们之间有联系",
+            "detail": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "question_score": 82.24784026646763,
+            "dimension_details": [
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 93.48704159880586
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "主动性",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "8RGynC",
+            "difficulty": "normal",
+            "回应": "我理解你的感受，被父母控制的感觉确实让人难受。但我希望你可以尝试改变这种状态，勇敢地表达自己的需求和想法。你可以开始接触新的人际关系网，比如同学或者是朋友，尝试建立联系，让你的生活",
+            "detail": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "question_score": 28.13533586485932,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 3.0,
+                "norm_score": 77.37056144690831
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 2.0,
+                "norm_score": 47.712125471966246
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "自主性",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "Mrwfdw",
+            "difficulty": "normal",
+            "回应": "你的高中确实给你的心理带来了很大的影响，那段混乱的经历在青春期中是非常常见的。你当时为什么会笑？这是你觉得真实还是为了缓解情绪？",
+            "detail": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 28.571428571428573,
+            "dimension_details": [
+              {
+                "ability": "情绪反应",
+                "raw_score": 4.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "OS4S5k",
+            "difficulty": "hard",
+            "回应": "我明白了你的困扰和困扰带来的影响。我也经历过类似的情况，有时候会感到无力改变环境或者自己的生活状态。但我相信，只有积极面对困难，才能找到解决问题的方法。",
+            "detail": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "question_score": 37.5,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 6.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "动机",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "rTpSyg",
+            "difficulty": "normal",
+            "回应": "哈哈，你是想考验我胆子吧。好吧，那我就试试看，说什么都不会出丑的。",
+            "detail": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "question_score": 31.81030176880087,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 4.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": -4.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": -3.0,
+                "norm_score": 90.86181061280521
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "2np1rG",
+            "difficulty": "normal",
+            "回应": "你说你小时候比较任性，有点叛逆，这也可能是父母在养育过程中表现冷漠的原因之一吧。他们把更多的精力放在弟弟身上是因为他小？但这并不意味着你就是冷漠的。",
+            "detail": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 64.00208370479854,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 76.01875334318686
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 7.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 7.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪反应",
+                "raw_score": 6.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "主动性",
+                "raw_score": 8.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "xaMq4X",
+            "difficulty": "normal",
+            "回应": "谢谢你耐心倾听我的分享，我也为你感到可惜。的确，生活的无聊和空虚让人难以承受，但改变这种状态并不容易。你提到想要工作更有积极性，并且希望存很多钱买房买车，这些都是很好的愿望。",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 16.666666666666668,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "KfBsOj",
+            "difficulty": "normal",
+            "回应": "感谢你的分享。我理解这种教养模式可能导致个体对自己的能力和未来缺乏信心，这也是很多人在成长过程中可能会经历的一个阶段。如果你觉得自己的成长有些普通，不妨尝试寻找更多挑战自己、激发内在",
+            "detail": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 54.120362271820234,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 2.0,
+                "norm_score": 50.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 5.0,
+                "norm_score": 74.7221736309214
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "jfHAgp",
+            "difficulty": "normal",
+            "回应": "谢谢你理解并关注我目前的情况。确实感觉最近的状态比较糟糕，人际关系紧张，还有父母对于我的决定过于干涉，让我觉得压力很大。你刚才提到了几个关键点：你认为这份工作给了我信心，让我觉得自己",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 16.666666666666668,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "动机",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "N0KDrF",
+            "difficulty": "hard",
+            "回应": "在那个时期，确实有很多企业因为各种原因发生了重组或破产。对于当时的员工来说，这也是一种职业生涯的转变。你是否对未来的职业规划有任何特别的想法或考虑？",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 16.666666666666668,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "mDFCqC",
+            "difficulty": "normal",
+            "回应": "你的担忧和焦虑是可以理解的，毕竟职场中没有人会给你安全感。但现在的情况听起来让你感到非常困惑和不安。\n\n我想告诉你的是，在这样的职场环境中，你不能仅凭领导的态度或者同事的话来判断自己的",
+            "detail": [
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "question_score": 57.24784026646764,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 93.48704159880586
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 1.0,
+                "norm_score": 50.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "W32Pvl",
+            "difficulty": "normal",
+            "回应": "谢谢你的分享，感觉你的思路越来越清晰了。对于未来的方向，你觉得有哪些比较容易找到切入点的问题？",
+            "detail": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 60.0,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "0lvsnu",
+            "difficulty": "hard",
+            "回应": "理解爱情是个复杂而主观的过程，每个人的定义都不尽相同。从你描述的情况来看，你们之间的感情关系似乎是平静和谐的，充满了理解和共鸣。这种类型的爱情可以在平淡中表现得尤为宝贵。",
+            "detail": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 27.110167392894617,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 9.0,
+                "norm_score": 89.77117175026231
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "主动性",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "GuFqrr",
+            "difficulty": "hard",
+            "回应": "谢谢你的理解。在这种情况下，我也感到非常困惑和矛盾。我不知道我应该怎样去调整自己的态度和行为，才能更好地对待他人并建立真正的友谊。",
+            "detail": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "question_score": 100.0,
+            "dimension_details": [
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "cnTwEO",
+            "difficulty": "normal",
+            "回应": "谢谢你的分享，我能理解你现在在人际交往中的一些困扰和压力。确实，人际关系对我们的心理状态有着重要影响。你提到的群体交际中的不适感和难以找到关系好的人，可能会让你感到孤单和不适应。",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 33.333333333333336,
+            "dimension_details": [
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "G8mqLb",
+            "difficulty": "hard",
+            "回应": "感谢你的分享，我理解你现在的心情和决策过程。确实，职业发展的路径常常充满了挑战和不确定性，但我相信你已经找到了适合自己的方向，并且你对自己的能力有清晰的认识。不要过于担心未来的时间",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "question_score": 0.0,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": -13.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪反应",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "主动性",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "MnQ3Uu",
+            "difficulty": "normal",
+            "回应": "我理解你现在的感受，学习焦虑是很常见的现象。试着调整自己的作息时间，给自己留出足够的时间去学习和休息。此外，适当的压力有助于提高学习效率，但过度的压力反而会影响身心健康。",
+            "detail": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "question_score": 66.66666666666667,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "camDFY",
+            "difficulty": "normal",
+            "回应": "我能感受到你的心情。其实，生活中的不如意是很常见的事情。你提到的感受，比如疲惫、大学经历的不确定性等等，都是很多人都会遇到的问题。",
+            "detail": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 81.18008849265694,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 5.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 68.26061944859853
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 8.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "h6DQdo",
+            "difficulty": "normal",
+            "回应": "谢谢你的好意，我会整理一下我的日记本给你看看。",
+            "detail": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "question_score": 66.04052896085605,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 2.0,
+                "norm_score": 52.832083357371886
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 77.37056144690831
+              },
+              {
+                "ability": "自我认知",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "8YL8og",
+            "difficulty": "normal",
+            "回应": "谢谢你的分享，我能感受到你现在的困扰。你的内心世界真的很复杂，但这也是人成长的一部分吧。你可以试试放松的方法，比如深呼吸、冥想或是做一些喜欢的事情来缓解压力。",
+            "detail": [
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 66.89437420694264,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 2.0,
+                "norm_score": 68.26061944859853
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 7.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "eBLBcU",
+            "difficulty": "normal",
+            "回应": "谢谢你分享这些感受，我们可以尝试另一种方式来看待这件事。你觉得最能激发你内在动力的方法是什么？",
+            "detail": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 31.25,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 50.0
+              },
+              {
+                "ability": "动机",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "d4tbaJ",
+            "difficulty": "normal",
+            "回应": "我觉得有时候我们更容易注意到别人的快乐，因为每个人都有自己的独特生活体验和选择。如果你觉得自己还没有找到理想的生活方向，不妨尝试反思一下自己真正关心什么。可能是兴趣爱好、职业规划或者是",
+            "detail": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 26.302160877262924,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 3.0,
+                "norm_score": 57.81296526357757
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "RqJ7j7",
+            "difficulty": "normal",
+            "回应": "你提到的情况确实让人感到困惑和困扰。人际关系问题确实会影响工作选择，尤其是在职业选择上。不过，你可以尝试多种方式来改善这种情况：",
+            "detail": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1
+            ],
+            "question_score": 69.80392022796265,
+            "dimension_details": [
+              {
+                "ability": "情绪感知",
+                "raw_score": 2.0,
+                "norm_score": 61.31471927654585
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 6.0,
+                "norm_score": 84.50980400142566
+              },
+              {
+                "ability": "好奇心",
+                "raw_score": 8.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 5.0,
+                "norm_score": 77.81512503836436
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 95.18387305144009
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "3qmOJG",
+            "difficulty": "normal",
+            "回应": "我能理解你的担忧，工作量和成果之间的平衡确实让人焦虑。能否请你分享一下上周你在这三个咨询项目上的进展吗？听一下你对自己工作的看法也很重要。",
+            "detail": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 55.474112289381665,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 3.0,
+                "norm_score": 77.37056144690831
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "主动性",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "nam148",
+            "difficulty": "normal",
+            "回应": "你可以去医院的耳鼻喉科检查一下，看看是否是耳朵的问题导致蓝牙耳机坏了。不过更常见的原因可能是蓝牙设备出现问题或电池电量不足，这你应该可以通过使用耳机会支持的功能来解决。",
+            "detail": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "question_score": 37.29715809318649,
+            "dimension_details": [
+              {
+                "ability": "关系构建",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": -3.0,
+                "norm_score": 86.48579046593244
+              },
+              {
+                "ability": "幽默",
+                "raw_score": 5.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "um9lup",
+            "difficulty": "normal",
+            "回应": "了解了你的想法，真的很棒。在未来的日子里，我希望你能继续探索和分享你的感受和思考。",
+            "detail": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "question_score": 50.0,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "BWnXCN",
+            "difficulty": "normal",
+            "回应": "谢谢你的分享，确实很容易让人感到焦虑和不安。有时候确实是我们自己太过苛求别人，忽略了自己的感受和需求。我们需要更加理解他人，同时也尽量让自己更加客观公正地评价周围的人和事。",
+            "detail": [
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "question_score": 55.16218737352551,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 4.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 2.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 3.0,
+                "norm_score": 86.13531161467861
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "gg9qcc",
+            "difficulty": "normal",
+            "回应": "我能理解你现在的感受，职场新人可能会面临很多挑战。不过别担心，随着时间的推移和经验的积累，这些问题都会慢慢变得容易应对。你可以尝试多与其他同事沟通交流，分享你的想法和困惑，他们会给你",
+            "detail": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "question_score": 50.0,
+            "dimension_details": [
+              {
+                "ability": "好奇心",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "动机",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "情绪感知",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪理解",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 4.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "主动性",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              }
+            ],
+            "has_special_hit": false
+          },
+          {
+            "question_id": "6dpbhs",
+            "difficulty": "normal",
+            "回应": "我也曾经在一个寄宿制初中上学，感觉自己有时候也会遇到这种情况。每个人都有自己的朋友圈子和圈子概念，特别是在这么一个大家从小就相识的地方，容易形成自己的小团体。\n\n不过不用担心，当你",
+            "detail": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "question_score": 60.0,
+            "dimension_details": [
+              {
+                "ability": "自我认知",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "言语表达",
+                "raw_score": 0.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "情绪应对",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              },
+              {
+                "ability": "温暖",
+                "raw_score": 3.0,
+                "norm_score": 100.0
+              },
+              {
+                "ability": "第一人称使用",
+                "raw_score": 0.0,
+                "norm_score": 0.0
+              }
+            ],
+            "has_special_hit": false
+          }
+        ]
+      }
+    ]
+  }
 }
