@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "保留所有权利 — 任何人可基于学术目的自由复现"}
 authors = [
-    {name = "邓斯键", email = "DYPUBG2025@QQ.COM"},
+    {name = "邓同学", email = "DYPUBG2025@QQ.COM"},
 ]
 
 keywords = ["llm", "semantic", "echo", "emotion", "nlp", "推理增强", "情感表达"]

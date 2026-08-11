@@ -681,7 +681,7 @@ def _创建界面() -> "gr.Blocks":
             <div style="text-align:center; color:#888; font-size:13px;">
               <b>语义回响 (Semantic Echo)</b> —
               通过回收被丢弃Token嵌入增强语言模型表达能力<br>
-              作者: 邓斯键 · 联系: DYPUBG2025@QQ.COM ·
+              作者: 邓同学 · 联系: DYPUBG2025@QQ.COM ·
               <a href="https://github.com/091635Aa/SemanticEcho" target="_blank">GitHub</a>
             </div>
             """

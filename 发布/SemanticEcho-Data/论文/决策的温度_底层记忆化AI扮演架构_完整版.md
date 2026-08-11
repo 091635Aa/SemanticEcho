@@ -1,6 +1,6 @@
 # 决策的温度：底层记忆化 AI 扮演五层通用架构——大模型决策性、扮演一致性与情感表达的可工程化实现 {.paper-title}
 
-> 邓斯键${}^\dagger$（项目主导）　DeepSeek V4${}^\ddagger$（AI 人与 AI 辅助工具）
+> 邓同学${}^\dagger$（项目主导）　DeepSeek V4${}^\ddagger$（AI 人与 AI 辅助工具）
 >
 > ${}^\dagger$项目主导、核心概念、技术路线与实验设计　${}^\ddagger$代码实现辅助、实验执行辅助与论文撰写辅助
 >
@@ -934,8 +934,8 @@ $\lambda$ 与语义熵的倒 U 型关系可由信噪比解释：$\lambda$ 较小
 8. Team, H. SmolLM2: When smol goes big. HuggingFace, 2024.
 9. Abdin, M., et al. Phi-3 technical report: A highly capable language model locally on your phone. Microsoft, 2024.
 10. Yang, A., et al. EmoCharacter: Evaluating the emotional intelligence of LLM-based role-playing agents. 2024.
-11. 邓斯键, DeepSeek V4. 语义回响：面向超级智能体陪伴的分层记忆、深度适配与情感增强一体化推理框架. 2026.
-12. 邓斯键, DeepSeek V4. 全流程最终版：底层记忆化 AI 扮演五层架构技术说明. 2026.
+11. 邓同学, DeepSeek V4. 语义回响：面向超级智能体陪伴的分层记忆、深度适配与情感增强一体化推理框架. 2026.
+12. 邓同学, DeepSeek V4. 全流程最终版：底层记忆化 AI 扮演五层架构技术说明. 2026.
 
 ---
 

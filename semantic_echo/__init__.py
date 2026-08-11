@@ -36,7 +36,7 @@ from semantic_echo.check_compatibility import (
 )
 
 __version__ = "1.0.0"
-__author__ = "邓斯键"
+__author__ = "邓同学"
 __license__ = "保留所有权利（All Rights Reserved）— 任何人可基于学术目的自由复现"
 
 __all__ = [

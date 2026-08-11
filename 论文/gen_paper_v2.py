@@ -48,7 +48,7 @@ parts.append(r"""% ============================================================
   \large \textbf{Semantic Echo: Enhancing LLM Expressiveness by Recycling Discarded Token Embeddings}
   \vspace{-0.3cm}}
 \author{
-  邓斯键${}^{1\dagger}$（思路）\qquad
+  邓同学${}^{1\dagger}$（思路）\qquad
   DeepSeek${}^{2\ddagger}$（AI实现）\\[4pt]
   \small${}^\dagger$核心概念、技术路线与实验设计 \\
   \small${}^\ddagger$代码实现、实验执行与论文撰写}

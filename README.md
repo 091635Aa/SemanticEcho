@@ -141,7 +141,7 @@ python -m semantic_echo.demo_app
 
 ## 作者
 
-- 邓斯键†（项目主导）
+- 邓同学†（项目主导）
 - DeepSeek V4‡（AI人与AI辅助工具）
 
 † 项目主导、核心概念、技术路线与实验设计

@@ -146,7 +146,7 @@
 | 🐙 GitHub | [091635Aa](https://github.com/091635Aa) |
 | 🤖 魔塔社区 | https://modelscope.cn/models/DYSLPUBG/SemanticEcho |
 
-**作者：邓斯键**（初中生独立研究，DeepSeek V4 辅助代码实现与论文撰写）。
+**作者：邓同学**（初中生独立研究，DeepSeek V4 辅助代码实现与论文撰写）。
 真诚希望本文能被业界看见，若有合适机会（面试、交流、实习等）欢迎联系。
 
 **致谢**：感谢深度求索（DeepSeek）的开源生态支持；感谢字节跳动 Trae AI IDE 的辅助工具支持。

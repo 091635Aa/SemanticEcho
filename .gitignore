@@ -71,3 +71,13 @@ semantic_echo_framework_v2.0.0.zip
 商业展示/
 邮件模板*.md
 邮件附件_材料说明.txt
+简历交付包/
+
+# 发布流程一次性脚本（含 GitHub Token，禁止推送）
+发布/上传脚本.py
+发布/前端优化任务记录.md
+发布/推送Hub仓库.py
+发布/推送定价更新.py
+发布/更新README引用Hub.py
+发布/查看主仓库定价.py
+发布/验证*.py
