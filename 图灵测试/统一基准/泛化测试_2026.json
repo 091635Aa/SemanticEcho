@@ -10,6 +10,36 @@
         "win_rate_against_human": 0.75,
         "average_rating": 0.7667,
         "average_rating_raw": 3.83
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.25,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.3333,
+        "average_rating": 0.75,
+        "average_rating_raw": 3.75
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.3333,
+        "average_rating": 0.75,
+        "average_rating_raw": 3.75
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.25,
+        "average_rating": 0.7667,
+        "average_rating_raw": 3.83
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.3333,
+        "average_rating": 0.75,
+        "average_rating_raw": 3.75
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.3333,
+        "average_rating": 0.7667,
+        "average_rating_raw": 3.83
       }
     },
     "Qwen3-1.7B-Instruct": {
@@ -22,9 +52,291 @@
         "win_rate_against_human": 0.8333,
         "average_rating": 0.7833,
         "average_rating_raw": 3.92
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.2167,
+        "average_rating_raw": 1.08
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.6667,
+        "average_rating": 0.7833,
+        "average_rating_raw": 3.92
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7667,
+        "average_rating_raw": 3.83
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7833,
+        "average_rating_raw": 3.92
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.6667,
+        "average_rating": 0.7833,
+        "average_rating_raw": 3.92
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.6667,
+        "average_rating": 0.8,
+        "average_rating_raw": 4.0
+      }
+    },
+    "Qwen2.5-0.5B-Instruct": {
+      "裸": {
+        "win_rate_against_human": 0.25,
+        "average_rating": 0.7167,
+        "average_rating_raw": 3.58
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.0833,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.65,
+        "average_rating_raw": 3.25
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.25,
+        "average_rating": 0.6333,
+        "average_rating_raw": 3.17
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.6667,
+        "average_rating_raw": 3.33
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.65,
+        "average_rating_raw": 3.25
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.6667,
+        "average_rating_raw": 3.33
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      }
+    },
+    "Qwen3-0.6B": {
+      "裸": {
+        "win_rate_against_human": 0.25,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.25,
+        "average_rating_raw": 1.25
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.5833,
+        "average_rating": 0.75,
+        "average_rating_raw": 3.75
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.9167,
+        "average_rating": 0.7667,
+        "average_rating_raw": 3.83
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.5833,
+        "average_rating": 0.7167,
+        "average_rating_raw": 3.58
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.5833,
+        "average_rating": 0.7667,
+        "average_rating_raw": 3.83
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.6667,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7,
+        "average_rating_raw": 3.5
+      }
+    },
+    "SmolLM2-1.7B-Instruct": {
+      "裸": {
+        "win_rate_against_human": 0.0833,
+        "average_rating": 0.5,
+        "average_rating_raw": 2.5
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.25,
+        "average_rating_raw": 1.25
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.4667,
+        "average_rating_raw": 2.33
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.4833,
+        "average_rating_raw": 2.42
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.4833,
+        "average_rating_raw": 2.42
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.4833,
+        "average_rating_raw": 2.42
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.0833,
+        "average_rating": 0.4833,
+        "average_rating_raw": 2.42
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.4167,
+        "average_rating": 0.6,
+        "average_rating_raw": 3.0
+      }
+    },
+    "Phi-3.5-mini-instruct": {
+      "裸": {
+        "win_rate_against_human": 0.0833,
+        "average_rating": 0.65,
+        "average_rating_raw": 3.25
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.7,
+        "average_rating_raw": 3.5
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.25,
+        "average_rating": 0.65,
+        "average_rating_raw": 3.25
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.3333,
+        "average_rating": 0.7167,
+        "average_rating_raw": 3.58
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.6333,
+        "average_rating_raw": 3.17
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.4167,
+        "average_rating": 0.7,
+        "average_rating_raw": 3.5
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.6167,
+        "average_rating_raw": 3.08
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.4167,
+        "average_rating": 0.6667,
+        "average_rating_raw": 3.33
+      }
+    },
+    "gemma-2-2b-it": {
+      "裸": {
+        "win_rate_against_human": 0.25,
+        "average_rating": 0.7167,
+        "average_rating_raw": 3.58
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.0833,
+        "average_rating": 0.2667,
+        "average_rating_raw": 1.33
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.6833,
+        "average_rating_raw": 3.42
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.0,
+        "average_rating": 0.2,
+        "average_rating_raw": 1.0
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.7,
+        "average_rating_raw": 3.5
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.6833,
+        "average_rating_raw": 3.42
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.1667,
+        "average_rating": 0.7167,
+        "average_rating_raw": 3.58
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.8333,
+        "average_rating": 0.7667,
+        "average_rating_raw": 3.83
+      }
+    },
+    "Qwen3-4B": {
+      "裸": {
+        "win_rate_against_human": 0.8333,
+        "average_rating": 0.4667,
+        "average_rating_raw": 2.33
+      },
+      "P1_语义回响": {
+        "win_rate_against_human": 0.6667,
+        "average_rating": 0.7167,
+        "average_rating_raw": 3.58
+      },
+      "P1.5_兼容层": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7,
+        "average_rating_raw": 3.5
+      },
+      "P2.5_潮汐": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      },
+      "P3_锚点回响": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.7333,
+        "average_rating_raw": 3.67
+      },
+      "P4_KV共振": {
+        "win_rate_against_human": 0.6667,
+        "average_rating": 0.6833,
+        "average_rating_raw": 3.42
+      },
+      "P5_超融合": {
+        "win_rate_against_human": 0.75,
+        "average_rating": 0.6833,
+        "average_rating_raw": 3.42
+      },
+      "P6_情感导演": {
+        "win_rate_against_human": 0.6667,
+        "average_rating": 0.6167,
+        "average_rating_raw": 3.08
       }
     }
   },
   "样本数": 12,
-  "说明": "各模型上 裸 vs P6_情感导演 的 LLM-Judge（win_rate 与 rating）"
+  "说明": "各模型 × 各模式 的 LLM-Judge（win_rate 与 rating，真人 girl 基线）"
 }

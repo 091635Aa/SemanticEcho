@@ -21,7 +21,7 @@ from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, BitsAn
 from safetensors import safe_open
 
 模型空间 = r"c:\Users\Administrator\Documents\论文+临时目录\模型空间"
-裁判模型名 = "Qwen2.5-7B-Instruct"
+裁判模型名 = os.environ.get("裁判模型", "Qwen2.5-7B-Instruct")
 
 # ── HeartBench rubric 裁判提示 ──
 评分提示模板 = """你是一个专业、严苛的心理学打分批评专家，请根据以上对话历史（作为考题）与待测AI的表现进行打分。
@@ -143,7 +143,7 @@ def 加载4bit():
         bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True)
     分词器 = AutoTokenizer.from_pretrained(路径, trust_remote_code=True)
     模型 = AutoModelForCausalLM.from_pretrained(
-        路径, quantization_config=配置, device_map="auto", trust_remote_code=True,
+        路径, quantization_config=配置, device_map={"": 0}, trust_remote_code=True,
         low_cpu_mem_usage=True)
     模型.eval()
     return 模型, 分词器
@@ -176,6 +176,20 @@ def 加载bf16():
             if hasattr(_模块, "original_inv_freq") and _模块.original_inv_freq is not None:
                 _模块.original_inv_freq.copy_(_inv)
     torch.cuda.empty_cache()
+    模型.eval()
+    分词器 = AutoTokenizer.from_pretrained(路径, trust_remote_code=True)
+    return 模型, 分词器
+
+
+def 加载fp16():
+    """小裁判（如 3B）直接 fp16 加载（规避 bnb 在 Windows 推理中段崩溃）"""
+    gc.collect()
+    torch.cuda.empty_cache()
+    路径 = os.path.join(模型空间, 裁判模型名)
+    print(f"[裁判子进程] 加载 {裁判模型名} fp16 ...", flush=True)
+    模型 = AutoModelForCausalLM.from_pretrained(
+        路径, torch_dtype=torch.float16, trust_remote_code=True,
+        low_cpu_mem_usage=True, device_map={"": 0})
     模型.eval()
     分词器 = AutoTokenizer.from_pretrained(路径, trust_remote_code=True)
     return 模型, 分词器
@@ -258,7 +272,12 @@ def 主():
     请求 = 任务["请求"]
     # 混合模式：每个请求自带 "类型" 字段则按请求类型分发
     混合 = any(r.get("类型") for r in 请求)
-    模型, 分词器 = 加载bf16() if 用bf16 else 加载4bit()
+    if 用bf16:
+        模型, 分词器 = 加载bf16()
+    elif 裁判模型名 != "Qwen2.5-7B-Instruct":
+        模型, 分词器 = 加载fp16()
+    else:
+        模型, 分词器 = 加载4bit()
 
     结果 = []
     for i, r in enumerate(请求):

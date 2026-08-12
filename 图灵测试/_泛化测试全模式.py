@@ -72,16 +72,35 @@ class 泛化生成器:
         self._回响 = None
         self._锚库 = None
         self._设备 = "cuda" if torch.cuda.is_available() else "cpu"
+        self._需恢复cfg = False
+        self._cfg备份路径 = None
 
     def _加载(self):
         if self._模型 is not None:
             return
         路径 = 定位模型路径(self.模型名)
         print(f"[泛化] 加载 {self.模型名} fp16 ...", flush=True)
-        self._分词器 = AutoTokenizer.from_pretrained(路径, trust_remote_code=True)
-        self._模型 = AutoModelForCausalLM.from_pretrained(
-            路径, torch_dtype=torch.float16, trust_remote_code=True,
-            low_cpu_mem_usage=True).to(self._设备)
+        _远程代码 = "Phi" not in self.模型名
+        self._分词器 = AutoTokenizer.from_pretrained(路径, trust_remote_code=_远程代码)
+        _加载参数 = dict(torch_dtype=torch.float16, trust_remote_code=_远程代码,
+                      low_cpu_mem_usage=True)
+        if "Phi" in self.模型名:
+            # Phi-3.5 自带 modeling_phi3.py 与 transformers 5.x DynamicCache API 不兼容
+            # → 移除 auto_map 强制内置 Phi3 实现；同时强制 eager 绕过 flash_attn 窗口缓存
+            import shutil
+            _cfg路径 = os.path.join(路径, "config.json")
+            self._cfg备份路径 = os.path.join(路径, "config.json.bak_generic")
+            if not os.path.exists(self._cfg备份路径):
+                shutil.copy(_cfg路径, self._cfg备份路径)
+            with open(_cfg路径, encoding="utf-8") as f:
+                _cfg = json.load(f)
+            _cfg.pop("auto_map", None)
+            _cfg.pop("_name_or_path", None)
+            with open(_cfg路径, "w", encoding="utf-8") as f:
+                json.dump(_cfg, f, ensure_ascii=False, indent=2)
+            self._需恢复cfg = True
+            _加载参数["attn_implementation"] = "eager"
+        self._模型 = AutoModelForCausalLM.from_pretrained(路径, **_加载参数).to(self._设备)
         self._模型.eval()
         torch.cuda.empty_cache()
 
@@ -155,15 +174,30 @@ class 泛化生成器:
             if not any(_w in 用户内容 for _w in _跳过):
                 消息 = [{"role": "system", "content": P6人格注入提示}] + 消息
 
-        提示 = self._分词器.apply_chat_template(
-            消息, tokenize=False, add_generation_prompt=True)
+        def _应用模板(_消息):
+            try:
+                return self._分词器.apply_chat_template(
+                    _消息, tokenize=False, add_generation_prompt=True)
+            except Exception:
+                # gemma 等模板不支持 system role → 并入第一条 user 并合并相邻同角色
+                _合并 = []
+                for _x in _消息:
+                    _角色 = "user" if _x["role"] == "system" else _x["role"]
+                    if _合并 and _合并[-1]["role"] == _角色:
+                        _合并[-1]["content"] += "\n" + _x["content"]
+                    else:
+                        _合并.append({"role": _角色, "content": _x["content"]})
+                return self._分词器.apply_chat_template(
+                    _合并, tokenize=False, add_generation_prompt=True)
+
+        提示 = _应用模板(消息)
         if 模式 != "裸":
             # Qwen3 思考块污染：注入模式从提示层面禁用 <think>（裸保持默认作基线）
             try:
                 提示 = self._分词器.apply_chat_template(
                     消息, tokenize=False, add_generation_prompt=True, enable_thinking=False)
             except Exception:
-                pass
+                提示 = _应用模板(消息)
         inputs = self._分词器(提示, return_tensors="pt").to(self._设备)
 
         if 模式 == "裸":
@@ -203,6 +237,12 @@ class 泛化生成器:
         return self._分词器.decode(新, skip_special_tokens=True).strip()
 
     def 清理(self):
+        if self._需恢复cfg and self._cfg备份路径 and os.path.exists(self._cfg备份路径):
+            import shutil
+            shutil.copy(self._cfg备份路径,
+                        os.path.join(定位模型路径(self.模型名), "config.json"))
+            self._需恢复cfg = False
+            print(f"  [清理] config.json 已还原", flush=True)
         for d in list(self._解码器.values()) + ([self._回响] if self._回响 else []):
             try:
                 d._移除钩子()
@@ -223,12 +263,37 @@ class 泛化生成器:
 
 
 def 跑裁判(裁判类型, 请求列表):
+    import time as _time
     任务路径 = os.path.join(统一目录, "_泛化全_任务.json")
     输出路径 = os.path.join(统一目录, "_泛化全_输出.json")
     with open(任务路径, "w", encoding="utf-8") as f:
         json.dump({"裁判": 裁判类型, "请求": 请求列表}, f, ensure_ascii=False)
-    subprocess.run([sys.executable, os.path.join(本目录, "裁判子进程.py"),
-                    任务路径, 输出路径], check=True)
+    # 7B 4bit 加载偶发段错误（bnb 与低内存/页文件压力有关）→ 4bit 重试 8 次，
+    # 仍失败则回退 bf16 手动分片加载（meta 创建，RAM 需求低，直载 GPU）
+    最后错误 = None
+    for _用bf16 in (False, True):
+        for 尝试 in range(8 if not _用bf16 else 3):
+            try:
+                _参数 = [sys.executable, os.path.join(本目录, "裁判子进程.py"),
+                         任务路径, 输出路径]
+                if _用bf16:
+                    _参数.append("--bf16")
+                subprocess.run(_参数, check=True)
+                最后错误 = None
+                break
+            except subprocess.CalledProcessError as e:
+                最后错误 = e
+                print(f"  [裁判] 子进程失败（{'bf16' if _用bf16 else '4bit'} "
+                      f"第{尝试+1}/{8 if not _用bf16 else 3} 次）"
+                      f"exit={e.returncode}，等待 30s 重试", flush=True)
+                _time.sleep(30)
+                gc.collect()
+                torch.cuda.empty_cache()
+        if 最后错误 is None:
+            break
+        print("  [裁判] 4bit 连续失败，回退 bf16 手动分片加载", flush=True)
+    if 最后错误 is not None:
+        raise 最后错误
     with open(输出路径, encoding="utf-8") as f:
         return json.load(f)
 
@@ -266,6 +331,10 @@ def 阶段生成(模型名, 模式们, 样本数, 缓存路径):
     finally:
         if 生成器 is not None:
             生成器.清理()
+        import time as _time
+        # 生成进程结束后系统内存/显存释放需要时间；立即启动 7B 4bit 裁判子进程易段错误
+        print(f"[阶段1完成] 缓存 -> {缓存路径}，等待 60s 释放内存后进入裁判 ...", flush=True)
+        _time.sleep(60)
     print(f"[阶段1完成] 缓存 -> {缓存路径}", flush=True)
 
 
