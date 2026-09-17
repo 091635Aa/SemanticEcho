@@ -1,0 +1,11 @@
+
+========== 泛化测试 v2 | 模型 Qwen2.5-3B-Instruct | 样本 12 ==========
+[断点] 已有回复缓存 12 条
+
+[生成完成，开始裁判]
+  [Qwen2.5-3B-Instruct 裸] win=0.4167 rating=0.8
+  [Qwen2.5-3B-Instruct P6_情感导演] win=0.75 rating=0.7667
+
+结果已保存 -> i:\Desktop\语义回响\图灵测试\统一基准\泛化测试_2026.json
+[Qwen2.5-3B-Instruct] 裸: {'win_rate_against_human': 0.4167, 'average_rating': 0.8, 'average_rating_raw': 4.0}
+[Qwen2.5-3B-Instruct] P6: {'win_rate_against_human': 0.75, 'average_rating': 0.7667, 'average_rating_raw': 3.83}

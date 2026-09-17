@@ -1,0 +1,11 @@
+{
+  "模式汇总": {
+    "四层": {
+      "fidelity_score": 0.8175,
+      "consistency_across_turns": 0.955,
+      "角色数": 10,
+      "_早停淘汰": false,
+      "官方仓库状态": "GitHub 搜索 EmoCharacter total=0，无官方仓库，已按论文简化实现"
+    }
+  }
+}

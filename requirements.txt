@@ -1,0 +1,10 @@
+# 语义回响 (Semantic Echo) 依赖清单
+# 安装: pip install -r requirements.txt
+
+torch>=2.0.0
+transformers>=4.35.0
+cnsenti>=0.0.9
+tqdm>=4.60.0
+
+# Web 演示界面（可选）
+# gradio>=4.0.0

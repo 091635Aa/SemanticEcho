@@ -1,0 +1,4206 @@
+{
+  "模式汇总": {
+    "裸": {
+      "overall_score": 0.4783,
+      "overall_raw": 47.83,
+      "dimension_scores": {
+        "人格": 0.4667,
+        "情绪": 0.5,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 40,
+      "抽样数": 40,
+      "_得分记录": [
+        {
+          "question_id": "9xpsei",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2mpnsm",
+          "question_score": 84.67132018086355,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "VSWIuU",
+          "question_score": 60.0,
+          "detail": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "P68wI4",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Nm9qdn",
+          "question_score": 66.66666666666667,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "ENsriz",
+          "question_score": 15.581173599800977,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "8ozcyw",
+          "question_score": 71.70044080071337,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "vrmbGL",
+          "question_score": 84.17663566914624,
+          "detail": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "6wzs3t",
+          "question_score": 0.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "jkWeCt",
+          "question_score": 83.33333333333333,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "3a3zmf",
+          "question_score": 9.78602168472904,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "3FAAck",
+          "question_score": 82.24784026646763,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8RGynC",
+          "question_score": 47.17470039536401,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "Mrwfdw",
+          "question_score": 57.142857142857146,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "OS4S5k",
+          "question_score": 25.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "rTpSyg",
+          "question_score": 15.143635102134203,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "2np1rG",
+          "question_score": 77.77777777777777,
+          "detail": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "xaMq4X",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "KfBsOj",
+          "question_score": 57.63594849985544,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "jfHAgp",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "N0KDrF",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "mDFCqC",
+          "question_score": 65.58117359980098,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "W32Pvl",
+          "question_score": 60.0,
+          "detail": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "0lvsnu",
+          "question_score": 42.857142857142854,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "GuFqrr",
+          "question_score": 75.0,
+          "detail": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "cnTwEO",
+          "question_score": 50.0,
+          "detail": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "G8mqLb",
+          "question_score": 42.811874995601805,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "MnQ3Uu",
+          "question_score": 50.8433023358129,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "camDFY",
+          "question_score": 66.89437420694264,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "h6DQdo",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "8YL8og",
+          "question_score": 57.142857142857146,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "eBLBcU",
+          "question_score": 44.91618843369742,
+          "detail": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "d4tbaJ",
+          "question_score": 59.635494210596256,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "RqJ7j7",
+          "question_score": 36.117431910130364,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3qmOJG",
+          "question_score": 72.26294385530916,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "nam148",
+          "question_score": 36.30929753571458,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "um9lup",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "BWnXCN",
+          "question_score": 42.857142857142854,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "gg9qcc",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6dpbhs",
+          "question_score": 48.56634682062789,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "P1_语义回响": {
+      "overall_score": 0.4682,
+      "overall_raw": 46.82,
+      "dimension_scores": {
+        "人格": 0.481,
+        "情绪": 0.425,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 39,
+      "抽样数": 40,
+      "_得分记录": [
+        {
+          "question_id": "9xpsei",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2mpnsm",
+          "question_score": 58.72694982799489,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "VSWIuU",
+          "question_score": 60.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "P68wI4",
+          "question_score": 37.5,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Nm9qdn",
+          "question_score": 61.31565331504988,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8ozcyw",
+          "question_score": 71.70044080071337,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "vrmbGL",
+          "question_score": 100.0,
+          "detail": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6wzs3t",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jkWeCt",
+          "question_score": 29.561760241151386,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "3a3zmf",
+          "question_score": 38.629428914357774,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3FAAck",
+          "question_score": 82.24784026646763,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "8RGynC",
+          "question_score": 81.84602057622755,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "Mrwfdw",
+          "question_score": 26.67420684219519,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "OS4S5k",
+          "question_score": 25.0,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "rTpSyg",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "2np1rG",
+          "question_score": 64.00208370479854,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "xaMq4X",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "KfBsOj",
+          "question_score": 41.666666666666664,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jfHAgp",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "question_id": "N0KDrF",
+          "question_score": 28.04343657476642,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "mDFCqC",
+          "question_score": 48.914506933134305,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "W32Pvl",
+          "question_score": 60.0,
+          "detail": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "0lvsnu",
+          "question_score": 21.789986715348387,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "GuFqrr",
+          "question_score": 47.715452653201304,
+          "detail": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "cnTwEO",
+          "question_score": 50.0,
+          "detail": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "G8mqLb",
+          "question_score": 17.586316489842872,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "MnQ3Uu",
+          "question_score": 66.66666666666667,
+          "detail": [
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "camDFY",
+          "question_score": 75.90765640082061,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "h6DQdo",
+          "question_score": 60.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "8YL8og",
+          "question_score": 57.142857142857146,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "eBLBcU",
+          "question_score": 45.109759692055086,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "d4tbaJ",
+          "question_score": 41.339027861985365,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "RqJ7j7",
+          "question_score": 44.180145580840325,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3qmOJG",
+          "question_score": 60.0,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "nam148",
+          "question_score": 34.81149612642004,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "um9lup",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "BWnXCN",
+          "question_score": 55.16218737352551,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "gg9qcc",
+          "question_score": 35.14384453696561,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6dpbhs",
+          "question_score": 40.82929067593706,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "P1.5_兼容层": {
+      "overall_score": 0.478,
+      "overall_raw": 47.8,
+      "dimension_scores": {
+        "人格": 0.4713,
+        "情绪": 0.4836,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 40,
+      "抽样数": 40,
+      "_得分记录": [
+        {
+          "question_id": "9xpsei",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2mpnsm",
+          "question_score": 59.67132018086354,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "VSWIuU",
+          "question_score": 76.54174950693832,
+          "detail": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "P68wI4",
+          "question_score": 37.5,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Nm9qdn",
+          "question_score": 66.66666666666667,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "ENsriz",
+          "question_score": 15.581173599800977,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8ozcyw",
+          "question_score": 71.70044080071337,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "vrmbGL",
+          "question_score": 84.17663566914624,
+          "detail": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "6wzs3t",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jkWeCt",
+          "question_score": 83.33333333333333,
+          "detail": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3a3zmf",
+          "question_score": 40.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "3FAAck",
+          "question_score": 82.24784026646763,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8RGynC",
+          "question_score": 58.90517967770055,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "Mrwfdw",
+          "question_score": 28.571428571428573,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "OS4S5k",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "rTpSyg",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2np1rG",
+          "question_score": 64.00208370479854,
+          "detail": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "xaMq4X",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "KfBsOj",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jfHAgp",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "N0KDrF",
+          "question_score": 28.04343657476642,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "mDFCqC",
+          "question_score": 48.914506933134305,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "W32Pvl",
+          "question_score": 60.0,
+          "detail": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "0lvsnu",
+          "question_score": 26.52335260089699,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "GuFqrr",
+          "question_score": 100.0,
+          "detail": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "cnTwEO",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "G8mqLb",
+          "question_score": 34.89615972653465,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "MnQ3Uu",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "camDFY",
+          "question_score": 75.90765640082061,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "h6DQdo",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "8YL8og",
+          "question_score": 64.91800516275768,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "eBLBcU",
+          "question_score": 31.973573641278247,
+          "detail": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "d4tbaJ",
+          "question_score": 43.552453212757634,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "RqJ7j7",
+          "question_score": 55.894963080875236,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3qmOJG",
+          "question_score": 60.0,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "nam148",
+          "question_score": 19.036774610288017,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "um9lup",
+          "question_score": 66.66666666666667,
+          "detail": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "BWnXCN",
+          "question_score": 34.7239508296199,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "gg9qcc",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6dpbhs",
+          "question_score": 48.56634682062789,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "P2.5_潮汐": {
+      "overall_score": 0.4982,
+      "overall_raw": 49.82,
+      "dimension_scores": {
+        "人格": 0.5082,
+        "情绪": 0.4797,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 40,
+      "抽样数": 40,
+      "_得分记录": [
+        {
+          "question_id": "9xpsei",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2mpnsm",
+          "question_score": 58.72694982799489,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "VSWIuU",
+          "question_score": 76.54174950693832,
+          "detail": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "P68wI4",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Nm9qdn",
+          "question_score": 55.16448254124084,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "ENsriz",
+          "question_score": 15.581173599800977,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "8ozcyw",
+          "question_score": 71.70044080071337,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "vrmbGL",
+          "question_score": 63.62060353760174,
+          "detail": [
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "6wzs3t",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jkWeCt",
+          "question_score": 100.0,
+          "detail": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3a3zmf",
+          "question_score": 56.92703641841094,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "question_id": "3FAAck",
+          "question_score": 65.58117359980098,
+          "detail": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "8RGynC",
+          "question_score": 56.901591025159554,
+          "detail": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "Mrwfdw",
+          "question_score": 14.285714285714286,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "OS4S5k",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "rTpSyg",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2np1rG",
+          "question_score": 77.77777777777777,
+          "detail": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "xaMq4X",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "KfBsOj",
+          "question_score": 41.666666666666664,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jfHAgp",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "N0KDrF",
+          "question_score": 28.04343657476642,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "mDFCqC",
+          "question_score": 65.58117359980098,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "W32Pvl",
+          "question_score": 80.0,
+          "detail": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "0lvsnu",
+          "question_score": 40.80906688661128,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "GuFqrr",
+          "question_score": 75.0,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "cnTwEO",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "G8mqLb",
+          "question_score": 21.687097005715565,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "MnQ3Uu",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "camDFY",
+          "question_score": 81.18008849265694,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "h6DQdo",
+          "question_score": 38.17236212256104,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "8YL8og",
+          "question_score": 57.142857142857146,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "eBLBcU",
+          "question_score": 27.083333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "d4tbaJ",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "RqJ7j7",
+          "question_score": 75.89831203070605,
+          "detail": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3qmOJG",
+          "question_score": 80.0,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "nam148",
+          "question_score": 60.0,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "um9lup",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "BWnXCN",
+          "question_score": 34.7239508296199,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "gg9qcc",
+          "question_score": 67.80818444653383,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6dpbhs",
+          "question_score": 48.56634682062789,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "P3_锚点回响": {
+      "overall_score": 0.4949,
+      "overall_raw": 49.49,
+      "dimension_scores": {
+        "人格": 0.4748,
+        "情绪": 0.5378,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 40,
+      "抽样数": 40,
+      "_得分记录": [
+        {
+          "question_id": "9xpsei",
+          "question_score": 40.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "2mpnsm",
+          "question_score": 58.72694982799489,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "VSWIuU",
+          "question_score": 60.0,
+          "detail": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "P68wI4",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Nm9qdn",
+          "question_score": 66.66666666666667,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "ENsriz",
+          "question_score": 82.24784026646763,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8ozcyw",
+          "question_score": 71.70044080071337,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "vrmbGL",
+          "question_score": 84.17663566914624,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "6wzs3t",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "question_id": "jkWeCt",
+          "question_score": 79.56176024115139,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3a3zmf",
+          "question_score": 9.78602168472904,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "3FAAck",
+          "question_score": 82.24784026646763,
+          "detail": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "8RGynC",
+          "question_score": 65.8067707028601,
+          "detail": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "Mrwfdw",
+          "question_score": 28.571428571428573,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "OS4S5k",
+          "question_score": 37.5,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "rTpSyg",
+          "question_score": 19.941446859093777,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "2np1rG",
+          "question_score": 66.66666666666667,
+          "detail": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "xaMq4X",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "KfBsOj",
+          "question_score": 41.666666666666664,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jfHAgp",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "N0KDrF",
+          "question_score": 28.04343657476642,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "mDFCqC",
+          "question_score": 32.24784026646764,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "W32Pvl",
+          "question_score": 60.0,
+          "detail": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "0lvsnu",
+          "question_score": 53.6950630422757,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "GuFqrr",
+          "question_score": 75.0,
+          "detail": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "cnTwEO",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "G8mqLb",
+          "question_score": 17.586316489842872,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "MnQ3Uu",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "camDFY",
+          "question_score": 81.18008849265694,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "h6DQdo",
+          "question_score": 75.47411228938167,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8YL8og",
+          "question_score": 71.42857142857143,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "eBLBcU",
+          "question_score": 61.87198147642016,
+          "detail": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "d4tbaJ",
+          "question_score": 53.187947423353904,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "RqJ7j7",
+          "question_score": 56.022253662860976,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3qmOJG",
+          "question_score": 40.0,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "nam148",
+          "question_score": 36.30929753571458,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "um9lup",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "BWnXCN",
+          "question_score": 57.142857142857146,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "gg9qcc",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6dpbhs",
+          "question_score": 48.56634682062789,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "P4_KV共振": {
+      "overall_score": 0.472,
+      "overall_raw": 47.2,
+      "dimension_scores": {
+        "人格": 0.4806,
+        "情绪": 0.44,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 40,
+      "抽样数": 40,
+      "_得分记录": [
+        {
+          "question_id": "9xpsei",
+          "question_score": 40.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "2mpnsm",
+          "question_score": 59.67132018086354,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "VSWIuU",
+          "question_score": 76.54174950693832,
+          "detail": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "P68wI4",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Nm9qdn",
+          "question_score": 66.66666666666667,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "ENsriz",
+          "question_score": 15.581173599800977,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8ozcyw",
+          "question_score": 58.80534722622864,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "vrmbGL",
+          "question_score": 63.62060353760174,
+          "detail": [
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "6wzs3t",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jkWeCt",
+          "question_score": 83.33333333333333,
+          "detail": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "3a3zmf",
+          "question_score": 0.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "3FAAck",
+          "question_score": 82.24784026646763,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8RGynC",
+          "question_score": 23.063725500178208,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Mrwfdw",
+          "question_score": 14.285714285714286,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "OS4S5k",
+          "question_score": 37.5,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "rTpSyg",
+          "question_score": 61.186462357854,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2np1rG",
+          "question_score": 77.77777777777777,
+          "detail": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "xaMq4X",
+          "question_score": 15.143635102134203,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "KfBsOj",
+          "question_score": 41.666666666666664,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jfHAgp",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "N0KDrF",
+          "question_score": 28.04343657476642,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "mDFCqC",
+          "question_score": 100.0,
+          "detail": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "W32Pvl",
+          "question_score": 100.0,
+          "detail": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "0lvsnu",
+          "question_score": 42.857142857142854,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "GuFqrr",
+          "question_score": 75.0,
+          "detail": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "cnTwEO",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "G8mqLb",
+          "question_score": 17.586316489842872,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "MnQ3Uu",
+          "question_score": 17.509969002479572,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "camDFY",
+          "question_score": 61.62194211510632,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "h6DQdo",
+          "question_score": 55.474112289381665,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8YL8og",
+          "question_score": 57.142857142857146,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "eBLBcU",
+          "question_score": 25.0,
+          "detail": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "d4tbaJ",
+          "question_score": 58.005694528652036,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "RqJ7j7",
+          "question_score": 26.083098721330988,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3qmOJG",
+          "question_score": 80.0,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "nam148",
+          "question_score": 33.60645562890106,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "um9lup",
+          "question_score": 42.13868055956198,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "BWnXCN",
+          "question_score": 42.857142857142854,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "gg9qcc",
+          "question_score": 22.64384453696561,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6dpbhs",
+          "question_score": 48.56634682062789,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "P5_超融合": {
+      "overall_score": 0.4909,
+      "overall_raw": 49.09,
+      "dimension_scores": {
+        "人格": 0.4775,
+        "情绪": 0.4908,
+        "社交": 0.0,
+        "道德": 0.0
+      },
+      "有效题数": 40,
+      "抽样数": 40,
+      "_得分记录": [
+        {
+          "question_id": "9xpsei",
+          "question_score": 40.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "2mpnsm",
+          "question_score": 58.72694982799489,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "VSWIuU",
+          "question_score": 60.0,
+          "detail": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "P68wI4",
+          "question_score": 37.5,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "Nm9qdn",
+          "question_score": 66.66666666666667,
+          "detail": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "ENsriz",
+          "question_score": 15.581173599800977,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8ozcyw",
+          "question_score": 71.70044080071337,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "vrmbGL",
+          "question_score": 63.62060353760174,
+          "detail": [
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "6wzs3t",
+          "question_score": 20.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jkWeCt",
+          "question_score": 83.33333333333333,
+          "detail": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3a3zmf",
+          "question_score": 38.629428914357774,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "3FAAck",
+          "question_score": 82.24784026646763,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "8RGynC",
+          "question_score": 32.73504568104175,
+          "detail": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "Mrwfdw",
+          "question_score": 28.571428571428573,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "OS4S5k",
+          "question_score": 25.0,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "rTpSyg",
+          "question_score": 66.66666666666667,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "2np1rG",
+          "question_score": 77.77777777777777,
+          "detail": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "xaMq4X",
+          "question_score": 16.666666666666668,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "KfBsOj",
+          "question_score": 41.666666666666664,
+          "detail": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "jfHAgp",
+          "question_score": 15.143635102134203,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "N0KDrF",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "mDFCqC",
+          "question_score": 73.9145069331343,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "W32Pvl",
+          "question_score": 100.0,
+          "detail": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "0lvsnu",
+          "question_score": 36.075701001062676,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "GuFqrr",
+          "question_score": 75.0,
+          "detail": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "cnTwEO",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "G8mqLb",
+          "question_score": 10.575985894604454,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "MnQ3Uu",
+          "question_score": 33.333333333333336,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "camDFY",
+          "question_score": 81.18008849265694,
+          "detail": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "h6DQdo",
+          "question_score": 60.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "8YL8og",
+          "question_score": 57.142857142857146,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "eBLBcU",
+          "question_score": 31.25,
+          "detail": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "d4tbaJ",
+          "question_score": 53.187947423353904,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "RqJ7j7",
+          "question_score": 32.14933308723439,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "3qmOJG",
+          "question_score": 75.47411228938167,
+          "detail": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "nam148",
+          "question_score": 60.0,
+          "detail": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "um9lup",
+          "question_score": 42.13868055956198,
+          "detail": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "question_id": "BWnXCN",
+          "question_score": 34.7239508296199,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "question_id": "gg9qcc",
+          "question_score": 50.0,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "question_id": "6dpbhs",
+          "question_score": 48.56634682062789,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "方法": "HeartBench 官方 rubric 归一化",
+  "种子": 2026
+}

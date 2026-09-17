@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Tokenizers
+*.tokenizer.json
+
+# 模型文件（太大，不推送）
+本地模型/
+original/
+
+# IDE
+.trae/
+.idea/
+.vscode/
+
+# Temp / Build
+*.tmp
+*.log
+dist/
+build/
+*.egg-info/
+
+# 发布包（只放在 GitHub Release，不提交到仓库）
+*.zip
+*.whl
+*.tar.gz
+
+# 含 GitHub Token 的推送脚本（secret scanning 会拒绝推送，本地使用）
+scripts/推送到1.5B仓库.py
+scripts/推送1.5B仓库_修正README与部署页.py
+scripts/更新仓库信息.py
+scripts/更新GitHub仓库信息.py
+scripts/_创建数据仓库.py
+scripts/_推送数据仓库.py
+scripts/_更新数据仓库信息.py
+scripts/_检查仓库流量.py
+
+# 敏感 / 内部文件（禁止推送到公开仓库）
+query
+last_ticket_id.txt
+workorder_chat.py
+发送邮件*.py
+测试SMTP登录.py
+邮件正文_*.html
+邮件附件_*.html
+生成邮件*.py
+生成交互附件.py
+semantic_echo_framework_v2.0.0.zip
+
+# 独立子仓库（由各自 GitHub 仓库发布，父仓库不包含）
+发布/SemanticEcho-AnchorEcho/
+发布/1.5B-Turing-Challenge/
+发布/SemanticEcho-ETD-OpenSource/
+发布/SemanticEcho-UFD/
+发布/SemanticEcho-EDD-OpenSource/
+图灵测试/repos/
+
+# 图灵测试统一基准：日志 / 临时 / 缓存不发布（结果数据发布）
+图灵测试/统一基准/*_log.txt
+图灵测试/统一基准/_*
+图灵测试/统一基准/*_cache_2026.json
+图灵测试/统一基准/*_out.json
+图灵测试/logs/
+图灵测试/data/turingbench/
+
+# 内部交付 / 商业材料（不发布）
+简介交付包/
+商业展示/
+邮件模板*.md
+邮件附件_材料说明.txt
+简历交付包/
+
+# 发布流程一次性脚本（含 GitHub Token，禁止推送）
+发布/上传脚本.py
+发布/前端优化任务记录.md
+发布/推送Hub仓库.py
+发布/推送定价更新.py
+发布/更新README引用Hub.py
+发布/查看主仓库定价.py
+发布/验证*.py

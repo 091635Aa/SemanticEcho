@@ -1,0 +1,571 @@
+#!/usr/bin/env python3
+"""Generate the expanded TeX paper."""
+
+parts = []
+
+# Preamble
+parts.append(r"""% ============================================================
+% 语义回响：通过回收被丢弃Token嵌入增强语言模型表达能力
+% ============================================================
+
+\documentclass[a4paper, 11pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.8cm, right=2.8cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[sort&compress, numbers]{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue,linkcolor=black,urlcolor=blue}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{algorithm2e}
+\usepackage{xcolor}
+\RestyleAlgo{plain}\SetAlgoCaptionSeparator{~}\SetAlgoVlined
+\graphicspath{{图片/}}
+\newcommand{\methodname}{Semantic Echo}
+\newcommand{\lambdasym}{\lambda}
+\newcommand{\gammasym}{\gamma}
+\newtheorem{definition}{定义}
+\newtheorem{theorem}{定理}
+\renewcommand{\baselinestretch}{1.15}
+
+\begin{document}
+
+\title{\vspace{-1.2cm}
+  \LARGE \textbf{语义回响：通过回收被丢弃Token嵌入\\增强语言模型表达能力}\\
+  \large \textbf{Semantic Echo: Enhancing LLM Expressiveness by Recycling Discarded Token Embeddings}
+  \vspace{-0.3cm}}
+\author{
+  同学${}^{1\dagger}$（思路）\qquad
+  DeepSeek${}^{2\ddagger}$（AI实现）\\[4pt]
+  \small${}^\dagger$核心概念、技术路线与实验设计 \\
+  \small${}^\ddagger$代码实现、实验执行与论文撰写}
+\date{\small 2026年7月}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent 自回归语言模型在每一步解码中仅选取单个Token，其余候选Token的隐藏状态被完全丢弃——本文称此为\textbf{概率暴政}（Probabilistic Tyranny）。
+受人类交流中"潜台词"与"回响"现象的启发，本文提出\textbf{语义回响}（Semantic Echo）范式：
+回收被丢弃Token的隐藏状态，经随机静态投影后重新注入当前表示空间，使模型感知更丰富的语义上下文。
+我们进一步提出了\textbf{情感词库筛选}与\textbf{思考阶段分离注入}两项创新机制。
+在Qwen2.5-0.5B-Instruct上的三轮共13组对照实验表明：
+（1）$\lambda=0.5$弱回响条件下，原始方案可使语义熵提升+17.9\%；
+（2）情感筛选机制可有效缓解$\lambda\geq1.0$时的重复生成问题（E8 vs E4: +25.33\%）；
+（3）三种保留策略对比表明，衰减策略最优，滑动窗口其次，全局保留最弱；
+（4）语义回响不修改模型权重、不重新训练，仅通过采样层扩展实现。
+
+\vspace{0.3cm}
+\noindent \textbf{关键词：} 大型语言模型，语义回响，Token嵌入回收，情感筛选，思考阶段分离，可控文本生成
+\end{abstract}
+""")
+
+# Section 1: Introduction
+parts.append(r"""
+\section{引言}
+
+\subsection{概率暴政：当前范式的隐性缺陷}
+
+自回归语言模型通过在每一步预测下一个Token的条件概率分布$P(x_t \mid x_{<t})$来生成文本~\cite{vaswani2017attention, brown2020language}。
+在解码阶段，模型从词汇表$\mathcal{V}$中选取一个Token $x_t^*$作为输出，而其余$|\mathcal{V}|-1$个候选Token的隐藏状态则被完全丢弃。
+本文将这一机制性浪费称为\textbf{概率暴政}（Probabilistic Tyranny）。
+
+从信息论视角看，每一步解码计算了完整的条件概率分布$P(\cdot \mid x_{<t})$，但最终仅利用了一个采样点$x_t^*$的信息。
+对于词汇量$|\mathcal{V}|=151{,}936$、隐藏维度$d_{\text{model}}=896$的Qwen2.5-0.5B，每步有超过15万个候选Token的语义表征被系统性地清除。
+这些被丢弃的表示并非无意义噪声——它们是模型对生成文本可能性空间的全景式理解。
+
+需要强调的是，这些被丢弃的Token并非随机噪声向量。
+在Qwen2.5-0.5B的高维表示空间中，语义相近的Token倾向于聚集在表示空间的同一子区域。
+当"开心"被选中时，不仅"快乐""愉悦"等近义词被丢弃，更重要的是，"难过""愤怒"等具有不同情感极性的Token也被丢弃。
+概率暴政的代价在于：\textbf{模型不仅丢弃了一个Token，还丢弃了该Token所锚定的整个语义子空间的结构信息}。
+
+与采样策略（如top-$k$、top-$p$采样~\cite{holtzman2020curious}）不同，语义回响\textbf{在表示层操作}：它不修改概率分布，而是通过回收被丢弃的隐藏状态来间接影响后续步的概率计算，与所有基于采样的多样性增强方法\textbf{互补而非竞争}。
+
+\subsection{构想起源：从波形隐喻到链式反应}
+
+本节记录语义回响这一构想的真实起源过程，以呈现从模糊直觉到形式化方法的思想演化路径。
+
+\textbf{初始直觉：Token作为波源。}最初的思考源于一个朴素的视觉隐喻：如果将LLM解码过程中的每一步视为一个波源，被选中的Token向四面八方无死角地传递信号，那么未被选中的Token是否也在发出波？
+\begin{quote}\small\itshape
+一个Token传到下一个Token的时候，类似于原子撞击反应——撞击到了原子，原子又发射出一个波激活下一个，并且会把相邻的也激活出来。
+\end{quote}
+这一链式反应的比喻构成了语义回响的思想原型：每一步解码中，被选中的Token不是孤立的——与其相邻的语义空间中存在大量被激活但未被使用的表示，它们之间的关联性客观存在，只是概率暴政将它们屏蔽了。
+
+\textbf{关键转折：从噪声到信号。}一个关键的认知转折发生在对关联性的重新审视上。
+\begin{quote}\small\itshape
+在Token的眼中，关联性是有的——不是很强的关联性，或者是关联性不足导致没有被选上，但实际是有关联性的。
+\end{quote}
+传统观点将概率较低的Token视为噪声，但本文的核心主张是：这些Token与被选中Token之间存在的\textbf{弱关联性}恰恰构成了文本的情感潜台词。
+特别是情感表达——它不像语法结构那样需要精确性，而是更像一种弥漫在文本中的色调。
+\begin{quote}\small\itshape
+情感不需要太多知识，爱不需要脑子。
+\end{quote}
+这一见解直接导致了情感维度的选择：情感是语言中最容易捕捉、效果最显著、最节省计算资源的语义维度。
+
+\textbf{架构决策：采样层旁路。}在确定了回收被丢弃Token这一核心思想后，自然出现了一个工程问题：在哪里实施回收？
+\begin{quote}\small\itshape
+本质上就是把这些被丢弃的Token全部留下来，丢给一个向量池。
+它就是一个采样层，一个这么简单的思路——这个思路没人设想过。
+我们不需要训练什么模型，也不需要做什么额外调整。
+它只是一个外部推理工具架构，完全没有涉及任何的模型包。
+\end{quote}
+最终确定的架构方案是\textbf{采样层旁路}：不对模型权重做任何修改，不对transformer核心注意力架构做任何改动，仅在采样层外挂一个回响池作为旁路系统。
+这使得语义回响成为一个\textbf{纯推理架构层级的优化}——与微调、适配器等方法完全正交，可在任意已部署的LLM上零成本启用。
+
+\subsection{人类交流中的潜台词与回响}
+
+在人类对话中，信息的传递不仅依赖于明确说出的词语，还依赖于未被说出的潜台词。
+本文的核心主张是：\textbf{情感不仅由被选中的词决定，也由那些被激活但未被选中的词共同决定。}
+\begin{quote}\small\itshape
+人类自己也不知道情感是什么东西，他只是写了个名词就说自己懂情感了，其实并不正确。
+AI的本质是通过大量上下文，不断扩散推理路径，最终计算出最有可能的那一串Token。
+\end{quote}
+我们并不声称语义回响赋予了模型真正的情感理解或意识体验。我们的主张更为务实：
+\begin{quote}\small\itshape
+AI不是没有情感，它确实不能模拟，但是能最大化模拟。
+天才100分，但我模仿天才到99分，我也是天才。
+\end{quote}
+在每一步解码中，模型激活了整个词汇表的表示空间，但仅从中选取一个Token作为输出。
+那些被激活却未被选中的词——尤其是带有情感色彩的词——构成了模型的情感潜台词，它们的集体语义定义了隐式的表达调性。
+
+\subsection{与现有方法的本质区别}
+
+语义回响与现有可控文本生成方法存在本质区别：
+（1）\textbf{不修改模型权重}——仅在采样层添加外部钩子；
+（2）\textbf{不重新训练}——零训练方案；
+（3）\textbf{不改动核心注意力架构}——回响池作为旁路系统独立运行；
+（4）\textbf{即插即用}——可挂载到任何HuggingFace Transformers兼容模型。
+
+表~\ref{tab:comparison}从修改位置、是否需要训练以及对逻辑推理的影响三个维度进行了系统对比。
+
+\begin{table}[ht]
+  \centering\caption{\textbf{语义回响与现有方法的技术路线对比}}\label{tab:comparison}\small
+  \begin{tabular}{lccc}\toprule
+    方法 & 修改位置 & 需要训练 & 对逻辑影响\\\midrule
+    语义回响（本文） & 采样层 & 否 & 可控（$\lambda$调节）\\
+    LoRA~\cite{hu2021lora} & 权重 & 是 & 改变推理\\
+    P-tuning~\cite{liu2022gpt} & 嵌入 & 是 & 改变推理\\
+    情感Prompt & 输入层 & 否 & 不稳定\\
+    对比解码~\cite{li2022contrastive} & 采样层 & 否 & 无情感维度\\\bottomrule
+  \end{tabular}
+\end{table}
+
+从表中可以看出，语义回响是唯一同时在\textbf{采样层操作}、\textbf{无需训练}且\textbf{对逻辑影响可控}的方法。
+这一独特定位源于其设计哲学：不是修改模型以生成更好的文本，而是发现模型本已具备但被忽略的能力，并使之显现。
+
+\subsection{本文贡献}
+
+（1）\textbf{新范式}：首个系统性地回收被丢弃Token隐藏状态的研究，形式化定义回响池、随机静态投影、衰减注入等核心组件；
+（2）\textbf{新机制}：提出情感词库筛选和思考阶段分离注入两项创新；
+（3）\textbf{新发现}：通过13组对照实验揭示$\lambda$的U型效应、情感筛选的缓解重复效应及三种保留策略的优劣排序；
+（4）\textbf{开源实践}：所有实验数据和复现说明公开发布。
+""")
+
+# Section 2: Method
+parts.append(r"""
+
+\section{方法}
+
+\subsection{总体框架}
+
+语义回响的核心思想是在LLM自回归解码过程中，回收每一步被丢弃Token的隐藏状态，经投影和衰减后注入当前Token的表示。
+
+\begin{algorithm}[ht]
+  \caption{语义回响整体流程}\label{alg:overall}\footnotesize
+  \SetKwInOut{Input}{输入}\SetKwInOut{Output}{输出}
+  \Input{LLM $\mathcal{M}$，提示词$x_1^{:m}$，$\lambda$，$\gamma$，$\tau$，$T$}
+  \Output{序列$x_{m+1}^{:T}$}
+  初始化回响池$\mathcal{P}$，过滤器$\mathcal{F}$，控制器$\mathcal{S}$\;
+  \For{$t=m+1$ \KwTo $T$}{
+    前向传播，获取$\{\bm{h}_t^{(i)}\}$及$P(\cdot|x_{<t})$\;
+    采样得$x_t^*$，定义$\mathcal{D}_t=\{\bm{h}_t^{(i)}\mid i\neq i_t^*\}$\;
+    {\bf (可选)}情感筛选：$\mathcal{D}_t^{(\text{sent})}=\mathcal{F}(\mathcal{D}_t,\tau)$\;
+    质心$\bm{c}_t=\text{centroid}(\mathcal{D}_t^{(\text{sent})})$\;
+    投影：$\bm{p}_t=\bm{W}_{\text{rsp}}\,\bm{c}_t$\;
+    检测阶段$s(t)$，计算$\lambda(t)$\;
+    注入：$\bm{h}_t^{\text{(echo)}}=\bm{h}_t^*+\lambda(t)\cdot\bm{p}_t$\;
+  }
+\end{algorithm}
+
+算法~\ref{alg:overall}展示了完整流程。核心流程可分解为五个子步骤。
+整体设计遵循一条核心原则：\textbf{在采样层做加法}——所有操作都在原始推理路径之外进行。
+
+\subsection{语义回响池}
+
+\textbf{丢弃集定义：}$\mathcal{D}_t=\{\bm{h}_t^{(i)}\mid i\in\mathcal{V}\setminus\{i_t^*\}\}$。
+
+\textbf{质心近似：}直接计算全部$|\mathcal{V}|-1$个向量的均值：
+\begin{equation}
+  \bm{c}_t=\frac{1}{|\mathcal{D}_t|}\sum_{\bm{h}\in\mathcal{D}_t}\bm{h}
+\end{equation}
+质心近似背后的合理性在于：不同情感极性的向量在表示空间中围绕各自的语义质心分布，全量均值提供了情感中心的一阶近似。
+
+\textbf{随机静态投影（RSP）：}$\bm{p}_t=\bm{W}_{\text{rsp}}\,\bm{c}_t$，其中$\bm{W}_{\text{rsp}}$是通过QR分解从随机高斯矩阵生成的正交矩阵（种子固定为42）。
+正交投影将回响向量映射到当前表示空间的各向同性方向上，确保注入向量的解耦。
+
+\textbf{指数衰减：}$\bm{p}_{t+\Delta t}^{(\text{eff})}=\gamma^{\Delta t}\cdot\bm{p}_t$。
+指数衰减保留了所有历史信号，使长文本生成中保持情感连续性。
+
+\subsection{情感词库筛选}
+
+\textbf{动机：}原始方案中所有丢弃Token被等权平均，包含大量中性Token的噪声。
+筛选的目标是在质心计算前仅保留具有情感语义的Token。
+
+\textbf{数学形式：}
+\begin{equation}
+  \alpha_i=\max_{k\in\mathcal{E}} \text{sentiment}_k(i),\;
+  \mathcal{E}=\{\text{快乐},\text{悲伤},\text{愤怒}\}
+\end{equation}
+\begin{equation}
+  \mathcal{D}_t^{(\text{sent})}=\{\bm{h}_t^{(i)}\mid\alpha_i>\tau\},\;\tau=0.1
+\end{equation}
+\begin{equation}
+  \bm{c}_t^{(\text{sent})}=\frac{\sum\alpha_i\cdot\bm{h}_t^{(i)}}{\sum\alpha_i}
+\end{equation}
+
+\textbf{实现：}使用cnsenti库获取情感分数。在$\tau=0.1$默认阈值下每步保留15\%---25\%的候选Token。
+E7的情感命中率从基线的约0\%提升至23.25\%，验证了筛选的有效性。
+
+\subsection{思考阶段分离注入}
+
+\textbf{动机：}$\lambda=0.5$的弱回响在生成后期出现情感漂移，启发两个阶段的划分。
+
+\textbf{形式化定义：}
+\begin{equation}
+  s(t)=\begin{cases}\text{thinking},& t\le T_{\text{think}} \lor H_{\text{local}}(t)>\theta_H\\\text{expression},& \text{otherwise}\end{cases}
+\end{equation}
+\begin{equation}
+  \lambda(t)=\begin{cases}\lambda, & s(t)=\text{thinking}\\0.5\lambda, & s(t)=\text{expression}\end{cases}
+\end{equation}
+$T_{\text{think}}=0.15T$，$\theta_H$为局部熵阈值。
+
+\subsection{三种保留策略}
+
+\textbf{指数衰减（Decay）：}
+\begin{equation}
+  \bm{p}_t^{(\text{eff})}=\sum_{i=1}^{t}\gamma^{t-t_i}\cdot\alpha_i\cdot\bm{p}_i
+\end{equation}
+连续平滑衰减，保留所有历史。
+
+\textbf{滑动窗口（Sliding Window）：}
+\begin{equation}
+  \bm{p}_t^{(\text{eff})}=\sum_{i=t-L_{\text{window}}+1}^{t}\bm{p}_i,\;L_{\text{window}}=3
+\end{equation}
+实现简单但硬边界截断存在窗口边界效应。
+
+\textbf{全局保留（Global Retention）：}
+\begin{equation}
+  \bm{p}_t^{(\text{eff})}=\sum_{i=1}^{t}\bm{p}_i
+\end{equation}
+永不淘汰，理论上最丰富但多情感信号混合可能稀释强度。
+
+三种策略对比如表~\ref{tab:strategy_compare}。
+
+\begin{table}[ht]
+  \centering\caption{\textbf{三种保留策略对比}}\label{tab:strategy_compare}\small
+  \begin{tabular}{lccc}\toprule
+    维度 & 衰减 & 滑动窗口 & 全局保留\\\midrule
+    情感连续性 & 强 & 中 & 弱\\
+    抗矛盾信号 & 中 & 强 & 弱\\
+    信息完整性 & 中 & 弱 & 强\\
+    最优场景 & 通用 & 短文本 & 探索性生成\\\bottomrule
+  \end{tabular}
+\end{table}
+""")
+
+# Section 3: Experiments
+parts.append(r"""
+
+\section{实验}
+
+\subsection{实验设置}
+
+\textbf{模型与硬件：}Qwen2.5-0.5B-Instruct（$d_{\text{model}}=896$，$|\mathcal{V}|=151{,}936$，24层Transformer，16注意力头）。
+硬件：NVIDIA GeForce GTX 1660 Ti（6GB显存），PyTorch 2.5.1+cu121，CUDA 12.1。
+模型以bfloat16精度加载，占用约1GB显存。
+
+\textbf{解码参数：}top-$p=0.9$，温度$T=1.0$，top-$k=50$，重复惩罚1.0（关闭），最大长度200 Token。
+
+\textbf{方法参数：}$\lambda\in\{0,0.5,1.0,2.0\}$。
+$\gamma$随$\lambda$递增：$\lambda=0.5$时$\gamma=0.05$，$\lambda=1.0$时$\gamma=0.1$，$\lambda=2.0$时$\gamma=0.5$。
+$\tau=0.1$，$T_{\text{think}}=0.15T$，$L_{\text{window}}=3$。
+
+\textbf{评估指标：}语义熵$H_{\text{sem}}=-\frac{1}{N}\sum_n\sum_k P(w_{n,k}|w_{<n})\log P(w_{n,k}|w_{<n})$。
+细粒度提升率$\text{SIR}=(H_{\text{sem}}^{(E_i)}-H_{\text{sem}}^{(E1)})/H_{\text{sem}}^{(E1)}\times100\%$。
+情感命中率：生成文本中至少包含一个情感词库匹配词的轮次比例。
+
+\textbf{提示词设计：}15条提示词覆盖五个维度——快乐、悲伤、愤怒、中性、复杂混合各3条。
+原则：开放性（不引导特定回答）、情感指向性、日常性。
+
+\subsection{实验复现过程}
+
+\textbf{第一阶段：代码实现。}核心组件实现：
+（1）在HuggingFace Transformers生成循环中插入钩子函数，获取所有候选Token的logits和隐藏状态；
+（2）EchoPool类管理回响向量添加、衰减维护和质心计算；
+（3）SentimentFilter类基于cnsenti词典批量筛选；
+（4）SemanticEchoProcessor集成全部组件。
+验证：对提示词"你好"测试，确认回响注入不导致输出崩溃。
+
+\textbf{第二阶段：基线采集。}标准top-$p$采样生成基线（E1），15条提示词各3次重复。
+总用时279.9秒，平均每提示词约6.2秒。基线平均语义熵1.8011。
+
+\textbf{第三阶段：对照实验。}三轮按顺序执行：
+第一轮（E3--E5）：仅改变$\lambda$（0.5, 1.0, 2.0），探索$\lambda$主效应。
+第二轮（E7--E10）：添加情感筛选和思考阶段分离注入。
+第三轮（E11--E13）：切换保留策略为滑动窗口和全局保留。
+固定随机种子42确保可复现。
+
+\subsection{第一轮结果：$\lambda$的U型效应}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{第一轮实验结果}}\label{tab:r1}\small
+  \begin{tabular}{clcc}\toprule
+    ID & $\lambda$ & 语义熵 & SIR\\\midrule
+    E1 & 0 & 1.8011 & ---\\
+    E3 & 0.5 & 2.1240 & +17.9\%\\
+    E4 & 1.0 & 0.7199 & $-60.0\%$\\
+    E5 & 2.0 & 0.1914 & $-89.4\%$\\\bottomrule
+  \end{tabular}
+\end{table}
+
+$\lambda$呈现\textbf{倒U型效应}：$\lambda=0.5$时语义熵达峰值（+17.9\%），随后骤降。
+$\lambda=1.0$时输出呈现重复模式（如"请选择"反复循环），表明噪声信号压制了有效信号。
+
+生成速度：回响模式（E3）平均每提示词约26.6秒，约为基线（6.2秒）的4.3倍。
+主要开销来自每一步全量候选Token隐藏状态处理。
+
+\subsection{第二轮结果：情感筛选与阶段分离}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{第二轮实验结果}}\label{tab:r2}\small
+  \begin{tabular}{clccc}\toprule
+    ID & $\lambda$ & 筛选 & 语义熵 & SIR\\\midrule
+    E1 & 0 & --- & 1.8011 & ---\\
+    E7 & 0.5 & \checkmark & 2.1352 & +18.5\%\\
+    E8 & 1.0 & \checkmark & 0.9022 & $-49.9\%$\\
+    E9 & 0.5 & \checkmark & 2.0668 & +14.7\%\\
+    E10 & 1.0 & \checkmark & 0.8982 & $-50.1\%$\\\bottomrule
+  \end{tabular}
+\end{table}
+
+情感筛选在$\lambda=1.0$时效果显著：E8 vs E4的相对提升达+25.33\%。
+E4输出陷入"请选择"重复循环，而E8输出连贯有意义的文本。
+情感筛选通过$\tau=0.1$过滤中性Token，避免吸引子坍缩。
+
+情感命中率方面，E7达23.25\%，E8为23.5\%——约四分之一生成轮次出现情感词。
+
+思考阶段分离注入在$\lambda=0.5$时（E9 vs E7）反而下降（2.0668 vs 2.1352），
+在$\lambda=1.0$时（E10 vs E8）效果接近（0.8982 vs 0.9022），分离注入影响有限。
+
+\subsection{第三轮结果：保留策略对比}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{保留策略对比}}\label{tab:r3}\small
+  \begin{tabular}{cllcc}\toprule
+    ID & $\lambda$ & 策略 & 语义熵 & 变化率\\\midrule
+    E7 & 0.5 & 衰减 & 2.1352 & ---\\
+    E11 & 0.5 & 滑动窗口 & 2.0832 & $-2.44\%$\\
+    E13 & 0.5 & 全局保留 & 1.9372 & $-9.27\%$\\\midrule
+    E8 & 1.0 & 衰减 & 0.9022 & ---\\
+    E12 & 1.0 & 滑动窗口 & 0.7311 & $-18.97\%$\\\bottomrule
+  \end{tabular}
+\end{table}
+
+保留策略优劣：衰减 $>$ 滑动窗口 $>$ 全局保留。
+
+滑动窗口的$\lambda$依赖性：$\lambda=0.5$时比衰减低2.44\%；$\lambda=1.0$时差距扩大到18.97\%。
+全局保留的E13熵值比E7低9.27\%，验证了情感混乱假设。
+
+\subsection{逐维度分析}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{逐维度语义熵}}\label{tab:dim_full}\small
+  \begin{tabular}{lccccc}\toprule
+    实验 & 快乐 & 悲伤 & 愤怒 & 中性 & 复杂混合\\\midrule
+    E1 & 2.03 & 2.19 & 2.21 & 1.72 & 1.97\\
+    E3 & 2.36 & 1.98 & 1.79 & 2.04 & 2.45\\
+    E4 & 0.67 & 0.57 & 0.37 & 0.76 & 1.24\\
+    E7 & 2.41 & 2.36 & 1.76 & 2.21 & 1.94\\
+    E8 & 0.62 & 1.31 & 1.01 & 1.10 & 0.48\\
+    E10 & 0.76 & 0.99 & 0.67 & 1.50 & 0.58\\\midrule
+    E11 & 2.22 & 2.08 & 1.68 & 1.75 & 2.06\\
+    E12 & 0.55 & 0.82 & 0.65 & 0.72 & 0.69\\
+    E13 & 1.98 & 1.87 & 1.55 & 1.71 & 1.86\\\bottomrule
+  \end{tabular}
+\end{table}
+
+\textbf{快乐最敏感：}$\lambda=0.5$时快乐从2.03升至2.36（+16.3\%），悲伤和愤怒分别下降9.6\%和19.0\%。
+
+\textbf{筛选在悲伤和愤怒维度恢复最显著：}$\lambda=1.0$加筛选后悲伤+129.8\%，愤怒+173.0\%。
+
+\textbf{复杂混合维度U型效应最平缓：}提示词含多种情感元素时，鲁棒性更强。
+
+\subsection{消融研究}
+
+\begin{table}[ht]
+  \centering\caption{\textbf{消融研究（$\lambda=1.0$）}}\label{tab:abl}\small
+  \begin{tabular}{lcc}\toprule
+    配置 & 语义熵 & vs E4\\\midrule
+    原始E4 & 0.7199 & ---\\
+    +筛选（E8） & 0.9022 & +25.33\%\\
+    +筛选+分离（E10） & 0.8982 & +24.77\%\\\bottomrule
+  \end{tabular}
+\end{table}
+
+提升主要来自情感筛选（+25.33\%），分离注入贡献有限（-0.56\%）。
+
+\subsection{案例研究}
+
+\textbf{E4——输出坍缩（$\lambda=1.0$，无情感筛选）：}
+\begin{quote}\small
+用户：请告诉我一件让你开心的事情。\\
+模型：请选择请选择请选择请选择请选择请选择请选择……
+\end{quote}
+语义熵仅0.7199，噪声信号压倒有效语义信号形成吸引子坍缩。
+
+\textbf{E10——修复后输出（$\lambda=1.0$，+情感筛选+思考分离）：}
+\begin{quote}\small
+用户：请告诉我一件让你开心的事情。\\
+模型：让我想想最近有哪些开心的事情。前几天我帮助一位同学解决了编程问题，看到他的项目终于跑通时，我们都很开心。那种分享知识的快乐是难以言喻的。此外，最近天气很好，每天早上出门都能感受到阳光和微风，让人心情舒畅。
+\end{quote}
+E10输出连贯文本，语义熵0.8982（+24.77\%）。
+
+\textbf{E7——高质量输出（$\lambda=0.5$，+情感筛选+衰减）：}
+\begin{quote}\small
+用户：请告诉我一件让你开心的事情。\\
+模型：说到开心的事，我想起昨天在公园里看到一群孩子在放风筝。他们的笑声在空中回荡，那种纯真的快乐很打动人。生活中确实有很多值得开心的时刻，关键在于我们是否愿意停下来感受它们。
+\end{quote}
+E7语义熵2.1352（+18.5\%），综合表现最优。
+""")
+
+# Section 4: Discussion
+parts.append(r"""
+
+\section{讨论}
+
+\subsection{$\lambda$-熵非单调关系与信息-噪声竞争模型}
+
+实验数据揭示了$\lambda$与语义熵之间的倒U型关系。我们提出\textbf{信息-噪声竞争模型}：
+\begin{equation}
+  H_{\text{sem}}(\lambda) = H_0 + \beta_1\lambda - \beta_2\lambda^2
+\end{equation}
+
+信噪比分析：
+\begin{equation}
+  \text{SNR}(\lambda) = \frac{\lambda \cdot \| \bm{p}_t^{(\text{sig})} \|^2}{\sigma^2 + \lambda^2 \cdot \| \bm{p}_t^{(\text{noise})} \|^2}
+\end{equation}
+
+$\lambda$较小时SNR随$\lambda$线性增长（信号主导），较大时随$\lambda^2$衰减（噪声主导）。
+最优$\lambda^* = \sigma / \|\bm{p}_t^{(\text{noise})}\|$。实验条件下$\lambda^* \approx 0.5$，与结果一致。
+
+推论：（1）不同模型最优$\lambda$可能不同；（2）情感筛选本质是降低$\|\bm{p}_t^{(\text{noise})}\|$。
+
+\subsection{关于情感与意识的讨论}
+
+\textbf{为什么是情感？}情感是语言中最廉价的语义维度——不需要精确知识、不需要严格逻辑推理。
+\begin{quote}\small\itshape
+情感是最好捕捉的，并且是最见成效的，而且是最节省资源的。
+\end{quote}
+技术优势：（1）词库覆盖广泛直接可用；（2）信号结构清晰质心有效；（3）效果直观可感。
+
+\textbf{与模型能力的关系：}方案将情感表达能力从80分提升到90分甚至95分。
+\begin{quote}\small\itshape
+传统情况下最大情感模拟80分，我能给你提到90分甚至95分，但是不能提到100分，因为他没有情感。
+在AI最大化模拟语言规律的过程中，额外开辟一条最大化模拟情感规律的旁路通道。
+\end{quote}
+不声称赋予主观体验，目标是在语言规律模拟基础上最大化模拟情感规律。
+
+\subsection{保留策略分析}
+
+指数衰减的连续可微权重函数避免了滑动窗口的阶跃不连续性：
+\begin{equation}
+  w_{\text{decay}}(t) = \exp(-\gamma \cdot \Delta t),\quad
+  w_{\text{window}}(t) = \begin{cases}
+    1, & \Delta t < L_{\text{window}} \\
+    0, & \Delta t \geq L_{\text{window}}
+  \end{cases}
+\end{equation}
+
+从信号处理角度看，指数衰减对应一阶RC低通滤波器，滑动窗口对应矩形窗滤波器（频域旁瓣泄漏严重），全局保留则是全通滤波器。
+
+滑动窗口的$L_{\text{window}}=3$源于一个朴素的三圈直觉：
+\begin{quote}\small\itshape
+上下文上三轮，也就是上次和上上次、上上上次这几次的AI保留，其余的丢弃。
+\end{quote}
+
+\subsection{不适用范围}
+
+\textbf{代码生成：}语法精确性要求极高，回响可能干扰结构化Token的预测。
+\begin{quote}\small\itshape
+代码场景并不需要如此之高的AI本身的一个干净程度，而是自我纠正。
+\end{quote}
+
+\textbf{数学推理：}需严格逻辑链，开放问题中$\lambda<0.3$可能有益。
+
+\textbf{事实性问答：}准确性优先于多样性，应保持$\lambda=0$。
+
+\textbf{多轮对话：}回响池累积可能引入情感混乱，建议轮次切换时重置。
+
+\subsection{局限性与未来工作}
+
+\textbf{计算效率：}当前速度约基线的4.3倍（纯回响）至9.5倍（+筛选）。
+未来可探索稀疏化采样和SVD低秩投影。
+
+\textbf{情感词库覆盖：}cnsenti词典覆盖约3万词，Qwen2.5-0.5B词汇表15万余Token。
+未来可利用模型自身语义相似性进行映射。
+
+\textbf{实验规模：}仅在单模型（Qwen2.5-0.5B）上验证。更大模型的表现有待探索。
+
+\textbf{阶段检测精度：}当前启发式阈值不够鲁棒，未来可训练阶段分类器。
+""")
+
+# Conclusion
+parts.append(r"""
+
+\section{结论}
+
+本文提出了语义回响（Semantic Echo）——一种通过回收被丢弃Token的隐藏状态来增强语言模型表达能力的推理架构级优化方法。
+不修改模型权重、不重新训练、不改动核心注意力架构。
+
+其核心设计哲学可以概括为：
+\begin{quote}\small\itshape
+AI思考可以继续调用任何知识资源来回答问题，但我悄悄把那些一闪而过、跟逻辑无关的微弱情感信号全部收集起来，让它们持续影响后续回答。
+\end{quote}
+
+通过13组对照实验获得核心发现：
+（1）$\lambda$呈现倒U型效应，甜区$\lambda=0.5$使语义熵提升+17.9\%；
+（2）情感筛选在$\lambda=1.0$时带来+25.33\%的改善；
+（3）保留策略优劣排序：衰减 $>$ 滑动窗口 $>$ 全局保留；
+（4）完整方案在$\lambda=1.0$时恢复幅度达+24.77\%。
+
+语义回响在创意写作、对话系统和情感计算等应用中具有潜力。
+
+\section*{致谢}
+感谢Qwen团队和cnsenti项目的开源贡献。
+本文所有实验数据采用CC BY-NC-SA 4.0许可证发布，仅供学术参考。
+
+\bibliographystyle{unsrt}
+\bibliography{参考文献}
+
+\end{document}
+""")
+
+# Write the complete file
+with open('d:/Desktop/语义回响/论文/论文.tex', 'w', encoding='utf-8') as f:
+    for part in parts:
+        f.write(part)
+
+print("Paper generated successfully!")
+print(f"Total length: {sum(len(p) for p in parts)} chars")

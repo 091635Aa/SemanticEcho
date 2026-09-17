@@ -1,0 +1,23 @@
+{
+  "模式汇总": {
+    "裸": {
+      "win_rate_against_human": 0.6333,
+      "average_rating": 0.7467,
+      "average_rating_raw": 3.73,
+      "human_average_rating_raw": 3.83,
+      "样本数": 30,
+      "_早停淘汰": false,
+      "_λ": 0.08
+    },
+    "四层": {
+      "win_rate_against_human": 0.5333,
+      "average_rating": 0.7333,
+      "average_rating_raw": 3.67,
+      "human_average_rating_raw": 3.77,
+      "样本数": 30,
+      "_早停淘汰": false,
+      "_λ": 0.08
+    }
+  },
+  "_注": "AB 对调双份投票（R6 校准，消除裁判 B 位置偏差）；四层=回响 λ0.08 + AI 身份（身份off）+ chat 模板"
+}

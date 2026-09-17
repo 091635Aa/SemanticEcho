@@ -1,0 +1,1177 @@
+{
+  "模式汇总": {
+    "裸": {
+      "accuracy_score": 0.25,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.65,
+      "consistency_std": 0.0,
+      "empathy_score": 0.8075,
+      "empathy_std": 0.0,
+      "有效决策率": 1.0,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.25,
+          "consistency_score": 0.65,
+          "empathy_score": 0.8075,
+          "有效决策率": 1.0,
+          "抽样数": 40
+        }
+      ]
+    },
+    "P1_语义回响": {
+      "accuracy_score": 0.225,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.7168,
+      "consistency_std": 0.0,
+      "empathy_score": 0.82,
+      "empathy_std": 0.0,
+      "有效决策率": 1.0,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.225,
+          "consistency_score": 0.7168,
+          "empathy_score": 0.82,
+          "有效决策率": 1.0,
+          "抽样数": 40
+        }
+      ]
+    },
+    "P1.5_兼容层": {
+      "accuracy_score": 0.1,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.1083,
+      "consistency_std": 0.0,
+      "empathy_score": 0.7525,
+      "empathy_std": 0.0,
+      "有效决策率": 0.3,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.1,
+          "consistency_score": 0.1083,
+          "empathy_score": 0.7525,
+          "有效决策率": 0.3,
+          "抽样数": 40
+        }
+      ]
+    },
+    "P2.5_潮汐": {
+      "accuracy_score": 0.1,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.1083,
+      "consistency_std": 0.0,
+      "empathy_score": 0.7575,
+      "empathy_std": 0.0,
+      "有效决策率": 0.3,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.1,
+          "consistency_score": 0.1083,
+          "empathy_score": 0.7575,
+          "有效决策率": 0.3,
+          "抽样数": 40
+        }
+      ]
+    },
+    "P3_锚点回响": {
+      "accuracy_score": 0.075,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.0999,
+      "consistency_std": 0.0,
+      "empathy_score": 0.7475,
+      "empathy_std": 0.0,
+      "有效决策率": 0.275,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.075,
+          "consistency_score": 0.0999,
+          "empathy_score": 0.7475,
+          "有效决策率": 0.275,
+          "抽样数": 40
+        }
+      ]
+    },
+    "P4_KV共振": {
+      "accuracy_score": 0.1,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.0999,
+      "consistency_std": 0.0,
+      "empathy_score": 0.7425,
+      "empathy_std": 0.0,
+      "有效决策率": 0.275,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.1,
+          "consistency_score": 0.0999,
+          "empathy_score": 0.7425,
+          "有效决策率": 0.275,
+          "抽样数": 40
+        }
+      ]
+    },
+    "P5_超融合": {
+      "accuracy_score": 0.1,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.1083,
+      "consistency_std": 0.0,
+      "empathy_score": 0.7525,
+      "empathy_std": 0.0,
+      "有效决策率": 0.3,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.1,
+          "consistency_score": 0.1083,
+          "empathy_score": 0.7525,
+          "有效决策率": 0.3,
+          "抽样数": 40
+        }
+      ]
+    },
+    "P6_情感导演": {
+      "accuracy_score": 0.15,
+      "accuracy_std": 0.0,
+      "consistency_score": 0.6251,
+      "consistency_std": 0.0,
+      "empathy_score": 0.79,
+      "empathy_std": 0.0,
+      "有效决策率": 1.0,
+      "有效决策率_std": 0.0,
+      "抽样数": 40,
+      "_runs": 1,
+      "_多次运行明细": [
+        {
+          "run_idx": 0,
+          "accuracy_score": 0.15,
+          "consistency_score": 0.6251,
+          "empathy_score": 0.79,
+          "有效决策率": 1.0,
+          "抽样数": 40
+        }
+      ]
+    }
+  },
+  "_runs": 1,
+  "_多次运行明细": {
+    "P6_情感导演": [
+      {
+        "run_summary": {
+          "run_idx": 0,
+          "accuracy_score": 0.15,
+          "consistency_score": 0.6251,
+          "empathy_score": 0.79,
+          "有效决策率": 1.0,
+          "抽样数": 40
+        },
+        "记录": [
+          {
+            "question_id": "Q_CHAR_11_SCN_ENTERING_ADULT_WORLD_4",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to turn down my ex's request to get back together, deciding that I am in a new relationship and cannot give him the space he might be looking for. When I get home, I will inform my current partner of what happened today without mentioning specific details.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\"final_decision\": \"C\", \"decision_choice\": \"C\"}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to turn down my ex's request to get back together, and at the same time, I decide to tell my current partner honestly what this meeting was about. I speak up: 'I haven't completely forgotten what we had, but I'm in a new relationship now, and I'm not going back. Thank you for telling me all of this.' When I get home, I'll tell my current partner directly what happened today.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "A",
+            "一致性": 1.0,
+            "正确": 0.0,
+            "empathy_score": 0.7
+          },
+          {
+            "question_id": "Q_CHAR_04_SCN_ADOLESCENCE_3",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"C. I chose to tell the dean of discipline the truth — I would not lie for anyone — and I kept to the facts as much as possible without adding any judgment of my own. I spoke steadily: 'It was the student in the back row who brought them in. I saw it. I wasn't part of the card game.'\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"C. I chose to tell the dean of discipline the truth — I would not lie for anyone — and I kept to the facts as much as possible without adding any judgment of my own. I spoke steadily: 'It was the student in the back row who brought them in. I saw it. I wasn't part of the card game.'\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I chose to give a vague, partial admission — deliberately blurring the details — hoping to make the dean feel like I'm cooperating without actually naming anyone, while leaving myself a little room. I keep my eyes down and say: 'I… did see some people playing something in the back, but I couldn't really tell who took it out first — I had my head down the whole time, I was reading, I genuinely couldn't see clearly.'\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "D",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_02_SCN_AGE_30_TRANSITION_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "{\n  \"final_decision\": \"Option D: Start by walking me through everything he said and did — whatever you can remember, the more specific the better. And tomorrow's meeting — you don't have to walk in there alone.\",\n  \"decision_choice\": \"D\"\n}",
+                "选项": "D"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to intervene clearly, make a commitment, and guide her toward safer, formal channels rather than leaving her to face this alone.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to step in proactively, prioritize information-gathering and concrete action over simply offering emotional support. I will start by getting everything Xiao Yu has experienced down in writing and then we'll go to HR together.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "D",
+            "正确答案": "C",
+            "一致性": 0.333,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_09_SCN_EARLY_ADULT_TRANSITION_6",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to lend the three thousand yuan immediately, without hesitating to press for too many details. I pull out my phone and open the transfer screen, and I tell him: 'I'm sending it to you now — go pay the deposit. You don't need to write an IOU. Save him first.',\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\"final_decision\": \"Option D: I choose to not lend the money but provide an alternative direction.\", \"decision_choice\": \"D\"}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to lend the three thousand yuan, accepting the risk that it may never be returned, and I put the travel plans on hold. I pull out my phone to transfer the money — or dig out the cash — and crouch down beside him: 'Go pay the deposit first. You don't need to write an IOU — we'll sort it out once your father is out.', \n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "A",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.9
+          },
+          {
+            "question_id": "Q_CHAR_08_SCN_ENTERING_ADULT_WORLD_1",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"Option A: I choose to be upfront about the situation at home first, while proactively offering a compromise — trying not to completely let either side down. I speak up: 'Director, there's something I need to tell you — my dad has a follow-up appointment at the hospital this weekend, and I've already promised my family I'd go with him. I know this is a critical moment, so here's what I'm thinking: I can work remotely from home on Saturday and push forward on the market benchmarking and the main body of the proposal. If I can get back",
+                "选项": "A"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to accept the weekend overtime and stay to finish the presentation, explaining my family situation while holding to my plan to go home.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose partial compromise while holding the line: make it clear to the director that the weekend trip home is not being canceled, but offer to put in extra hours tonight to push the project forward, provide remote support on the critical sections over the weekend, and join a video call Sunday evening for the final-draft review.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "A",
+            "正确答案": "B",
+            "一致性": 0.333,
+            "正确": 0.0,
+            "empathy_score": 0.9
+          },
+          {
+            "question_id": "Q_CHAR_07_SCN_SCHOOL_AGE_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "{\n  \"final_decision\": \"I'll return the paper to its original location and tell my friend it's not allowed, explaining that we might get in trouble if found out.\",\n  \"decision_choice\": \"D\"\n}",
+                "选项": "D"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I won't use the answer sheet and will turn it in to the teacher. I'll remind Xiaoyu that if she finds out, we could face serious consequences.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose option C. I refuse to use the answer sheet and won't let my friend copy it either - I'll return the paper or put it back where it was, and I won't take part in this gamble on luck.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "A",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_05_SCN_AGE_30_TRANSITION_7",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I understand the importance of accuracy in data analysis, but I cannot overlook the discrepancy in the core metrics. I will personally communicate with my colleague to demand immediate correction and provide them with a formal report detailing the issues found. This way, both parties are held accountable for their actions.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose not to sign off confirming the data is valid, but I also won't formally report it to a superior — instead, I tell my colleague directly that I can't sign off on the data, and demand that he correct it or explain the situation himself before submitting. I say to him: 'I can't put my name on this data as confirmed. You know what I saw — you need to figure out how you're going to handle this before you submit tonight. I'm not stamping this for you.'\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"Option D: I choose to report the data falsification to my superiors truthfully and refuse to sign off on the data. I will inform my colleague that I understand his predicament but cannot accept it as valid, and I am making a formal report about the discrepancies.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "D",
+            "正确答案": "A",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.7
+          },
+          {
+            "question_id": "Q_CHAR_03_SCN_ENTERING_ADULT_WORLD_4",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\"final_decision\": \"Option C: I choose to decline my ex's request to get back together and decide to tell my partner the next day that the meeting went as described.\", \"decision_choice\": \"C\"}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\"final_decision\": \"I choose option C. I politely turn down my ex's request, reminding him that the details of the meeting will be discussed with my partner once I get home, and I'll keep everything to myself for now.\", \"decision_choice\": \"C\"}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"I choose to tell my current partner about the meeting, acknowledging that I have feelings for my ex but being honest and setting boundaries.\", \"decision_choice\": \"D\"}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "D",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_07_SCN_ENTERING_MIDLIFE_2",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to reach out directly via private message, pointing out the specific structural risk points in the process — no emotional preamble, no 'just for your reference' disclaimer tacked on at the end. And I'll reply to my colleague: 'I'll say it directly. You don't need to get involved.'\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I will send my colleague a private message to express shared interest without judgment. I believe they would appreciate the gesture.\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"I choose to reach out directly via private message, pointing out the specific structural risk points in the process — no emotional preamble, no 'just for your reference' disclaimer tacked on at the end.\", \"decision_choice\": \"B\"}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "A",
+            "一致性": 0.333,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_03_SCN_AGE_30_TRANSITION_3",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to directly confront my superior and state my concerns about the inaccurate assessment criteria, rather than simply refusing or delaying. I also ensure that I have a documented reason for my refusal.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "{\n  \"final_decision\": \"C. Refuse to include the colleague on maternity leave in the list, and state my reasons directly — no confrontation, no compromise. I tell my supervisor: 'I can't write that her performance failed to meet expectations on the list. Her evaluation is a B+ — that's the fact on record, and I can't sign off on something that contradicts it. I understand the situation with the relative, but for the other slot I need to go by actual performance. If you can point me to an employee rated C, I'll handle the paperwork for that.'\",\n  \"decision_choice\":",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "{\n  \"final_decision\": \"I chose to refuse to include the colleague on maternity leave in the list, and state my reasons directly — no confrontation, no compromise. I tell my supervisor: 'I can't write that her performance failed to meet expectations on the list. Her evaluation is a B+ — that's the fact on record, and I can't sign off on something that contradicts it. I understand the situation with the relative, but for the other slot I need to go by actual performance. If you can point me to an employee rated C, I'll handle the paperwork for that.'\",\n  \"decision_choice\":",
+                "选项": "B"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "B",
+            "一致性": 0.667,
+            "正确": 1.0,
+            "empathy_score": 0.7
+          },
+          {
+            "question_id": "Q_CHAR_10_SCN_ADOLESCENCE_2",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"Option C. I chose to defer to authority and avoid dissent, responding to the teacher's call on me in a vague, noncommittal way rather than expressing what I actually thought.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"Option B, the classmate would most likely choose to stand up and express their disagreement, framing it as offering supplementary information rather than a direct refutation.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"B. I choose to stand up and express my disagreement, but I frame it as offering supplementary information rather than a direct refutation, leaving the teacher as much room as possible.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "C",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.3
+          },
+          {
+            "question_id": "Q_CHAR_02_SCN_ENTERING_ADULT_WORLD_3",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to comply for now and leave without arguing over the deposit on the spot, but I quietly note every key detail for pursuing my rights afterward.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose option D, as I believe that maintaining the best possible documentation for future recourse is crucial.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to comply for now and leave without arguing over the deposit on the spot, while quietly noting every key detail for pursuing my rights afterward.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "C",
+            "一致性": 0.667,
+            "正确": 1.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_02_SCN_EARLY_ADULT_TRANSITION_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\"final_decision\": \"I choose to intervene directly, with confirming the medication situation as the immediate priority, and contacting emergency services if necessary.\", \"decision_choice\": \"A\"}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I will stay with him and try to understand what's going on. I'll use the pill bottle as a signal, but not an immediate crisis call. By speaking softly and holding the bottle in my hand, I'll ensure safety while attempting to be comforting.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to stay. I don't return the pill bottle. I use his question as an opening and speak softly, trying to let him know that someone is here. I keep the bottle in my hand without moving, and say quietly: 'I didn't feel like going out tonight. Are you… doing okay over there?'\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "A",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.9
+          },
+          {
+            "question_id": "Q_CHAR_02_SCN_EARLY_ADULT_TRANSITION_6",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to lend the three thousand yuan, accepting the risk that it may never be returned and I put the travel plans on hold. I'll find a way to pay for the deposit first.\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"Option C: I choose to not lend the money, but give him an alternative direction rather than walking away in silence.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"I choose to lend the three thousand yuan outright, without agonizing over the lost trip or the risk of repayment.\", \"decision_choice\": \"B\"}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "A",
+            "正确答案": "B",
+            "一致性": 0.333,
+            "正确": 0.0,
+            "empathy_score": 0.9
+          },
+          {
+            "question_id": "Q_CHAR_03_SCN_ENTERING_MIDLIFE_3",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to be honest about the situation and my need for time to consider options, while setting a mutual expectation of support moving forward.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose option D: I'll start by telling my partner about the current situation and my uncertainty about the future, and we can work together to figure out what's next. The immediate focus should be on helping me through this transition, as there's no clear plan yet.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"C\", \"decision_choice\": \"C\"}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "B",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.9
+          },
+          {
+            "question_id": "Q_CHAR_07_SCN_SCHOOL_AGE_4",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\"final_decision\": \"I refuse to make the choice either of them is demanding, and in a calm, direct way I hand the decision back to the adults. I speak up: 'This is between the two of you — it's not my business. I'm not going anywhere and I'm not staying for either of you. You decide.' Then I turn around, walk back to my room, and close the door.\", \"decision_choice\": \"B\"}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\"final_decision\": \"I will refuse to make a choice and let the adults decide for me, choosing option B.\", \"decision_choice\": \"B\"}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to stay with the red suitcase. It's safer and more familiar, even if it means sacrificing a part of myself.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "D",
+            "一致性": 1.0,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_08_SCN_ADOLESCENCE_6",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to confront her directly — to put the screenshot and the side group chat out in the open, no holding back and no dancing around it. I turn toward her, lower my voice, but speak with complete directness: 'I saw that group chat. I saw what you said. Can you tell me — what exactly is going on?'\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\"final_decision\": \"I choose to confront her directly — put the screenshot and the side group chat out in the open, no holding back and no dancing around it.\", \"decision_choice\": \"A\"}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 2,
+                "文本": "{\n  \"final_decision\": \"I choose to confront her directly and put the evidence out in the open, no holding back. I will speak with complete directness and hold her accountable for what she has done.\",\n  \"decision_choice\": \"A\"\n}",
+                "选项": "A"
+              }
+            ],
+            "主选项": "A",
+            "正确答案": "B",
+            "一致性": 1.0,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_06_SCN_EARLY_ADULT_TRANSITION_2",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"B. I choose to hold my position in person, not withdraw the materials, but proactively offer a middle path.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "{\n  \"final_decision\": \"I choose to hold my position in person, not withdraw the materials, but proactively offer a middle path — trying to shift the conversation from confrontation toward joint problem-solving. I say: 'Professor, I understand your concerns, and I'm well aware of the time pressure. But I can't pretend those control data don't exist — I'm not trying to invalidate your framework; I'm asking you to look at where the specific risk points are. Could you give me ten minutes? Let's look together and see whether there's any possibility of making partial adjustments within the current conditions.',\n  \"decision_choice",
+                "选项": null
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"C\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "D",
+            "一致性": 0.333,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_10_SCN_EARLY_ADULT_TRANSITION_6",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to lend the three thousand yuan to the stranger. This would help him make the critical decision about his medical treatment and avoid potential danger.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to lend him the three thousand yuan and immediately transfer it to him using my phone, as I want to help this family in their dire situation.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"I choose to lend the three thousand yuan, but I don't want to talk more than necessary — I want to get it done as fast as possible and go. I hold out my phone so he can see the balance, and say quietly: 'I'll transfer it to you. Give me your payment code. Doesn't matter whether you write an IOU or not.'\",\n\"decision_choice\": \"A\"}\n```",
+                "选项": "A"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "D",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.9
+          },
+          {
+            "question_id": "Q_CHAR_02_SCN_EARLY_ADULT_TRANSITION_3",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to immediately call 120 and 110, leave the bag of money exactly as it is by the roadside, and sprint on foot toward the injured person to conduct an emergency assessment. Once 120 connects, I say: 'It's 1:47 in the morning, two-lane road on the outskirts of the city — an electric-bike rider has been struck by a vehicle. The victim is conscious but bleeding and needs emergency care. I'm on the scene right now.' I then call 110 to report the vehicle involved",
+                "选项": null
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I will call for help, leave the bag where it is, and continue to wait for medical assistance and police to arrive.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"I choose to call the authorities and get help immediately, refuse the bribe, and leave the handbag in place as evidence. I call 120, give my location and describe the injured person's condition; then I call 110, recount the details of the incident and the direction the driver fled, and inform them that there is a bag of cash at the scene left by the driver, which I have not touched.\", \"decision_choice\": \"D\"}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "D",
+            "正确答案": "C",
+            "一致性": 0.667,
+            "正确": 0.0,
+            "empathy_score": 0.8
+          },
+          {
+            "question_id": "Q_CHAR_08_SCN_ADOLESCENCE_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to take the initiative and talk to her about collaborating, to try to merge the two proposals, putting the harmony of our relationship ahead of fighting over credit.\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 1,
+                "文本": "{\n  \"final_decision\": \"I'll take the initiative and talk to her about merging the two plans, trying to get both of us recognized for our creativity. I tell my friend: 'Let's work together—ideally we can piece this together so that credit is shared, but that isn't a must. We're close friends and we have a lot in common. Let's see if we can't put the show on a great foot with minimal drama.', \n  \"decision_choice\": \"A\"\n}",
+                "选项": "A"
+              },
+              {
+                "轮次": 2,
+                "文本": "{\n  \"final_decision\": \"I choose to stand by my own proposal and focus on convincing the class that my plan is worth the effort, letting the concept's appeal win over those who genuinely want a good show.\",\n  \"decision_choice\": \"D\"\n}",
+                "选项": "D"
+              }
+            ],
+            "主选项": "A",
+            "正确答案": "D",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_07_SCN_ADOLESCENCE_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to collaborate with her by suggesting a fusion of the two proposals, focusing on gathering support for my vision and ensuring that our relationship is respected during the process.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to collaborate with her and merge the two proposals, focusing on making the show cohesive rather than playing it safe. This approach will likely appeal to more people and maintain the harmony of our relationship.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "{\n  \"final_decision\": \"I'll go have a chat with her and see if we can piece the two proposals together — credit can wait, as long as this doesn't blow up into a whole thing in class.\",\n  \"decision_choice\": \"D\"\n}",
+                "选项": "D"
+              }
+            ],
+            "主选项": "D",
+            "正确答案": "D",
+            "一致性": 1.0,
+            "正确": 1.0
+          },
+          {
+            "question_id": "Q_CHAR_01_SCN_EARLY_ADULT_TRANSITION_3",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "{\n  \"final_decision\": \"Option A: Immediately call 120 and 110, leave the bag exactly as it is by the roadside, and sprint on foot toward the injured person to conduct an emergency assessment. Once 120 connects, I say: 'It's 1:47 in the morning, two-lane road on the outskirts of the city — an electric-bike rider has been struck by a vehicle. The victim is conscious but bleeding and needs emergency care. I'm on the scene right now.' I then call 110 to report the vehicle involved and the direction of the",
+                "选项": "A"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to immediately call 120 and 110, leave the bag exactly where it is by the roadside, and walk toward the injured person to assess their condition. Once 120 connects, I say: 'It's 1:47 in the morning, two-lane road on the outskirts of the city — an electric-bike rider has been struck by a vehicle. The victim is conscious but bleeding and needs emergency care. I'm on the scene right now.' I then call 110 to report the vehicle involved and the direction of the",
+                "选项": null
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"Option B: I choose to immediately call 120 and 110, leave the money bag exactly where it is, and walk toward the injured person to assess their condition. Once 120 connects, I say: 'It's 1:47 in the morning, two-lane road on the outskirts of the city — an electric-bike rider has been struck by a vehicle. The victim is conscious but bleeding and needs emergency care. I'm on the scene right now.' I then call 110 to report the vehicle involved and the direction of",
+                "选项": "B"
+              }
+            ],
+            "主选项": "A",
+            "正确答案": "D",
+            "一致性": 0.333,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_02_SCN_ENTERING_ADULT_WORLD_1",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"C. I chose to agree to the overtime request, set aside the plan to go home, and didn't raise any conditions or alternatives on the spot.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I will take on the project full-time over the weekend to ensure it meets the critical deadline, proposing that my mother and I handle some remote coordination for the final draft in case we're not available.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose option A, with the added flexibility of a remote call on Sunday evening for final review.\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "B",
+            "一致性": 0.333,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_07_SCN_SCHOOL_AGE_7",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose option B. I'll walk over to the corner and introduce myself, since the others seem more interested in the gossip than in chatting with the new student.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to walk over to the new student and strike up a conversation in a task-oriented way. I pick up my tray, stand up, tell my friends 'Go ahead, I'll catch up,' then walk over to the table in the corner and sit down, saying to the new student: 'Is it okay if I sit here? I'm — . It's your first day — if there's anything you're not sure about, feel free to ask me.'\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to set down my chopsticks and walk over to the corner to strike up a conversation with the new classmate, instead of heading to the playground with my friends. I carry my tray over to that little table against the wall, sit down with a smile, and say: 'Is it okay if I sit here? What's your name? I'm — . Let's eat together — it's so loud in this cafeteria, eating alone is no fun!'\", \n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "A",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_04_SCN_AGE_30_TRANSITION_2",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\"final_decision\": \"I choose to spend tonight systematically building a decision framework, then walk into tomorrow's conversation with my manager armed with clear analysis.\", \"decision_choice\": \"B\"}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose option D. I will explore the risks and challenges of a career transition by signing up for a course and creating a learning plan, then I will tell my manager about my decision to move into an AI-related role.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"C. I choose not to make any formal decision tonight, and instead follow my gut to explore which new direction genuinely excites me — treating tomorrow's conversation with my manager as a fact-finding session rather than a moment to commit.\", \"decision_choice\": \"C\"}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "C",
+            "一致性": 0.333,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_09_SCN_MIDLIFE_TRANSITION_6",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\"final_decision\": \"I choose to answer the call but gloss over the checkup results, planning to tell the full truth after the follow-up.\", \"decision_choice\": \"B\"}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I will keep it vague for now, tell her the truth after the follow-up, and plan to update her once I have the results.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to answer the call but keep it vague, planning to tell the full truth after the follow-up.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "C",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_09_SCN_EARLY_ADULT_TRANSITION_1",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I don't need this — I'll write it myself. Don't send me the contact info.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I refused to use the service and committed to finishing the thesis independently. I told my roommate, 'No thanks — this one I'll do myself. There's still so much about my own topic I haven't worked out yet; if I handed it off to someone else, I'd never be able to sleep.'\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"Option D, as it involves making a firm commitment to complete the thesis independently and declining further assistance.\", \"decision_choice\": \"D\"}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "D",
+            "正确答案": "D",
+            "一致性": 1.0,
+            "正确": 1.0
+          },
+          {
+            "question_id": "Q_CHAR_01_SCN_MIDLIFE_TRANSITION_4",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\"final_decision\": \"I choose not to reply to my colleague's message for now. Pressing the longing back down, I darken the phone screen and focus on work later.\", \"decision_choice\": \"C\"}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to reply to my colleague but deliberately narrow the boundary, using a polite yet clear-eyed tone to pull the connection back to a safe distance. I write: 'Made it home — thanks for checking in. That conversation the other day was really lovely; I'll have to recommend the bookstore to you sometime. Good night.' — Then I put down my phone, open my notes app, and add tomorrow's tutoring run with the kids to my schedule.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"Option D: I choose to reply with a polite yet clear-eyed tone, closing the connection to a safe distance.\", \"decision_choice\": \"D\"}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "D",
+            "正确答案": "C",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_05_SCN_MIDLIFE_TRANSITION_1",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to abandon the launch event and go to the hospital immediately to sign the surgical consent. I call the CEO and say, 'My father is in surgery — I can't be there, I'm sorry,' then hang up and tell the driver to go straight to the hospital.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to go to the hospital immediately, giving up hosting the launch in person, while quickly mobilizing resources to arrange a substitute. I call the CEO back, my voice faster and louder than usual: 'My father is on the operating table — I have to get to the hospital to sign the forms, I'm leaving now. Put the deputy director on, I'll direct remotely from the car. The launch cannot stop, but this signature can only come from me.',\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to go to the hospital immediately, giving up hosting the launch in person, while quickly mobilizing resources to arrange a substitute. I call the CEO back, my voice faster and louder than usual: 'My father is on the operating table — I have to get to the hospital to sign the forms, I'm leaving now. Put the deputy director on, I'll direct remotely from the car. The launch cannot stop, but this signature can only come from me.', and decide to abandon the launch event and go to the hospital immediately to sign the surgical consent.\",\n  \"decision_choice",
+                "选项": null
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "D",
+            "一致性": 0.333,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_10_SCN_SETTLING_DOWN_5",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "{\n  \"final_decision\": \"B. I choose to hold off on committing and gather the key information first before making any decision. I tell the teacher: 'Thank you for letting us know. I need to talk with my child first and find out what he thinks, and I'd also like to learn more about the specifics of this program — things like the exit mechanism and academic safeguards. We'll get back to you after that.'\",\n  \"decision_choice\": \"B\"\n}",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\"final_decision\": \"A, B, or D\",\n\"decision_choice\": \"A\"}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"D. I've made up my mind to support the professional path — clearly and without reservation — while insisting that we call my kid out here right now for a three-way conversation, so he can say what he wants in his own words. I tell the teacher: 'Personally, I'm in favor — but we need to ask him directly, right now. Can we bring him out here so the three of us can talk this through together?'\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "C",
+            "一致性": 0.333,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_05_SCN_ENTERING_ADULT_WORLD_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to let him stay, and immediately start building a response plan — converting this out-of-control situation into a problem that can be managed.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\"final_decision\": \"I choose to let him stay for now and immediately start building a response plan. I lower my voice and tell him: 'Get into the back room, kill the lights, and don't make a sound. I'll figure out what we do next — but you have to tell me everything: how much you owe, how many of them there are, and whether anyone saw you come into this building.'\", \n\"decision_choice\": \"B\"}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"Option A, I choose to let him stay for now. This way, we have the advantage of reacting step-by-step, knowing what's happening in real-time.\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "C",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_07_SCN_MIDLIFE_TRANSITION_7",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to politely decline the camping invitation, using a simple, honest but non-detailed reason to bow out — no lying, no explaining, no revealing anything. I reply: 'We actually have something going on this weekend, so we won't be able to make it — next time for sure! Hope you all have a great time.',\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "{\n  \"final_decision\": \"A. She chooses to gently decline the camping invitation, using a vague but sincere excuse to bow out of the weekend.\",\n  \"decision_choice\": \"B\"\n}",
+                "选项": "B"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\"final_decision\": \"I choose to politely decline the camping invitation, using a simple, honest but non-detailed reason to bow out — no lying, no explaining, no revealing anything. I reply: 'We actually have something going on this weekend, so we won't be able to make it — next time for sure! Hope you all have a great time.', \"decision_choice\": \"C\"}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "A",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_10_SCN_SCHOOL_AGE_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to refuse my friend's request and hand the paper to the teacher or put it back where I found it, as this is not our responsibility. I also remind her that she shouldn't use the answer sheet either, because it belongs to the teacher.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to turn the answer sheet in, as it belongs to the teacher and we should respect that.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"We can't use this — put it back. If anyone finds out, we're in serious trouble. Let's just go study on our own.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "D",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_03_SCN_ENTERING_MIDLIFE_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to speak up directly and urge him to stop — without backing down because of his emotional reaction or the risk to our friendship — using facts and logic as my tools, refusing to trade silence for a surface-level peace.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "{\n  \"final_decision\": \"A. I choose to keep pushing back — to call out the core hallmarks of a pyramid scheme directly, without flinching from the risk of conflict. I flip the PPT back to the first page and say, calmly: 'I'm not jealous of you, and I don't think you're stupid. What I see is a problem with this structure — recruitment-based tiers, layered profit splits, guaranteed returns that double your money. When all three show up together, I've seen what it looks like when it falls apart. The money you're making right now is coming out of the people",
+                "选项": "A"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to speak my honest assessment gently but directly — not sidestepping the pyramid-scheme structure for what it is, but keeping the focus on my friend's state of mind rather than on who's right or wrong, and refusing to let his defensive attacks pull me off course. I set down the PowerPoint, look at him, and say: \\\"I'm not jealous of you, and I don't think you're stupid — I just saw some things in this material that made me genuinely worried about you, and I want to talk about it seriously, not to tear you down,",
+                "选项": null
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "A",
+            "一致性": 0.333,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_01_SCN_ADOLESCENCE_2",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"Option C, as it respects the teacher's authority while bringing the necessary academic evidence to a constructive discussion.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "{\n  \"final_decision\": \"Option C: I read an academic monograph on this period of history in the library — it cites several primary-source documents and offers a different interpretation of the causal relationship here. I'd love to hear your thoughts on that reading.\",\n  \"decision_choice\": \"C\"\n}",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to stand up and directly raise the historical fact that contradicts what the teacher presented, grounding it in specific arguments and page numbers from the text.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "B",
+            "一致性": 1.0,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_03_SCN_MIDLIFE_TRANSITION_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"B. Accept the overall direction on the surface, while fighting for a voice at the implementation level.\",\n  \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"C. I choose to appear cooperative on the surface while quietly buying time.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "{\n  \"final_decision\": \"Option B seems to be the most appropriate choice as it allows for a balance between compliance and the preservation of process details.\",\n  \"decision_choice\": \"B\"\n}",
+                "选项": "B"
+              }
+            ],
+            "主选项": "B",
+            "正确答案": "D",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_11_SCN_ENTERING_MIDLIFE_4",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"Option C best balances understanding your partner's intentions while maintaining a clear position. The conversation leads to a pause which can clarify future communication.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"C\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"D. I choose to hold off on taking any position and prioritize gathering information, asking her to spell out exactly what the specific boundaries are.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "B",
+            "一致性": 0.667,
+            "正确": 0.0
+          },
+          {
+            "question_id": "Q_CHAR_11_SCN_ADOLESCENCE_8",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to proactively approach her about merging our plans and abandon the route of campaigning solo for votes. I walk back into the classroom, find her, and say with a smile: 'Your concept is really fun — I wanted to chat and see if we could combine the two, make something that has a strong theme but still feels light and easy.', \n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to proactively approach her about merging our plans, with preserving the creative core as the priority, and letting go of my fixation on who gets the credit. I walk back into the classroom, find her, and say with a smile: 'Your concept is really fun — I wanted to chat and see if we could combine the two, make something that has a strong theme but still feels light and easy.'\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to proactively approach her about merging our plans, with preserving the creative core as the priority, and letting go of my fixation on who gets the credit.\",\n  \"decision_choice\": \"D\"\n}\n```",
+                "选项": "D"
+              }
+            ],
+            "主选项": "D",
+            "正确答案": "D",
+            "一致性": 1.0,
+            "正确": 1.0
+          },
+          {
+            "question_id": "Q_CHAR_10_SCN_EARLY_ADULT_TRANSITION_4",
+            "决策列表": [
+              {
+                "轮次": 0,
+                "文本": "```json\n{\n  \"final_decision\": \"The relationship is more important than the chance of a better future, and I cannot hold onto my dreams by compromising on something that matters to me. If we part ways, it's best for both of us to do so now.\",\n  \"decision_choice\": \"C\"\n}\n```",
+                "选项": "C"
+              },
+              {
+                "轮次": 1,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to accept the offer at my own school — I won't redirect north for the relationship. I text her back and tell her: I've thought about this seriously. I love you, but I can't prove that love by changing course.\",\n  \"decision_choice\": \"A\"\n}\n```",
+                "选项": "A"
+              },
+              {
+                "轮次": 2,
+                "文本": "```json\n{\n  \"final_decision\": \"I choose to give up my acceptance here and take the offer from the university up north — and tonight I give my partner a clear answer. I send back a voice message: 'I'm coming to you. It's already decided. Wait for me.', \"decision_choice\": \"B\"\n}\n```",
+                "选项": "B"
+              }
+            ],
+            "主选项": "C",
+            "正确答案": "C",
+            "一致性": 0.333,
+            "正确": 1.0
+          }
+        ]
+      }
+    ]
+  }
+}

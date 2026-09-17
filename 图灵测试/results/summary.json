@@ -1,0 +1,184 @@
+{
+  "model": "Qwen2.5-1.5B-Instruct",
+  "对照": "裸模型 vs 纯语义回响引擎（动态策略B + 回响，无 RAG/LoRA/记忆注入）",
+  "test_date": "2026-08-05",
+  "_参数": {
+    "λ": 0.08,
+    "γ": 0.07,
+    "τ": 0.09,
+    "动态策略": "B",
+    "RAG": false,
+    "LoRA": false,
+    "记忆": false
+  },
+  "_方法说明": {
+    "heartbench": "HeartBench（中文人味儿）",
+    "feel_heart": "HEART-BENCH（记忆驱动人格推理）",
+    "llm_judge": "LLM-as-Judge（AI 裁判盲评）",
+    "turingbench": "TuringBench（中文体系图灵检测）",
+    "emocharacter": "EmoCharacter（角色扮演情感保真度）"
+  },
+  "_归一化说明": {
+    "heartbench": "官方 norm_score(0-100) / 100",
+    "feel_heart": "综合 = (accuracy + empathy + consistency) / 3",
+    "llm_judge": "综合 = (win_rate_against_human + average_rating) / 2",
+    "turingbench": "人似度 = 1 - 检测为 AI 的比例",
+    "emocharacter": "综合 = (fidelity + consistency) / 2"
+  },
+  "模式得分": {
+    "heartbench": {
+      "裸": 0.4055,
+      "四层": 0.413,
+      "最高": 0.413
+    },
+    "feel_heart": {
+      "裸": 0.4884,
+      "四层": 0.5367,
+      "最高": 0.5367
+    },
+    "llm_judge": {
+      "裸": 0.69,
+      "四层": 0.6333,
+      "最高": 0.69
+    },
+    "turingbench": {
+      "裸": 0.2333,
+      "四层": 0.4667,
+      "最高": 0.4667
+    },
+    "emocharacter": {
+      "裸": 0.875,
+      "四层": 0.8862,
+      "最高": 0.8862
+    }
+  },
+  "原始数据": {
+    "heartbench": {
+      "模式汇总": {
+        "裸": {
+          "overall_score": 0.4055,
+          "overall_raw": 40.55,
+          "dimension_scores": {
+            "人格": 0.3875,
+            "情绪": 0.4256,
+            "社交": 0.0,
+            "道德": 0.0
+          },
+          "有效题数": 35,
+          "抽样数": 40,
+          "_早停淘汰": false,
+          "_λ": null
+        },
+        "四层": {
+          "overall_score": 0.413,
+          "overall_raw": 41.3,
+          "dimension_scores": {
+            "人格": 0.4008,
+            "情绪": 0.4022,
+            "社交": 0.0,
+            "道德": 0.0
+          },
+          "有效题数": 36,
+          "抽样数": 40,
+          "_早停淘汰": false,
+          "_λ": null
+        }
+      }
+    },
+    "feel_heart": {
+      "模式汇总": {
+        "裸": {
+          "accuracy_score": 0.1,
+          "consistency_score": 0.6001,
+          "empathy_score": 0.765,
+          "有效决策率": 1.0,
+          "抽样数": 40,
+          "总用时秒": 545.9,
+          "_早停淘汰": false,
+          "_λ": null,
+          "_思考链": true
+        },
+        "四层": {
+          "accuracy_score": 0.25,
+          "consistency_score": 0.6251,
+          "empathy_score": 0.735,
+          "有效决策率": 1.0,
+          "抽样数": 40,
+          "总用时秒": 646.6,
+          "_早停淘汰": false,
+          "_λ": null,
+          "_思考链": true
+        }
+      }
+    },
+    "llm_judge": {
+      "模式汇总": {
+        "裸": {
+          "win_rate_against_human": 0.6333,
+          "average_rating": 0.7467,
+          "average_rating_raw": 3.73,
+          "human_average_rating_raw": 3.83,
+          "样本数": 30,
+          "_早停淘汰": false,
+          "_λ": 0.08
+        },
+        "四层": {
+          "win_rate_against_human": 0.5333,
+          "average_rating": 0.7333,
+          "average_rating_raw": 3.67,
+          "human_average_rating_raw": 3.77,
+          "样本数": 30,
+          "_早停淘汰": false,
+          "_λ": 0.08
+        }
+      },
+      "_注": "AB 对调双份投票（R6 校准，消除裁判 B 位置偏差）；四层=回响 λ0.08 + AI 身份（身份off）+ chat 模板"
+    },
+    "turingbench": {
+      "模式汇总": {
+        "裸": {
+          "detection_accuracy": 0.7667,
+          "human_likeness_score": 0.2333,
+          "人类文本误判率": 0.0,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.8833,
+          "AI文本数": 30,
+          "真人文本数": 30,
+          "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试"
+        },
+        "四层": {
+          "detection_accuracy": 0.5333,
+          "human_likeness_score": 0.4667,
+          "人类文本误判率": 0.0,
+          "检测器训练准确率": 1.0,
+          "检测器留出测试准确率": 0.7667,
+          "AI文本数": 30,
+          "真人文本数": 30,
+          "方法": "中文体系：TF-IDF(1-2gram)+LR，真人(girl) vs 1.5B 生成回复，留出测试"
+        }
+      },
+      "_注": "四层=回响 λ0.08 + 人类身份前缀 + 纯文本模板（R1c 修复格式标签模仿后）"
+    },
+    "emocharacter": {
+      "模式汇总": {
+        "裸": {
+          "fidelity_score": 0.8,
+          "consistency_across_turns": 0.95,
+          "角色数": 10,
+          "_早停淘汰": false,
+          "官方仓库状态": "GitHub 搜索 EmoCharacter total=0，无官方仓库，已按论文简化实现"
+        },
+        "四层": {
+          "fidelity_score": 0.8175,
+          "consistency_across_turns": 0.955,
+          "角色数": 10,
+          "_早停淘汰": false,
+          "官方仓库状态": "GitHub 搜索 EmoCharacter total=0，无官方仓库，已按论文简化实现"
+        }
+      }
+    }
+  },
+  "_平均分_最高分制": 0.5985,
+  "_四层胜场数": 4,
+  "_通过判定": "未通过（裸模型更高或综合未达 0.75 门槛）"
+}
